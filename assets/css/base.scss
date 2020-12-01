@@ -1,0 +1,36 @@
+@import './variables.scss';
+
+body {
+  height: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Microsoft YaHei",'PingFang SC', "Helvetica Neue", Helvetica, arial, STHeiTi, sans-serif;
+  font-size: 14px;
+}
+
+html {
+  height: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+a {
+  color: $primary;
+  text-decoration: none;
+}
+
+
+.light-btn {
+  border-color: #333;
+  background: none;
+  &:hover {
+    border-color: $primary;
+    color: $primary;
+    background: none;
+  }
+}

@@ -1,0 +1,5 @@
+@mixin container {
+  width: $baseWidth;
+  margin: 0 auto;
+  color: $text;
+}
