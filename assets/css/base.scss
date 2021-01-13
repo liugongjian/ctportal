@@ -1,4 +1,4 @@
-@import './variables.scss';
+@import './_animation.scss';
 
 body {
   height: 100%;
@@ -24,6 +24,38 @@ a {
   text-decoration: none;
 }
 
+.svg-icon {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  color: inherit;
+  vertical-align: middle;
+  fill: none;
+  stroke: currentColor;
+}
+
+.svg-fill {
+  fill: currentColor;
+  stroke: none;
+}
+
+.svg-up {
+  /* default */
+  transform: rotate(0deg);
+}
+
+.svg-right {
+  transform: rotate(90deg);
+}
+
+.svg-down {
+  transform: rotate(180deg);
+}
+
+.svg-left {
+  transform: rotate(-90deg);
+}
+
 
 .light-btn {
   border-color: #333;
@@ -32,5 +64,9 @@ a {
     border-color: $primary;
     color: $primary;
     background: none;
+  }
+  &.el-button--primary {
+    border-color: $primary;
+    color: $primary;
   }
 }

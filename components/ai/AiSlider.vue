@@ -3,14 +3,14 @@
     <div class="slider__item slider__item--1">
       <div class="slider__item__container">
         <div class="slider__item__left">
-          <div class="slider__item__title">抢先体验视频监控AI能力</div>
+          <div class="slider__item__title">人脸检测</div>
           <div class="slider__item__content">
-            机器视觉是智能世界的眼睛，万物感知入口，行业数字化抓手。天翼云视频监控面向智慧城市、社区、乡村等提供极简部署、普惠AI、智能业务闭环的监控解决方案。
+            快速检测人脸并返回人脸框位置，输出人脸150个关键点坐标，准确识别多种属性信息
           </div>
-          <el-button class="slider__item__btn light-btn">立即体验</el-button>
+          <el-button class="slider__item__btn light-btn">技术文档</el-button>
         </div>
         <div class="slider__item__right">
-          <img class="slider__item__img" src="~/assets/mock/home_slider.png" />
+          <img class="slider__item__img" src="~/assets/mock/ai_slider.png" />
         </div>
       </div>
     </div>
@@ -23,11 +23,11 @@
       display: flex;
     }
     &__left {
-      flex: 6;
+      flex: 5;
       align-self: center;
     }
     &__right {
-      flex: 5;
+      flex: 7;
     }
     &__title {
       font-size: 40px;
@@ -43,13 +43,13 @@
     }
 
     &--1 {
-      background: #212126;
+      background: #1c1c3e;
       color: #fff;
       .slider__item__container {
         color: #fff;
       }
       .slider__item__content {
-        color: #ccc;
+        color: #eee;
       }
       .slider__item__btn {
         border-color: #fff;

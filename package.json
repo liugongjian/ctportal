@@ -6,7 +6,9 @@
     "dev": "nuxt-ts",
     "build": "nuxt-ts build",
     "start": "nuxt-ts start",
-    "generate": "nuxt-ts generate"
+    "generate": "nuxt-ts generate",
+    "generate:prod": "base='/portal/' nuxt-ts generate",
+    "svg": "vsvg -s ./assets/svg -t ./icons --es6"
   },
   "dependencies": {
     "@nuxt/typescript-runtime": "^2.0.0",
@@ -15,7 +17,8 @@
     "element-ui": "^2.13.2",
     "nuxt": "^2.14.6",
     "sass": "^1.29.0",
-    "sass-loader": "^10.1.0"
+    "sass-loader": "^10.1.0",
+    "vue-svgicon": "^3.2.9"
   },
   "devDependencies": {
     "@nuxt/types": "^2.14.6",

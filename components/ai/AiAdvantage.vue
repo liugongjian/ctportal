@@ -1,27 +1,27 @@
 <template>
   <div class="advantage">
     <div class="advantage__container">
-      <div class="advantage__title">产品优势</div>
+      <div class="advantage__title">核心优势</div>
       <div class="advantage__item__wrap">
         <div class="advantage__item">
           <div class="advantage__item__img"><img src="~/assets/mock/home_feat_1.svg" /></div>
-          <div class="advantage__item__title">多前端接入</div>
-          <div class="advantage__item__content">支持通过标准协议接入摄像头、NVR/DVR、监控平台等多种前端，简单调试即可使用</div>
+          <div class="advantage__item__title">多维感知，全面互联</div>
+          <div class="advantage__item__content">感知、读懂“人、车、物以及环境”多维数据，通过AI嵌入“云-边-端”的智能协同，打破子系统数据孤岛，实现全面互联</div>
         </div>
         <div class="advantage__item">
           <div class="advantage__item__img"><img src="~/assets/mock/home_feat_2.svg" /></div>
-          <div class="advantage__item__title">边缘节点智能分析</div>
-          <div class="advantage__item__content">将数据处理能力下沉到边缘节点，满足行业数字化在实时业务、敏捷连接、数据优化等方面的关键需求，使用户得到了更加极致的体验</div>
+          <div class="advantage__item__title">服务稳定高效</div>
+          <div class="advantage__item__content">以“AI算法”为核心，整合“感知、计算和存储”AIoT智能硬件，衔接“云端软件”管理平台，构建软硬一体化智能安防屏障</div>
         </div>
         <div class="advantage__item">
           <div class="advantage__item__img"><img src="~/assets/mock/home_feat_3.svg" /></div>
-          <div class="advantage__item__title">功能丰富、实用性强</div>
-          <div class="advantage__item__content">事前及时预警，防患于未然；事中实时告警，方便管理人员快速处理；事后信息存档，便于查证和决策分析</div>
+          <div class="advantage__item__title">灵活简单易用</div>
+          <div class="advantage__item__content">全场景“一脸通”，将“智慧通行、智能安防、餐饮消费和会员服务”等环节打通，开放合作生态，共同提质创收</div>
         </div>
         <div class="advantage__item">
           <div class="advantage__item__img"><img src="~/assets/mock/home_feat_4.svg" /></div>
-          <div class="advantage__item__title">海量算法库，自由组合</div>
-          <div class="advantage__item__content">支持数百种算法，且可根据具体场景优化算法效果，可广泛应用在 工业园区、生产制造企业、住宅小区、校园、景区、工地等多种场景</div>
+          <div class="advantage__item__title">效率为先，降本增效</div>
+          <div class="advantage__item__content">从提升园区“管理和服务”效率出发，依据实际业务需求，提供“灵活部署”的针对性方案，降本增效</div>
         </div>
       </div>
     </div>

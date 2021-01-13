@@ -3,14 +3,15 @@
     <div class="slider__item slider__item--1">
       <div class="slider__item__container">
         <div class="slider__item__left">
-          <div class="slider__item__title">抢先体验视频监控AI能力</div>
+          <div class="slider__item__title">开发者</div>
           <div class="slider__item__content">
-            机器视觉是智能世界的眼睛，万物感知入口，行业数字化抓手。天翼云视频监控面向智慧城市、社区、乡村等提供极简部署、普惠AI、智能业务闭环的监控解决方案。
+            为开发者提供API、SDK、CLI等工具，方便快捷调用天翼云视频监控开放能力
           </div>
-          <el-button class="slider__item__btn light-btn">立即体验</el-button>
+          <el-button class="slider__item__btn light-btn">API文档</el-button>
+          <el-button class="slider__item__btn light-btn">SDK文档</el-button>
         </div>
         <div class="slider__item__right">
-          <img class="slider__item__img" src="~/assets/mock/home_slider.png" />
+          <img class="slider__item__img" src="~/assets/mock/dev_slider.svg" />
         </div>
       </div>
     </div>
@@ -23,11 +24,11 @@
       display: flex;
     }
     &__left {
-      flex: 6;
+      flex: 5;
       align-self: center;
     }
     &__right {
-      flex: 5;
+      flex: 7;
     }
     &__title {
       font-size: 40px;
@@ -43,13 +44,16 @@
     }
 
     &--1 {
-      background: #212126;
+      background: linear-gradient(90deg, #152a3c 0%, #2485de 100%);
       color: #fff;
       .slider__item__container {
         color: #fff;
       }
       .slider__item__content {
-        color: #ccc;
+        color: #eee;
+      }
+      .slider__item__img {
+        padding: 30px;
       }
       .slider__item__btn {
         border-color: #fff;

@@ -7,7 +7,7 @@
           随着深度学习、大规模数据处理能力及云基础设施的迅猛发展的背景下，AI算法的成熟让监控安防的智能化成为可能。随着场景的不断丰富和应用的不断深入，更多成熟可用的视频算法可以融入到各行业的生产流程中，赋予行业先进生产力。
         </div>
         <div class="ai__gallery">
-          <div class="ai__gallery__item">
+          <div class="ai__gallery__item" @click="goto('ai')">
             <img class="ai__gallery__item__img" src="~/assets/mock/328909811.jpg" />
             <div class="ai__gallery__item__title">人脸搜索1:N</div>
             <div class="ai__gallery__item__intro">
@@ -19,7 +19,7 @@
               </div>
             </div>
           </div>
-          <div class="ai__gallery__item">
+          <div class="ai__gallery__item" @click="goto('ai')">
             <img class="ai__gallery__item__img" src="~/assets/mock/310532962.jpg" />
             <div class="ai__gallery__item__title">家畜识别</div>
             <div class="ai__gallery__item__intro">
@@ -31,7 +31,7 @@
               </div>
             </div>
           </div>
-          <div class="ai__gallery__item">
+          <div class="ai__gallery__item" @click="goto('ai')">
             <img class="ai__gallery__item__img" src="~/assets/mock/126679847.jpg" />
             <div class="ai__gallery__item__title">物流识别</div>
             <div class="ai__gallery__item__intro">
@@ -43,7 +43,7 @@
               </div>
             </div>
           </div>
-          <div class="ai__gallery__item">
+          <div class="ai__gallery__item" @click="goto('ai')">
             <img class="ai__gallery__item__img" src="~/assets/mock/146576895.jpg" />
             <div class="ai__gallery__item__title">路况识别</div>
             <div class="ai__gallery__item__intro">
@@ -55,7 +55,7 @@
               </div>
             </div>
           </div>
-          <div class="ai__gallery__item">
+          <div class="ai__gallery__item" @click="goto('ai')">
             <img class="ai__gallery__item__img" src="~/assets/mock/134894386.jpg" />
             <div class="ai__gallery__item__title">矿区事故预警</div>
             <div class="ai__gallery__item__intro">
@@ -67,7 +67,7 @@
               </div>
             </div>
           </div>
-          <div class="ai__gallery__item">
+          <div class="ai__gallery__item" @click="goto('ai')">
             <img class="ai__gallery__item__img" src="~/assets/mock/303243143.jpg" />
             <div class="ai__gallery__item__title">智慧港口</div>
             <div class="ai__gallery__item__intro">
@@ -84,11 +84,23 @@
     </div>
   </div>
 </template>
+
+<script>
+import Vue from 'vue'
+
+export default Vue.extend({
+  methods: {
+    goto(pageName) {
+      this.$router.push(pageName)
+    }
+  }
+})
+</script>
 <style lang="scss" scoped>
   .ai {
     &__container {
       @include container;
-      padding: $containerPadding;
+      @include containerPadding;
       display: flex;
     }
     &__title {
@@ -109,10 +121,11 @@
       flex-wrap: wrap;
       &__item {
         position: relative;
-        flex: 1 300px;
-        max-width: 360px;
-        margin-right: 5px;
-        margin-bottom: 5px;
+        flex: 0 0 32%;
+        max-width: 32%;
+        margin-right: 1%;
+        margin-bottom: 1%;
+        cursor: pointer;
         &__img {
           width: 100%;
           display: block;
