@@ -59,7 +59,7 @@
           >
             <NuxtLink to="/service">支持与服务</NuxtLink>
           </div>
-          <div class="header__navigation__item">控制台</div>
+          <div class="header__navigation__item"><a href="http://console.vcn.ctyun.cn/" target="_blank">控制台</a></div>
           <div class="header__navigation__item"><svg-icon class="header__navigation__item__search" name="search" /></div>
         </div>
       </div>
