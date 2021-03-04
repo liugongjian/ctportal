@@ -9,7 +9,7 @@
             <div class="openapi__item__title">API文档</div>
             <div class="openapi__item__content">在线查看和搜索开放API对应的文档信息，教你快速掌握API 的使用</div>
             <div class="openapi__item__button">
-              <el-button class="light-btn">查看文档</el-button>
+              <a class="el-button light-btn el-button--default light-btn" href="/document/api/" target="_blank">查看文档</a>
             </div>
           </div>
         </div>
@@ -19,7 +19,7 @@
             <div class="openapi__item__title">API Explorer</div>
             <div class="openapi__item__content">在线查看和搜索开放API对应的文档信息，教你快速掌握API 的使用</div>
             <div class="openapi__item__button">
-              <el-button class="light-btn">查看文档</el-button>
+              <el-button class="light-btn">使用API Explorer</el-button>
             </div>
           </div>
         </div>

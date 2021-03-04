@@ -74,7 +74,7 @@
       </ul>
       <ul v-if="currentSubMenu === 'developer'">
         <li @click="goto('/developer')">API Explorer</li>
-        <li @click="goto('/developer')">API文档</li>
+        <li><a href="/document/api/" target="_blank">API文档</a></li>
         <li @click="goto('/developer')">SDK文档</li>
       </ul>
       <ul v-if="currentSubMenu === 'doc'">
@@ -339,6 +339,9 @@ export default Vue.extend({
         cursor: pointer;
         &:hover {
           color: $primary;
+        }
+        a {
+          display: block;
         }
       }
     }

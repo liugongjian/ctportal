@@ -8,8 +8,7 @@
           <div class="sdk__item__body">
             <div class="sdk__item__title">Java SDK</div>
             <div class="sdk__item__button">
-              <el-button class="light-btn">SDK文档</el-button>
-              <el-button class="light-btn">SDK下载</el-button>
+              <a class="el-button light-btn el-button--default light-btn" href="http://vss.gz2oss.xstore.ctyun.cn/sdk/ctyun-java-sdk-vss.zip" target="_blank">SDK下载</a>
             </div>
           </div>
         </div>
@@ -18,8 +17,7 @@
           <div class="sdk__item__body">
             <div class="sdk__item__title">Python SDK</div>
             <div class="sdk__item__button">
-              <el-button class="light-btn">SDK文档</el-button>
-              <el-button class="light-btn">SDK下载</el-button>
+              <a class="el-button light-btn el-button--default light-btn" href="http://vss.gz2oss.xstore.ctyun.cn/sdk/ctyun-python-sdk-vss.zip" target="_blank">SDK下载</a>
             </div>
           </div>
         </div>
@@ -28,8 +26,7 @@
           <div class="sdk__item__body">
             <div class="sdk__item__title">GO SDK</div>
             <div class="sdk__item__button">
-              <el-button class="light-btn">SDK文档</el-button>
-              <el-button class="light-btn">SDK下载</el-button>
+              <a class="el-button light-btn el-button--default light-btn" href="http://vss.gz2oss.xstore.ctyun.cn/sdk/ctyun-go-sdk.zip" target="_blank">SDK下载</a>
             </div>
           </div>
         </div>
@@ -38,8 +35,7 @@
           <div class="sdk__item__body">
             <div class="sdk__item__title">Node.js SDK</div>
             <div class="sdk__item__button">
-              <el-button class="light-btn">SDK文档</el-button>
-              <el-button class="light-btn">SDK下载</el-button>
+              敬请期待
             </div>
           </div>
         </div>
