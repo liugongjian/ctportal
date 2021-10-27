@@ -8,7 +8,7 @@
       label-width="100px"
     >
       <div class="form_title"><h2>天翼云视频监控需求问卷</h2></div>
-      <div class="form_col">基本信息</div>
+      <div class="form_col-level1">基本信息</div>
       <el-form-item label="企业名称:" prop="name">
         <el-input v-model="ruleForm.name"></el-input>
       </el-form-item>
@@ -58,57 +58,45 @@
       <el-form-item label="企业联系人邮箱" prop="entrepreneurEmail">
         <el-input v-model="ruleForm.entrepreneurEmail"></el-input>
       </el-form-item>
-      <div class="form_col">需求信息</div>
+      <div class="form_col-level1">需求信息</div>
       <el-form-item>
-        <div class="form_colmin">需要哪些通用能力</div>
+        <div class="form_col-level2">需要哪些通用能力</div>
         <el-checkbox-group v-model="ruleForm.checkedFunction">
-          <el-col :span="12">
+          <el-col :span="24">
             <el-checkbox label="视频接入" disabled />
           </el-col>
-          <el-col :span="12">
+          <el-col :span="24">
             <el-checkbox label="云存储" />
           </el-col>
           <el-checkbox label="AI算法" />
         </el-checkbox-group>
       </el-form-item>
       <el-form-item v-if="ruleForm.checkedFunction.indexOf('AI算法') > -1">
-        <el-form-item>
-          <div class="form_colmin">需要哪些AI算法</div>
-          <div class="form_colminmin">人脸识别</div>
-          <el-checkbox-group v-model="ruleForm.faceDistinguish">
-            <el-col v-for="item in faceDistinguish" :key="item" :span="12">
-              <el-checkbox :label="item" />
-            </el-col>
-          </el-checkbox-group>
-        </el-form-item>
-        <el-form-item>
-          <div class="form_colminmin">人体识别</div>
-          <el-checkbox-group v-model="ruleForm.bodyDistinguish">
-            <el-col v-for="item in bodyDistinguish" :key="item" :span="12">
-              <el-checkbox :label="item" />
-            </el-col>
-          </el-checkbox-group>
-        </el-form-item>
-        <el-form-item>
-          <div class="form_colminmin">场景识别</div>
-          <el-checkbox-group v-model="ruleForm.sceneDistinguish">
-            <el-col v-for="item in sceneDistinguish" :key="item" :span="12">
-              <el-checkbox :label="item"
-            /></el-col>
-          </el-checkbox-group>
-        </el-form-item>
-        <el-form-item>
-          <div class="form_colminmin">其它</div>
-          <el-input
-            v-model="ruleForm.other"
-            type="textarea"
-            :rows="2"
-          ></el-input>
-        </el-form-item>
+        <div class="form_col-level2">需要哪些AI算法</div>
+        <div class="form_col-level3">人脸识别</div>
+        <el-checkbox-group v-model="ruleForm.faceDistinguish">
+          <el-col v-for="item in faceDistinguish" :key="item" :span="24">
+            <el-checkbox :label="item" />
+          </el-col>
+        </el-checkbox-group>
+        <div class="form_col-level3">人体识别</div>
+        <el-checkbox-group v-model="ruleForm.bodyDistinguish">
+          <el-col v-for="item in bodyDistinguish" :key="item" :span="24">
+            <el-checkbox :label="item" />
+          </el-col>
+        </el-checkbox-group>
+        <div class="form_col-level3">场景识别</div>
+        <el-checkbox-group v-model="ruleForm.sceneDistinguish">
+          <el-col v-for="item in sceneDistinguish" :key="item" :span="24">
+            <el-checkbox :label="item"
+          /></el-col>
+        </el-checkbox-group>
+        <div class="form_col-level3">其它</div>
+        <el-input v-model="ruleForm.other" type="textarea" :rows="2"></el-input>
       </el-form-item>
-      <div class="form_colmin">接入信息列表</div>
-      <div class="form_colAccessInfo">
-        <el-form-item>
+      <el-form-item>
+        <div class="form_col-level2">接入信息列表</div>
+        <div class="form_col-access-info">
           <div>接入信息-1</div>
           <el-select v-model="ruleForm.accessInfo" placeholder="请选择预计码率">
             <el-option
@@ -118,8 +106,6 @@
               :value="item.value"
             ></el-option>
           </el-select>
-        </el-form-item>
-        <el-form-item>
           <el-select
             v-model="ruleForm.accessNumber"
             placeholder="请选择预计接入数量"
@@ -131,8 +117,6 @@
               :value="item.value"
             ></el-option>
           </el-select>
-        </el-form-item>
-        <el-form-item>
           <el-select v-model="ruleForm.cycle" placeholder="请选择存储周期">
             <el-option
               v-for="item in cycle"
@@ -141,8 +125,6 @@
               :label="item.label"
             ></el-option>
           </el-select>
-        </el-form-item>
-        <el-form-item>
           <el-select v-model="ruleForm.time" placeholder="请选择订购时长">
             <el-option
               v-for="item in time"
@@ -151,10 +133,8 @@
               :label="item.label"
             ></el-option>
           </el-select>
-        </el-form-item>
-      </div>
-      <div class="form_colAccessInfo">
-        <el-form-item>
+        </div>
+        <div class="form_col-access-info">
           <div>接入信息-2</div>
           <el-select v-model="ruleForm.accessInfo" placeholder="请选择预计码率">
             <el-option
@@ -164,8 +144,6 @@
               :value="item.value"
             ></el-option>
           </el-select>
-        </el-form-item>
-        <el-form-item>
           <el-select
             v-model="ruleForm.accessNumber"
             placeholder="请选择预计接入数量"
@@ -177,8 +155,6 @@
               :value="item.value"
             ></el-option>
           </el-select>
-        </el-form-item>
-        <el-form-item>
           <el-select v-model="ruleForm.cycle" placeholder="请选择存储周期">
             <el-option
               v-for="item in cycle"
@@ -187,8 +163,6 @@
               :label="item.label"
             ></el-option>
           </el-select>
-        </el-form-item>
-        <el-form-item>
           <el-select v-model="ruleForm.time" placeholder="请选择订购时长">
             <el-option
               v-for="item in time"
@@ -197,51 +171,45 @@
               :label="item.label"
             ></el-option>
           </el-select>
-        </el-form-item>
-      </div>
-      <el-form-item class="form_title">
+        </div>
         <el-button class="form_button" @click="append">+增加接入信息</el-button>
       </el-form-item>
-      <div class="form_colmin">摄像头/NVR通过哪种协议进行接入</div>
       <el-form-item>
+        <div class="form_col-level2">摄像头/NVR通过哪种协议进行接入</div>
         <el-checkbox-group v-model="ruleForm.protocol">
-          <el-col v-for="item in protocol" :key="item" :span="12">
+          <el-col v-for="item in protocol" :key="item" :span="24">
             <el-checkbox :label="item"
           /></el-col>
         </el-checkbox-group>
       </el-form-item>
-      <div class="form_colmin">摄像头/NVR通过哪种网络方式进行接入</div>
-      <el-form-item>
+      <el-form-item
+        ><div class="form_col-level2">摄像头/NVR通过哪种网络方式进行接入</div>
         <el-checkbox-group v-model="ruleForm.network">
-          <el-col v-for="item in network" :key="item" :span="12">
+          <el-col v-for="item in network" :key="item" :span="24">
             <el-checkbox :label="item"
           /></el-col>
         </el-checkbox-group>
       </el-form-item>
-      <div class="form_colmin">摄像头/NVR通过哪种网络方式进行播放</div>
       <el-form-item>
+        <div class="form_col-level2">摄像头/NVR通过哪种网络方式进行播放</div>
         <el-checkbox-group v-model="ruleForm.network1">
-          <el-col v-for="item in network1" :key="item" :span="12">
+          <el-col v-for="item in network1" :key="item" :span="24">
             <el-checkbox :label="item"
           /></el-col>
         </el-checkbox-group>
       </el-form-item>
-      <div class="form_colmin">备注需求</div>
-      <div class="form_remarks">
-        例如定制视频分析服务，比如人脸识别，口罩检测，人员聚集检测，人员布控，吸烟检测，安全帽发光服检测等
-      </div>
       <el-form-item>
+        <div class="form_col-level2">备注需求</div>
+        <div class="form_remarks">
+          例如定制视频分析服务，比如人脸识别，口罩检测，人员聚集检测，人员布控，吸烟检测，安全帽发光服检测等
+        </div>
         <el-input
           type="textarea"
           :rows="3"
           v-model="ruleForm.inputs"
         ></el-input>
       </el-form-item>
-      <el-form-item class="form_title"
-        ><el-button class="form_button" @click="submit"
-          >提交</el-button
-        ></el-form-item
-      >
+      <el-button class="form_button" @click="submit">提交</el-button>
     </el-form>
   </div>
 </template>
@@ -325,61 +293,65 @@ export default Vue.extend({
 </script>
 <style lang="scss" scoped>
 .form {
+  padding: 20px 0px;
   background-color: rgb(241, 241, 238);
-  padding: 30px 40px 50px 80px;
+  .el-select {
+    width: 100%;
+  }
+  .el-form-item {
+    background-color: #fff;
+    padding: 1em 1.5em;
+  }
 }
 
 .form_title {
   text-align: center;
 }
-.form_col {
+.form_col-level1 {
   position: relative;
-  padding: 10px 10px;
-  font-family: '黑体';
   font-weight: bolder;
-  font-size: 20px;
+  font-size: 1.3em;
+  margin: 1em 2em;
 }
-.form_colmin {
+.form_col-level2 {
   position: relative;
-  font-family: '黑体';
   font-weight: bolder;
-  font-size: 18px;
-  padding: 10px 0px 10px 0px;
+  font-size: 1.2em;
 }
-.form_colminmin {
+.form_col-level3 {
   position: relative;
-  font-family: '黑体';
   font-weight: bolder;
-  font-size: 15px;
+  font-size: 1em;
 }
-.form_col::before {
+.form_col-level1::before {
   position: absolute;
   content: '';
   width: 8px;
   height: 20px;
   background-color: #fa8334;
-  margin: 1px -20px;
+  margin: 0.2em -0.8em;
 }
-.checkbox--verticalArrange {
-  display: block;
-}
-.form_colAccessInfo {
+.form_col-access-info {
   border-style: solid;
-  padding: 8px 10px 5px 10px;
-  margin: 10px 0px 20px 0px;
   border-width: 2px;
+  padding: 0.5em 1em;
   border-color: rgb(230, 230, 229);
-  font-family: '黑体';
-  font-weight: bolder;
-  font-size: 15px;
+  font-weight: bold;
+  font-size: 1em;
+  margin-bottom: 2em;
+  .el-select {
+    margin: 0.5em 0em;
+  }
 }
 .form_button {
   background: #fa8334;
-  width: 50%;
+  width: 80%;
   color: aliceblue;
+  margin: 0 10%;
 }
 .form_remarks {
   color: darkgray;
-  margin-bottom: 10px;
+  line-height: 1.4em;
+  margin-bottom: 1em;
 }
 </style>
