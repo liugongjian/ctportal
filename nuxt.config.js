@@ -38,7 +38,9 @@ export default {
 
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [
-    '@nuxtjs/style-resources'
+    '@nuxtjs/style-resources',
+    '@nuxtjs/axios',
+    "@nuxtjs/proxy"
   ],
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
@@ -56,5 +58,18 @@ export default {
       './assets/css/_variables.scss',
       './assets/css/_mixins.scss'
     ]
+   },
+
+   axios: {
+    proxy: true
+   },
+   
+  proxy: {
+    '/operation/v1': 'http://182.43.127.35:9190',
+  },
+
+   server: {
+     port: 9190
+  //    host: '182.43.127.35'
    }
 }
