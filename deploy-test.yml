@@ -1,0 +1,47 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: vss-portal-web
+  namespace: vss-test
+  labels:
+    app: vss-portal-web
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: vss-portal-web
+  template:
+    metadata:
+      labels:
+        app: vss-portal-web
+    spec:
+      containers:
+      - name: vss-portal-web
+        image: 10.95.123.130:7080/ctyun/vss-portal-web:temptag
+        imagePullPolicy: Always
+        command:
+          - nginx
+        args:
+          - '-g daemon off;'
+        ports:
+        - containerPort: 80
+      nodeSelector:
+        kubernetes.io/hostname: 10.95.13.195
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: vss-portal-web-service
+  namespace: vss-test
+  labels:
+    name: vss-portal-web-service
+spec:
+  type: NodePort
+  ports:
+  - port: 80
+    targetPort: 80
+    protocol: TCP
+    nodePort: 30300
+  selector:
+    app: vss-portal-web
