@@ -7,7 +7,7 @@ export default {
     title: '天翼云 - 视频网络',
     meta: [
       { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no' },
       { hid: 'description', name: 'description', content: '' }
     ],
     link: [
@@ -69,7 +69,7 @@ export default {
   },
 
    server: {
-     port: 9190
-  //    host: '182.43.127.35'
+     port: 9190,
+     host: '172.24.6.30'
    }
 }
