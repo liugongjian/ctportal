@@ -13,13 +13,44 @@
       <el-form-item label="企业名称:" prop="companyName">
         <el-input v-model="form.companyName"></el-input>
       </el-form-item>
-      <el-form-item label="省份" prop="provinceCity">
+      <!-- <el-form-item label="省份" prop="provinceCity">
+        
         <el-cascader
           v-model="form.provinceCity"
           :options="cityList"
           placeholder="请选择地区"
           clearable
         />
+      </el-form-item> -->
+      <el-form-item label="省份" prop="provinceCode">
+        <el-select
+          v-model="form.provinceCode"
+          @change="provinceChange"
+          :popper-append-to-body="false"
+          placeholder="请选择省份"
+        >
+          <el-option
+            v-for="item in provinceList"
+            :key="item.value"
+            :value="item.value"
+            :label="item.label"
+          ></el-option>
+        </el-select>
+      </el-form-item>
+      <el-form-item label="城市" prop="cityCode">
+        <el-select
+          v-model="form.cityCode"
+          :popper-append-to-body="false"
+          placeholder="请选择城市"
+        >
+          <el-option
+            v-for="item in dynamicCity"
+            :key="item.value"
+            :value="item.value"
+            :label="item.label"
+            :disabled="item.disabled"
+          ></el-option>
+        </el-select>
       </el-form-item>
       <el-form-item label="所属行业" prop="industry">
         <el-select
@@ -201,7 +232,12 @@
 </template>
 <script lang="ts">
 import Vue from 'vue'
-import { cityList, provinceList } from '@/assets/region/cities'
+import {
+  cityList,
+  provinceList,
+  provinceMapping,
+  cityMapping
+} from '@/assets/region/cities'
 import { industry } from '@/assets/industry/industry'
 import {
   inProtocal,
@@ -254,9 +290,16 @@ export default Vue.extend({
     return {
       loading: false,
       ais: [],
+      dynamicCity: [
+        {
+          label: '请先选择省份',
+          value: null,
+          disabled: true
+        }
+      ],
       form: {
         ability: ['1'],
-        provinceCity: [],
+        // provinceCity: [],
         industry: null,
         companyName: '',
         contactName: '',
@@ -321,13 +364,13 @@ export default Vue.extend({
           { required: true, message: '请输入正确的邮箱', trigger: 'blur' },
           { validator: validateEmail, trigger: 'blur' }
         ],
-        provinceCity: [
-          { required: true, message: '请选择客户属地', trigger: 'change' },
-          { validator: validateAddress, trigger: 'change' }
-        ],
         industry: [
           { required: true, message: '请选择所属行业', trigger: 'change' }
-        ]
+        ],
+        provinceCode: [
+          { required: true, message: '请选择省份', trigger: 'change' }
+        ],
+        cityCode: [{ required: true, message: '请选择城市', trigger: 'change' }]
         // name: [{ required: true, trigger: 'blur' }],
         // province: [{ required: true, trigger: 'change' }],
         // city: [{ required: true, trigger: 'change' }],
@@ -351,6 +394,15 @@ export default Vue.extend({
         orderDuration: null
       })
     },
+    // 省份城市联动
+    provinceChange() {
+      cityList.map((item: any) => {
+        const val = item.value.slice(1, 3)
+        if (val === this.form.provinceCode) {
+          this.dynamicCity = item.children
+        }
+      })
+    },
     async renderAiAlgorithm() {
       const ai: any = await getAiAlgorithm()
       this.ais = ai.info
@@ -369,8 +421,8 @@ export default Vue.extend({
       try {
         this.loading = true
         this.form.progress = +this.form.progress
-        this.form.cityCode = this.form.provinceCity[1]
-        this.form.provinceCode = this.form.provinceCity[0]
+        // this.form.cityCode = this.form.provinceCity[1]
+        // this.form.provinceCode = this.form.provinceCity[0]
         this.form.ability.forEach(function (v: any, i: any, a: any) {
           a[i] = +v
         })
