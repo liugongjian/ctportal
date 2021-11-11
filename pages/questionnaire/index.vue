@@ -211,7 +211,7 @@ export default Vue.extend({
         }],
         form: {
           ability: ['1'],
-          provinceCity: [],
+          // provinceCity: [],
           industry: null,
           companyName: '',
           contactName: '',
@@ -275,12 +275,14 @@ export default Vue.extend({
           { required: true, message: '请输入正确的邮箱', trigger: 'blur' },
           { validator: validateEmail, trigger: 'blur' }
         ],
-        provinceCity: [
-          { required: true, message: '请选择客户属地', trigger: 'change' },
-          { validator: validateAddress, trigger: 'change' }
-        ],
         industry: [
           { required: true, message: '请选择所属行业', trigger: 'change' }
+        ],
+        provinceCode: [
+          { required: true, message: '请选择省份', trigger: 'change' }
+        ],
+        cityCode: [
+          { required: true, message: '请选择城市', trigger: 'change' }
         ]
         // name: [{ required: true, trigger: 'blur' }],
         // province: [{ required: true, trigger: 'change' }],
@@ -332,8 +334,8 @@ export default Vue.extend({
       try {
         this.loading = true
         this.form.progress = +this.form.progress
-        this.form.cityCode = this.form.provinceCity[1]
-        this.form.provinceCode = this.form.provinceCity[0]
+        // this.form.cityCode = this.form.provinceCity[1]
+        // this.form.provinceCode = this.form.provinceCity[0]
         this.form.ability.forEach(function(v: any, i: any, a: any) {
           a[i] = +v
         })
