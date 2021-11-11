@@ -1,7 +1,7 @@
 <template>
   <div class="form">
     <!-- <el-card class="h5__card"> -->
-      <el-form
+    <el-form
       ref="userForm"
       :model="form"
       :rules="rules"
@@ -22,7 +22,11 @@
         />
       </el-form-item>
       <el-form-item label="所属行业" prop="industry">
-        <el-select v-model="form.industry">
+        <el-select
+          v-model="form.industry"
+          :popper-append-to-body="false"
+          placeholder="请选择所属行业"
+        >
           <el-option
             v-for="item in industry"
             :key="item.value"
@@ -49,11 +53,18 @@
           <el-checkbox label="3">AI算法</el-checkbox>
         </el-checkbox-group>
       </el-form-item>
-      <el-form-item v-if="form.ability.indexOf('3') > -1" label="AI算法:">
+      <el-form-item v-if="form.ability.indexOf('3') > -1">
+        <div class="form_col-level2">AI算法</div>
         <div v-for="item in ais" :key="item.name">
           <div class="descriptions-Info">{{ item.name }}</div>
           <el-checkbox-group v-model="form.aiAlgorithm">
-            <el-checkbox v-for="ai in item.algorithms" :key="ai.id" v-model="ai.id" :label="+ai.id">{{ ai.name }}</el-checkbox>
+            <el-checkbox
+              v-for="ai in item.algorithms"
+              :key="ai.id"
+              v-model="ai.id"
+              :label="+ai.id"
+              >{{ ai.name }}</el-checkbox
+            >
           </el-checkbox-group>
         </div>
         <div class="descriptions-Info">其他</div>
@@ -61,9 +72,13 @@
       </el-form-item>
       <el-form-item>
         <div class="form_col-level2">接入信息列表</div>
-        <div v-for="(item,index) in form.potentialVideoOrders" :key="index">
+        <div v-for="(item, index) in form.potentialVideoOrders" :key="index">
           <el-form-item class="insertMessage">
-            <el-select v-model="form.potentialVideoOrders[index].coderate" placeholder="请选择预计码率">
+            <el-select
+              v-model="form.potentialVideoOrders[index].coderate"
+              placeholder="请选择预计码率"
+              :popper-append-to-body="false"
+            >
               <el-option
                 v-for="rate in bitRateList"
                 :key="rate.value"
@@ -73,7 +88,11 @@
             </el-select>
           </el-form-item>
           <el-form-item class="insertMessage">
-            <el-select v-model="form.potentialVideoOrders[index].value" placeholder="请选择预计接入数量">
+            <el-select
+              v-model="form.potentialVideoOrders[index].value"
+              placeholder="请选择预计接入数量"
+              :popper-append-to-body="false"
+            >
               <el-option
                 v-for="num in accessQuantityList"
                 :key="num.value"
@@ -83,7 +102,11 @@
             </el-select>
           </el-form-item>
           <el-form-item class="insertMessage">
-            <el-select v-model="form.potentialVideoOrders[index].storageTime" placeholder="请选择存储周期">
+            <el-select
+              v-model="form.potentialVideoOrders[index].storageTime"
+              placeholder="请选择存储周期"
+              :popper-append-to-body="false"
+            >
               <el-option
                 v-for="storage in storageCycleList"
                 :key="storage.value"
@@ -93,7 +116,11 @@
             </el-select>
           </el-form-item>
           <el-form-item class="insertMessage">
-            <el-select v-model="form.potentialVideoOrders[index].orderDuration" placeholder="请选择订购时长">
+            <el-select
+              v-model="form.potentialVideoOrders[index].orderDuration"
+              placeholder="请选择订购时长"
+              :popper-append-to-body="false"
+            >
               <el-option
                 v-for="storage in subDurationList"
                 :key="storage.value"
@@ -103,27 +130,53 @@
             </el-select>
           </el-form-item>
           <el-form-item class="insertMessage">
-            <el-button v-if="index+1 === form.potentialVideoOrders.length" @click="addInsert">+</el-button>
-            <el-button v-if="form.potentialVideoOrders.length > 1" @click="deletInsert(index)">-</el-button>
+            <el-button
+              v-if="index + 1 === form.potentialVideoOrders.length"
+              @click="addInsert"
+              >+</el-button
+            >
+            <el-button
+              v-if="form.potentialVideoOrders.length > 1"
+              @click="deletInsert(index)"
+              >-</el-button
+            >
           </el-form-item>
         </div>
       </el-form-item>
       <el-form-item>
         <div class="form_col-level2">摄像头/NVR通过哪种协议进行接入</div>
         <el-checkbox-group v-model="form.inProtocal">
-          <el-checkbox v-for="item in inProtocal" :key="item.value" v-model="item.value" :label="item.value">{{ item.label }}</el-checkbox>
+          <el-checkbox
+            v-for="item in inProtocal"
+            :key="item.value"
+            v-model="item.value"
+            :label="item.value"
+            >{{ item.label }}</el-checkbox
+          >
         </el-checkbox-group>
       </el-form-item>
       <el-form-item>
         <div class="form_col-level2">摄像头/NVR通过哪种网络方式进行接入</div>
         <el-checkbox-group v-model="form.inNetworkType">
-          <el-checkbox v-for="item in inNetworkType" :key="item.value" v-model="item.value" :label="item.value">{{ item.label }}</el-checkbox>
+          <el-checkbox
+            v-for="item in inNetworkType"
+            :key="item.value"
+            v-model="item.value"
+            :label="item.value"
+            >{{ item.label }}</el-checkbox
+          >
         </el-checkbox-group>
       </el-form-item>
       <el-form-item>
         <div class="form_col-level2">摄像头/NVR通过哪种网络方式进行播放</div>
         <el-checkbox-group v-model="form.playNetworkType">
-          <el-checkbox v-for="item in playNetworkType" :key="item.value" v-model="item.value" :label="item.value">{{ item.label }}</el-checkbox>
+          <el-checkbox
+            v-for="item in playNetworkType"
+            :key="item.value"
+            v-model="item.value"
+            :label="item.value"
+            >{{ item.label }}</el-checkbox
+          >
         </el-checkbox-group>
       </el-form-item>
       <el-form-item>
@@ -131,21 +184,37 @@
         <div class="form_remarks">
           例如定制视频分析服务，比如人脸识别，口罩检测，人员聚集检测，人员布控，吸烟检测，安全帽发光服检测等
         </div>
-        <el-input v-model="form.otherReq" type="textarea" :rows="3" class="needWidth" />
+        <el-input
+          v-model="form.otherReq"
+          type="textarea"
+          :rows="3"
+          class="needWidth"
+        />
       </el-form-item>
       <!-- <el-button :disabled="loading" type="primary" @click="submit">提交</el-button> -->
-      <el-button :disabled="loading" class="form_button" @click="submit">提交</el-button>
+      <el-button :disabled="loading" class="form_button" @click="submit"
+        >提交</el-button
+      >
     </el-form>
     <!-- </el-card> -->
-    
   </div>
 </template>
 <script lang="ts">
 import Vue from 'vue'
 import { cityList, provinceList } from '@/assets/region/cities'
 import { industry } from '@/assets/industry/industry'
-import { inProtocal, inNetworkType, playNetworkType } from '@/assets/business/protocal'
-import { speedS, bitRateList, accessQuantityList, storageCycleList, subDurationList } from '@/assets/business/insertMessage'
+import {
+  inProtocal,
+  inNetworkType,
+  playNetworkType
+} from '@/assets/business/protocal'
+import {
+  speedS,
+  bitRateList,
+  accessQuantityList,
+  storageCycleList,
+  subDurationList
+} from '@/assets/business/insertMessage'
 import { getAiAlgorithm, createCustomer } from '@/api/potential'
 
 export default Vue.extend({
@@ -166,7 +235,10 @@ export default Vue.extend({
       }
     }
     let validateEmail = (rule: any, value: string, callback: Function) => {
-      if (value && !/^[\w-]+@[a-zA-Z\d-]+(\.[a-zA-Z]{2,8}){1,2}$/gi.test(value)) {
+      if (
+        value &&
+        !/^[\w-]+@[a-zA-Z\d-]+(\.[a-zA-Z]{2,8}){1,2}$/gi.test(value)
+      ) {
         callback(new Error('请输入正确的邮箱'))
       } else {
         callback()
@@ -180,49 +252,50 @@ export default Vue.extend({
       }
     }
     return {
-        loading: false,
-        ais: [],
-        form: {
-          ability: ['1'],
-          provinceCity: [],
-          industry: null,
-          companyName: '',
-          contactName: '',
-          contactTel: '',
-          contactEmail: '',
-          salesManager: '',
-          cityCode: '',
-          provinceCode: '',
-          salesManagerTel: '',
-          potentialVideoOrders: [{
+      loading: false,
+      ais: [],
+      form: {
+        ability: ['1'],
+        provinceCity: [],
+        industry: null,
+        companyName: '',
+        contactName: '',
+        contactTel: '',
+        contactEmail: '',
+        salesManager: '',
+        cityCode: '',
+        provinceCode: '',
+        salesManagerTel: '',
+        potentialVideoOrders: [
+          {
             value: null,
             coderate: null,
             storageTime: null,
             orderDuration: null
-          }],
-          inProtocal: [],
-          inNetworkType: [],
-          playNetworkType: [],
-          progress: 0,
-          remark: '',
-          otherReq: '',
-          aiAlgorithm: [],
-          aiAlgorithmOther: ''
-        },
-        cityList: cityList,
-        industry: industry,
-        provinceList: provinceList,
-        speedS: speedS,
-        bitRateList: bitRateList,
-        accessQuantityList: accessQuantityList,
-        storageCycleList: storageCycleList,
-        subDurationList: subDurationList,
-        inProtocal: inProtocal,
-        inNetworkType: inNetworkType,
-        playNetworkType: playNetworkType
-        // createCustomer: createCustomer,
-        // getAiAlgorithm: getAiAlgorithm,
-      ,
+          }
+        ],
+        inProtocal: [],
+        inNetworkType: [],
+        playNetworkType: [],
+        progress: 0,
+        remark: '',
+        otherReq: '',
+        aiAlgorithm: [],
+        aiAlgorithmOther: ''
+      },
+      cityList: cityList,
+      industry: industry,
+      provinceList: provinceList,
+      speedS: speedS,
+      bitRateList: bitRateList,
+      accessQuantityList: accessQuantityList,
+      storageCycleList: storageCycleList,
+      subDurationList: subDurationList,
+      inProtocal: inProtocal,
+      inNetworkType: inNetworkType,
+      playNetworkType: playNetworkType,
+      // createCustomer: createCustomer,
+      // getAiAlgorithm: getAiAlgorithm,
       rules: {
         companyName: [
           { required: true, message: '请输入企业名称', trigger: 'blur' },
@@ -262,15 +335,15 @@ export default Vue.extend({
         // entrepreneur: [{ required: true, trigger: 'change' }],
         // entrepreneurNumber: [{ required: true, trigger: 'blur' }],
         // entrepreneurEmail: [{ trigger: 'blur' }]
-      },
+      }
     }
   },
   layout: 'h5',
-  async mounted(){
+  async mounted() {
     await this.renderAiAlgorithm()
   },
   methods: {
-    addInsert(){
+    addInsert() {
       this.form.potentialVideoOrders.push({
         value: null,
         coderate: null,
@@ -284,11 +357,11 @@ export default Vue.extend({
     },
     async submit() {
       const form: any = this.$refs.userForm
-      form.validate(async(valid: any) => {
+      form.validate(async (valid: any) => {
         if (!valid) {
           this.$message.error('请修改错误信息！')
           return
-        } 
+        }
         this.createNewUser()
       })
     },
@@ -298,7 +371,7 @@ export default Vue.extend({
         this.form.progress = +this.form.progress
         this.form.cityCode = this.form.provinceCity[1]
         this.form.provinceCode = this.form.provinceCity[0]
-        this.form.ability.forEach(function(v: any, i: any, a: any) {
+        this.form.ability.forEach(function (v: any, i: any, a: any) {
           a[i] = +v
         })
         const params = {
@@ -319,40 +392,63 @@ export default Vue.extend({
 })
 </script>
 <style lang="scss" scoped>
- ::v-deep .el-form-item__error {
-   position: relative;
-}
 .form {
   padding: 20px 0px;
   background-color: rgb(241, 241, 238);
   .el-select {
     width: 100%;
   }
+
   .el-form-item {
     background-color: #fff;
     padding: 1em 1.5em;
+  }
+
+  ::v-deep .el-form-item__error {
+    position: relative;
+  }
+
+  ::v-deep .el-form-item__label {
+    font-size: 1.4em;
+  }
+
+  ::v-deep .el-checkbox__label {
+    font-size: 1.4em;
+  }
+
+  ::v-deep .el-input__inner {
+    font-size: 1.4em;
+  }
+
+  ::v-deep .el-select-dropdown__item {
+    font-size: 1.4em;
   }
 }
 
 .form_title {
   text-align: center;
+  font-size: 1.4em;
 }
+
 .form_col-level1 {
   position: relative;
   font-weight: bolder;
-  font-size: 1.3em;
+  font-size: 1.7em;
   margin: 1em 2em;
 }
+
 .form_col-level2 {
   position: relative;
   font-weight: bolder;
-  font-size: 1.2em;
+  font-size: 1.6em;
 }
+
 .form_col-level3 {
   position: relative;
   font-weight: bolder;
-  font-size: 1em;
+  font-size: 1.4em;
 }
+
 .form_col-level1::before {
   position: absolute;
   content: '';
@@ -361,6 +457,12 @@ export default Vue.extend({
   background-color: #fa8334;
   margin: 0.2em -0.8em;
 }
+
+.descriptions-Info {
+  font-size: 1.4em;
+  font-weight: bolder;
+}
+
 .form_col-access-info {
   border-style: solid;
   border-width: 2px;
@@ -373,12 +475,14 @@ export default Vue.extend({
     margin: 0.5em 0em;
   }
 }
+
 .form_button {
   background: #fa8334;
   width: 80%;
   color: aliceblue;
   margin: 0 10%;
 }
+
 .form_remarks {
   color: darkgray;
   line-height: 1.4em;
