@@ -13,13 +13,35 @@
       <el-form-item label="企业名称:" prop="companyName">
         <el-input v-model="form.companyName"></el-input>
       </el-form-item>
-      <el-form-item label="省份" prop="provinceCity">
+      <!-- <el-form-item label="省份" prop="provinceCity">
+        
         <el-cascader
           v-model="form.provinceCity"
           :options="cityList"
           placeholder="请选择地区"
           clearable
         />
+      </el-form-item> -->
+      <el-form-item label="省份" prop="provinceCode">
+        <el-select v-model="form.provinceCode" @change="provinceChange" placeholder="请选择省份">
+          <el-option
+            v-for="item in provinceList"
+            :key="item.value"
+            :value="item.value"
+            :label="item.label"
+          ></el-option>
+        </el-select>
+      </el-form-item>
+      <el-form-item label="城市" prop="cityCode">
+        <el-select v-model="form.cityCode" placeholder="请选择城市">
+          <el-option
+            v-for="item in dynamicCity"
+            :key="item.value"
+            :value="item.value"
+            :label="item.label"
+            :disabled="item.disabled"
+          ></el-option>
+        </el-select>
       </el-form-item>
       <el-form-item label="所属行业" prop="industry">
         <el-select v-model="form.industry">
@@ -142,7 +164,7 @@
 </template>
 <script lang="ts">
 import Vue from 'vue'
-import { cityList, provinceList } from '@/assets/region/cities'
+import { cityList, provinceList, provinceMapping, cityMapping } from '@/assets/region/cities'
 import { industry } from '@/assets/industry/industry'
 import { inProtocal, inNetworkType, playNetworkType } from '@/assets/business/protocal'
 import { speedS, bitRateList, accessQuantityList, storageCycleList, subDurationList } from '@/assets/business/insertMessage'
@@ -182,6 +204,11 @@ export default Vue.extend({
     return {
         loading: false,
         ais: [],
+        dynamicCity: [{
+          'label': '请先选择省份',
+          'value': null,
+          'disabled': true
+        }],
         form: {
           ability: ['1'],
           provinceCity: [],
@@ -270,12 +297,21 @@ export default Vue.extend({
     await this.renderAiAlgorithm()
   },
   methods: {
-    addInsert(){
+    addInsert() {
       this.form.potentialVideoOrders.push({
         value: null,
         coderate: null,
         storageTime: null,
         orderDuration: null
+      })
+    },
+    // 省份城市联动
+    provinceChange() {
+      cityList.map((item: any) => {
+        const val = item.value.slice(1, 3)
+        if(val === this.form.provinceCode) {
+          this.dynamicCity = item.children
+        }
       })
     },
     async renderAiAlgorithm() {
