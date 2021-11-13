@@ -51,25 +51,25 @@ export default {
   router: {
     base: process.env.base || '/'
   },
-  
+
   styleResources: {
     // your settings here
     scss: [
       './assets/css/_variables.scss',
       './assets/css/_mixins.scss'
     ]
-   },
+  },
 
-   axios: {
+  axios: {
     proxy: true
-   },
-   
+  },
+
   proxy: {
     '/operation/v1': 'http://182.43.127.35:9190',
   },
 
-   server: {
-     port: 9190,
-     host: '172.24.6.30'
-   }
+  server: {
+    port: 9190,
+    host: '172.24.6.68'
+  }
 }
