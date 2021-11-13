@@ -282,7 +282,7 @@ export default Vue.extend({
           { required: true, message: '请选择省份', trigger: 'change' }
         ],
         cityCode: [
-          { required: true, message: '请选择城市', trigger: 'change' }
+          { required: true, message: '请选择城市', trigger: 'blur' }
         ]
         // name: [{ required: true, trigger: 'blur' }],
         // province: [{ required: true, trigger: 'change' }],
@@ -309,9 +309,11 @@ export default Vue.extend({
     },
     // 省份城市联动
     provinceChange() {
+      // 重置城市
+      this.form.cityCode = ''
       cityList.map((item: any) => {
-        const val = item.value.slice(1, 3)
-        if(val === this.form.provinceCode) {
+        // const val = item.value.slice(1, 3)
+        if(item.value === this.form.provinceCode) {
           this.dynamicCity = item.children
         }
       })
