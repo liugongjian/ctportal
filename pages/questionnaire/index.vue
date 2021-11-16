@@ -437,9 +437,9 @@ export default Vue.extend({
         this.$router.push({
           path: '/questionnaire/success'
         })
-        this.$message.success('新建客户成功')
+        // this.$message.success('新建客户成功')
       } catch (e) {
-        this.$message.error(e && e.message)
+        this.$message.error(e && e.data.message)
       } finally {
         this.loading = false
       }
