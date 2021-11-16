@@ -11,17 +11,8 @@
       <div class="form_title"><h2>天翼云视频监控需求问卷</h2></div>
       <div class="form_col-level1">基本信息</div>
       <el-form-item label="企业名称:" prop="companyName">
-        <el-input v-model="form.companyName"></el-input>
+        <el-input v-model="form.companyName" clearable />
       </el-form-item>
-      <!-- <el-form-item label="省份" prop="provinceCity">
-        
-        <el-cascader
-          v-model="form.provinceCity"
-          :options="cityList"
-          placeholder="请选择地区"
-          clearable
-        />
-      </el-form-item> -->
       <el-form-item label="省份" prop="provinceCode">
         <el-select
           v-model="form.provinceCode"
@@ -70,10 +61,10 @@
         <el-input v-model="form.contactName" clearable />
       </el-form-item>
       <el-form-item label="企业联系人电话" prop="contactTel">
-        <el-input v-model="form.contactTel"></el-input>
+        <el-input v-model="form.contactTel" clearable />
       </el-form-item>
       <el-form-item label="企业联系人邮箱" prop="contactEmail">
-        <el-input v-model="form.contactEmail"></el-input>
+        <el-input v-model="form.contactEmail" clearable />
       </el-form-item>
       <div class="form_col-level1">需求信息</div>
       <el-form-item>
@@ -99,7 +90,7 @@
           </el-checkbox-group>
         </div>
         <div class="descriptions-Info">其他</div>
-        <el-input v-model="form.aiAlgorithmOther" :rows="1" class="needWidth" />
+        <el-input v-model="form.aiAlgorithmOther" :rows="1" class="needWidth" clearable />
       </el-form-item>
       <el-form-item>
         <div class="form_col-level2">接入信息列表</div>
@@ -176,7 +167,7 @@
       </el-form-item>
       <el-form-item>
         <div class="form_col-level2">摄像头/NVR通过哪种协议进行接入</div>
-        <el-checkbox-group v-model="form.inProtocal">
+        <el-checkbox-group v-model="form.inProtocol">
           <el-checkbox
             v-for="item in inProtocal"
             :key="item.value"
@@ -317,7 +308,7 @@ export default Vue.extend({
             orderDuration: null
           }
         ],
-        inProtocal: [],
+      inProtocol: [],
         inNetworkType: [],
         playNetworkType: [],
         progress: 0,
@@ -341,28 +332,28 @@ export default Vue.extend({
       // getAiAlgorithm: getAiAlgorithm,
       rules: {
         companyName: [
-          { required: true, message: '请输入企业名称', trigger: 'blur' },
-          { validator: validateUserName, trigger: 'blur' }
+          { required: true, message: '请输入企业名称', trigger: 'change' },
+          { validator: validateUserName, trigger: 'change' }
         ],
         contactName: [
-          { required: true, message: '请输入企业联系人姓名', trigger: 'blur' },
-          { validator: validateUserName, trigger: 'blur' }
+          { required: true, message: '请输入企业联系人姓名', trigger: 'change' },
+          { validator: validateUserName, trigger: 'change' }
         ],
         contactTel: [
-          { required: true, message: '请输入企业联系人电话', trigger: 'blur' },
-          { validator: validatePhone, trigger: 'blur' }
+          { required: true, message: '请输入企业联系人电话', trigger: 'change' },
+          { validator: validatePhone, trigger: 'change' }
         ],
         salesManager: [
-          { required: true, message: '请输入销售经理名', trigger: 'blur' },
-          { validator: validateUserName, trigger: 'blur' }
+          { required: true, message: '请输入销售经理名', trigger: 'change' },
+          { validator: validateUserName, trigger: 'change' }
         ],
         salesManagerTel: [
-          { required: true, message: '请输入销售经理电话', trigger: 'blur' },
-          { validator: validatePhone, trigger: 'blur' }
+          { required: true, message: '请输入销售经理电话', trigger: 'change' },
+          { validator: validatePhone, trigger: 'change' }
         ],
         contactEmail: [
-          { required: true, message: '请输入正确的邮箱', trigger: 'blur' },
-          { validator: validateEmail, trigger: 'blur' }
+          { required: true, message: '请输入正确的邮箱', trigger: 'change' },
+          { validator: validateEmail, trigger: 'change' }
         ],
         industry: [
           { required: true, message: '请选择所属行业', trigger: 'change' }
@@ -371,15 +362,8 @@ export default Vue.extend({
           { required: true, message: '请选择省份', trigger: 'change' }
         ],
         cityCode: [
-          { required: true, message: '请选择城市', trigger: 'blur' }
+          { required: true, message: '请选择城市', trigger: 'change' }
         ]
-        // name: [{ required: true, trigger: 'blur' }],
-        // province: [{ required: true, trigger: 'change' }],
-        // city: [{ required: true, trigger: 'change' }],
-        // industry: [{ required: true, trigger: 'change' }],
-        // entrepreneur: [{ required: true, trigger: 'change' }],
-        // entrepreneurNumber: [{ required: true, trigger: 'blur' }],
-        // entrepreneurEmail: [{ trigger: 'blur' }]
       }
     }
   },
@@ -395,6 +379,9 @@ export default Vue.extend({
         storageTime: null,
         orderDuration: null
       })
+    },
+    deletInsert(index: any) {
+      this.form.potentialVideoOrders.splice(index, 1)
     },
     // 省份城市联动
     provinceChange() {
