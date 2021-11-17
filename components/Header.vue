@@ -10,14 +10,20 @@
       <div class="header__right">
         <div class="header__navigation">
           <div
+            class="header__navigation__item"
+            :class="{'actived': currentPage === 'index'}"
+          >
+            <NuxtLink to="/">首页</NuxtLink>
+          </div>
+          <!-- <div
             class="header__navigation__item sub"
             :class="{'hovered': currentSubMenu === 'prod'}"
             data-menu="prod"
             @mouseenter.self="showSubmenu"
             @mouseleave="hideSubmenu"
           >
-            产品<svg-icon name="arrow-down" width="10" height="10" />
-          </div>
+            产品<svg-icon name="arrow-down" width="10" height="10" />                                                                                                                                                                                                                       
+          </div> -->
           <div
             class="header__navigation__item sub"
             :class="{'hovered': currentSubMenu === 'solution'}"
@@ -34,15 +40,12 @@
             <NuxtLink to="/ai">AI能力</NuxtLink>
           </div>
           <div
-            class="header__navigation__item sub"
-            :class="{'hovered': currentSubMenu === 'developer', 'actived': currentPage === 'developer'}"
-            data-menu="developer"
-            @mouseenter="showSubmenu"
-            @mouseleave="hideSubmenu"
+            class="header__navigation__item"
+            :class="{'actived': currentPage === 'developer'}"
           >
-            开发者<svg-icon name="arrow-down" width="10" height="10" />
+            <NuxtLink to="/developer">开发者</NuxtLink>
           </div>
-          <div
+          <!-- <div
             class="header__navigation__item sub"
             :class="{'hovered': currentSubMenu === 'doc'}"
             data-menu="doc"
@@ -50,7 +53,7 @@
             @mouseleave="hideSubmenu"
           >
             文档<svg-icon name="arrow-down" width="10" height="10" />
-          </div>
+          </div> -->
           <div
             class="header__navigation__item"
             :class="{'actived': currentPage === 'service'}"
@@ -58,7 +61,7 @@
             <NuxtLink to="/service">支持与服务</NuxtLink>
           </div>
           <div class="header__navigation__item"><a href="http://console.vcn.ctyun.cn/" target="_blank">控制台</a></div>
-          <div class="header__navigation__item"><svg-icon class="header__navigation__item__search" name="search" /></div>
+          <!-- <div class="header__navigation__item"><svg-icon class="header__navigation__item__search" name="search" /></div> -->
         </div>
       </div>
     </div>
@@ -195,9 +198,9 @@ export default Vue.extend({
 
 <style lang="scss" scoped>
   .header {
-    background: $darkBg;
+    background: #fff;
     a {
-      color: #fff;
+      color: $text;
       &:hover {
         color: $primary;
       }
@@ -217,13 +220,13 @@ export default Vue.extend({
     }
     &__logo {
       width: 130px;
-      border-right: 1px solid #777;
+      border-right: 1px solid $textGrey;
       margin-right: 20px;
       padding-right: 20px;
     }
     &__title {
-      color: #fff;
-      font-size: 18px;
+      color: $text;
+      font-size: 16px;
     }
     &__navigation {
       height: 100%;
@@ -231,7 +234,7 @@ export default Vue.extend({
       justify-content: flex-end;
       align-items: stretch;
       &__item {
-        color: #fff;
+        color: $text;
         font-size: 16px;
         margin-right: 40px;
         display: flex;
@@ -279,7 +282,7 @@ export default Vue.extend({
       &__container {
         @include container;
         padding: 0 100px;
-        color: #fff;
+        color: $text;
         display: flex;
       }
       &__navigation {
@@ -330,7 +333,7 @@ export default Vue.extend({
         margin: 0;
         padding: 10px 20px;
         list-style: none;
-        color: #fff;
+        color: $text;
       }
       li {
         padding: 5px 0;
