@@ -3,11 +3,10 @@
     <div class="slider__item slider__item--1">
       <div class="slider__item__container">
         <div class="slider__item__left">
-          <div class="slider__item__title">人脸检测</div>
+          <div class="slider__item__title">AI能力的深度应用</div>
           <div class="slider__item__content">
-            快速检测人脸并返回人脸框位置，输出人脸150个关键点坐标，准确识别多种属性信息
+            随着深度学习、大规模数据处理能力及云基础设施的迅猛发展的背景下，AI算法的成熟让监控安防的智能化成为可能。随着场景的不断丰富和应用的不断深入，更多成熟可用的视频算法可以融入到各行业的生产流程中，赋予行业先进生产力。
           </div>
-          <el-button class="slider__item__btn light-btn">技术文档</el-button>
         </div>
         <div class="slider__item__right">
           <img class="slider__item__img" src="~/assets/mock/ai_slider.png" />

@@ -27,13 +27,11 @@
           >
             解决方案<svg-icon name="arrow-down" width="10" height="10" />
           </div>
-          <div class="header__navigation__item sub"
-            :class="{'hovered': currentPanel === 'ai', 'actived': currentPage === 'ai'}"
-            data-menu="ai"
-            @mouseenter.self="showPanel"
-            @mouseleave="hidePanel"
+          <div
+            class="header__navigation__item"
+            :class="{'actived': currentPage === 'ai'}"
           >
-            AI能力<svg-icon name="arrow-down" width="10" height="10" />
+            <NuxtLink to="/ai">AI能力</NuxtLink>
           </div>
           <div
             class="header__navigation__item sub"

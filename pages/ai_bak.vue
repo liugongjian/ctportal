@@ -1,7 +1,10 @@
 <template>
   <div class="container">
     <AiSlider />
-    <AiList />
+    <AiFeature />
+    <AiDemo />
+    <AiScene />
+    <AiAdvantage />
   </div>
 </template>
 

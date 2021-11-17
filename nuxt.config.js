@@ -70,6 +70,6 @@ export default {
 
   server: {
     port: 9190,
-    host: '172.24.6.68'
+    // host: '172.24.6.68'
   }
 }
