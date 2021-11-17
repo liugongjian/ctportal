@@ -19,6 +19,7 @@
           @change="provinceChange"
           :popper-append-to-body="false"
           placeholder="请选择省份"
+          clearable
         >
           <el-option
             v-for="item in provinceList"
@@ -33,6 +34,7 @@
           v-model="form.cityCode"
           :popper-append-to-body="false"
           placeholder="请选择城市"
+          clearable
         >
           <el-option
             v-for="item in dynamicCity"
@@ -204,7 +206,6 @@
       <el-form-item>
         <div class="form_col-level2">备注需求</div>
         <div class="form_remarks">
-          例如定制视频分析服务，比如人脸识别，口罩检测，人员聚集检测，人员布控，吸烟检测，安全帽发光服检测等
         </div>
         <el-input
           v-model="form.otherReq"
@@ -362,7 +363,7 @@ export default Vue.extend({
           { required: true, message: '请选择省份', trigger: 'change' }
         ],
         cityCode: [
-          { required: true, message: '请选择城市', trigger: 'change' }
+          { required: true, message: '请选择城市', trigger: 'blur' }
         ]
       }
     }
@@ -387,12 +388,24 @@ export default Vue.extend({
     provinceChange() {
       // 重置城市
       this.form.cityCode = ''
-      cityList.map((item: any) => {
-        // const val = item.value.slice(1, 3)
-        if(item.value === this.form.provinceCode) {
-          this.dynamicCity = item.children
-        }
-      })
+      if(this.form.provinceCode) {
+          cityList.map((item: any) => {
+          // const val = item.value.slice(1, 3)
+          if(item.value === this.form.provinceCode) {
+            this.dynamicCity = item.children
+          } 
+        })
+      } else {
+        // clearable
+        this.dynamicCity = [
+          {
+            label: '请先选择省份',
+            value: null,
+            disabled: true
+          }
+        ]
+      }
+      
     },
     async renderAiAlgorithm() {
       const ai: any = await getAiAlgorithm()
