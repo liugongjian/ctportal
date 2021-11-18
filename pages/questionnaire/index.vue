@@ -387,7 +387,7 @@ export default Vue.extend({
       })
 
       wx.config({
-        debug: false,
+        debug: true,
         appId: res.appId,
         timestamp: res.timestamp,
         nonceStr: res.noncestr,
@@ -402,7 +402,7 @@ export default Vue.extend({
           title: '天翼云视频监控需求问卷',
           desc: `天翼云视频监控需求问卷`,
           link,
-          imgUrl: 'https://vcn.ctyun.cn/document-vaas/api/_nuxt/img/logo.0952cb8.svg'
+          imgUrl: 'https://vcn.ctyun.cn/covid/poster.png'
         }
         wx.updateTimelineShareData(config)
         wx.updateAppMessageShareData(config)
