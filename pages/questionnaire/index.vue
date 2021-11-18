@@ -374,7 +374,7 @@ export default Vue.extend({
   },
   methods: {
     async setShareInfo() {
-      const link = `https://vcn.ctyun.cn/questionnaire`
+      const link = `https://vcn.ctyun.cn/questionnaire/`
       // @ts-ignore
       const wx: any = window.wx
       const res: any = await signature({
