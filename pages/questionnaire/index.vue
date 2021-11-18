@@ -374,8 +374,8 @@ export default Vue.extend({
     }
   },
   async mounted() {
-    await this.renderAiAlgorithm()
     this.setShareInfo()
+    await this.renderAiAlgorithm()
   },
   methods: {
     async setShareInfo() {
