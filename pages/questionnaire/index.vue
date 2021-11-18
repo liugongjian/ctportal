@@ -380,14 +380,12 @@ export default Vue.extend({
   methods: {
     async setShareInfo() {
       const link = `https://vcn.ctyun.cn/questionnaire/`
-      // @ts-ignore
-      const wx: any = window.wx
       const res: any = await signature({
         url: link
       })
-
+      // @ts-ignore
       wx.config({
-        debug: true,
+        debug: false,
         appId: res.appId,
         timestamp: res.timestamp,
         nonceStr: res.noncestr,
@@ -397,14 +395,17 @@ export default Vue.extend({
           'updateAppMessageShareData'
         ]
       })
+      // @ts-ignore
       wx.ready(() => {
         var config = {
           title: '天翼云视频监控需求问卷',
           desc: `天翼云视频监控需求问卷`,
           link,
-          imgUrl: 'https://vcn.ctyun.cn/covid/poster.png'
+          imgUrl: 'https://vcn.ctyun.cn/document/api/_nuxt/img/logo.0952cb8.svg'
         }
+        // @ts-ignore
         wx.updateTimelineShareData(config)
+        // @ts-ignore
         wx.updateAppMessageShareData(config)
       })
     },
