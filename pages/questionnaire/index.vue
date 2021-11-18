@@ -245,6 +245,12 @@ import { getAiAlgorithm, createCustomer } from '@/api/potential'
 import { signature } from '@/api/wx'
 
 export default Vue.extend({
+  layout: 'h5',
+  head(){
+  return {
+      title: '天翼云视频监控需求问卷'
+    }
+  },
   data() {
     // 验证规则
     let validateUserName = (rule: any, value: any, callback: Function) => {
@@ -367,7 +373,6 @@ export default Vue.extend({
       }
     }
   },
-  layout: 'h5',
   async mounted() {
     await this.renderAiAlgorithm()
     this.setShareInfo()
