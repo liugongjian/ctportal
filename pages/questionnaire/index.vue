@@ -495,7 +495,7 @@ export default Vue.extend({
   }
 
   ::v-deep .el-form-item__label {
-    font-size: 1.4em;
+    font-size: 1.3em;
   }
 
   ::v-deep .el-checkbox {
@@ -503,7 +503,7 @@ export default Vue.extend({
   }
 
   ::v-deep .el-checkbox__label {
-    font-size: 1.4em;
+    font-size: 1.3em;
     font-weight: normal;
   }
 
@@ -518,17 +518,17 @@ export default Vue.extend({
   }
 
   ::v-deep .el-input__inner {
-    font-size: 1.4em;
+    font-size: 1.3em;
   }
 
   ::v-deep .el-select-dropdown__item {
-    font-size: 1.4em;
+    font-size: 1.3em;
   }
 }
 
 .form_title {
   text-align: center;
-  font-size: 1.4em;
+  font-size: 1.3em;
 }
 
 .form_col-level1 {
@@ -540,7 +540,7 @@ export default Vue.extend({
 
 .form_col-level2 {
   position: relative;
-  font-size: 1.4em;
+  font-size: 1.3em;
   color: #606266;
   margin-bottom: 0.5em;
 }
@@ -548,7 +548,7 @@ export default Vue.extend({
 .form_col-level3 {
   position: relative;
   font-weight: bolder;
-  font-size: 1.4em;
+  font-size: 1.3em;
 }
 
 .form_col-level1::before {
@@ -565,7 +565,7 @@ export default Vue.extend({
 }
 
 .descriptions-Info {
-  font-size: 1.4em;
+  font-size: 1.3em;
   font-weight: bolder;
 }
 
@@ -591,7 +591,7 @@ export default Vue.extend({
 
 .form_remarks {
   color: darkgray;
-  line-height: 1.4em;
+  line-height: 1.3em;
   margin-bottom: 1em;
 }
 </style>
