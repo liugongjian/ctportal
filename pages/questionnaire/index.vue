@@ -242,6 +242,7 @@ import {
   subDurationList
 } from '@/assets/business/insertMessage'
 import { getAiAlgorithm, createCustomer } from '@/api/potential'
+import { signature } from '@/api/wx'
 
 export default Vue.extend({
   data() {
@@ -369,8 +370,39 @@ export default Vue.extend({
   layout: 'h5',
   async mounted() {
     await this.renderAiAlgorithm()
+    this.setShareInfo()
   },
   methods: {
+    async setShareInfo() {
+      const link = `https://vcn.ctyun.cn/questionnaire`
+      // @ts-ignore
+      const wx: any = window.wx
+      const res: any = await signature({
+        url: link
+      })
+
+      wx.config({
+        debug: false,
+        appId: res.appId,
+        timestamp: res.timestamp,
+        nonceStr: res.noncestr,
+        signature: res.signature,
+        jsApiList: [
+          'updateTimelineShareData',
+          'updateAppMessageShareData'
+        ]
+      })
+      wx.ready(() => {
+        var config = {
+          title: '天翼云视频监控需求问卷',
+          desc: `天翼云视频监控需求问卷`,
+          link,
+          imgUrl: 'https://vcn.ctyun.cn/document-vaas/api/_nuxt/img/logo.0952cb8.svg'
+        }
+        wx.updateTimelineShareData(config)
+        wx.updateAppMessageShareData(config)
+      })
+    },
     addInsert() {
       this.form.potentialVideoOrders.push({
         value: null,
