@@ -10,18 +10,9 @@
     >
       <div class="form_title"><h2>天翼云视频监控需求问卷</h2></div>
       <div class="form_col-level1">基本信息</div>
-      <el-form-item label="企业名称:" prop="companyName">
-        <el-input v-model="form.companyName"></el-input>
+      <el-form-item label="企业名称" prop="companyName">
+        <el-input v-model="form.companyName" />
       </el-form-item>
-      <!-- <el-form-item label="省份" prop="provinceCity">
-        
-        <el-cascader
-          v-model="form.provinceCity"
-          :options="cityList"
-          placeholder="请选择地区"
-          clearable
-        />
-      </el-form-item> -->
       <el-form-item label="省份" prop="provinceCode">
         <el-select
           v-model="form.provinceCode"
@@ -67,13 +58,13 @@
         </el-select>
       </el-form-item>
       <el-form-item label="企业联系人姓名" prop="contactName">
-        <el-input v-model="form.contactName" clearable />
+        <el-input v-model="form.contactName" />
       </el-form-item>
       <el-form-item label="企业联系人电话" prop="contactTel">
-        <el-input v-model="form.contactTel"></el-input>
+        <el-input v-model="form.contactTel" />
       </el-form-item>
       <el-form-item label="企业联系人邮箱" prop="contactEmail">
-        <el-input v-model="form.contactEmail"></el-input>
+        <el-input v-model="form.contactEmail" />
       </el-form-item>
       <div class="form_col-level1">需求信息</div>
       <el-form-item>
@@ -103,7 +94,7 @@
       </el-form-item>
       <el-form-item>
         <div class="form_col-level2">接入信息列表</div>
-        <div v-for="(item, index) in form.potentialVideoOrders" :key="index">
+        <div class="form_order" v-for="(item, index) in form.potentialVideoOrders" :key="index">
           <el-form-item class="insertMessage">
             <el-select
               v-model="form.potentialVideoOrders[index].coderate"
@@ -176,7 +167,7 @@
       </el-form-item>
       <el-form-item>
         <div class="form_col-level2">摄像头/NVR通过哪种协议进行接入</div>
-        <el-checkbox-group v-model="form.inProtocal">
+        <el-checkbox-group v-model="form.inProtocol">
           <el-checkbox
             v-for="item in inProtocal"
             :key="item.value"
@@ -213,7 +204,6 @@
       <el-form-item>
         <div class="form_col-level2">备注需求</div>
         <div class="form_remarks">
-          例如定制视频分析服务，比如人脸识别，口罩检测，人员聚集检测，人员布控，吸烟检测，安全帽发光服检测等
         </div>
         <el-input
           v-model="form.otherReq"
@@ -317,7 +307,7 @@ export default Vue.extend({
             orderDuration: null
           }
         ],
-        inProtocal: [],
+      inProtocol: [],
         inNetworkType: [],
         playNetworkType: [],
         progress: 0,
@@ -341,28 +331,28 @@ export default Vue.extend({
       // getAiAlgorithm: getAiAlgorithm,
       rules: {
         companyName: [
-          { required: true, message: '请输入企业名称', trigger: 'blur' },
-          { validator: validateUserName, trigger: 'blur' }
+          { required: true, message: '请输入企业名称', trigger: 'change' },
+          { validator: validateUserName, trigger: 'change' }
         ],
         contactName: [
-          { required: true, message: '请输入企业联系人姓名', trigger: 'blur' },
-          { validator: validateUserName, trigger: 'blur' }
+          { required: true, message: '请输入企业联系人姓名', trigger: 'change' },
+          { validator: validateUserName, trigger: 'change' }
         ],
         contactTel: [
-          { required: true, message: '请输入企业联系人电话', trigger: 'blur' },
-          { validator: validatePhone, trigger: 'blur' }
+          { required: true, message: '请输入企业联系人电话', trigger: 'change' },
+          { validator: validatePhone, trigger: 'change' }
         ],
         salesManager: [
-          { required: true, message: '请输入销售经理名', trigger: 'blur' },
-          { validator: validateUserName, trigger: 'blur' }
+          { required: true, message: '请输入销售经理名', trigger: 'change' },
+          { validator: validateUserName, trigger: 'change' }
         ],
         salesManagerTel: [
-          { required: true, message: '请输入销售经理电话', trigger: 'blur' },
-          { validator: validatePhone, trigger: 'blur' }
+          { required: true, message: '请输入销售经理电话', trigger: 'change' },
+          { validator: validatePhone, trigger: 'change' }
         ],
         contactEmail: [
-          { required: true, message: '请输入正确的邮箱', trigger: 'blur' },
-          { validator: validateEmail, trigger: 'blur' }
+          { required: true, message: '请输入正确的邮箱', trigger: 'change' },
+          { validator: validateEmail, trigger: 'change' }
         ],
         industry: [
           { required: true, message: '请选择所属行业', trigger: 'change' }
@@ -373,13 +363,6 @@ export default Vue.extend({
         cityCode: [
           { required: true, message: '请选择城市', trigger: 'blur' }
         ]
-        // name: [{ required: true, trigger: 'blur' }],
-        // province: [{ required: true, trigger: 'change' }],
-        // city: [{ required: true, trigger: 'change' }],
-        // industry: [{ required: true, trigger: 'change' }],
-        // entrepreneur: [{ required: true, trigger: 'change' }],
-        // entrepreneurNumber: [{ required: true, trigger: 'blur' }],
-        // entrepreneurEmail: [{ trigger: 'blur' }]
       }
     }
   },
@@ -396,16 +379,31 @@ export default Vue.extend({
         orderDuration: null
       })
     },
+    deletInsert(index: any) {
+      this.form.potentialVideoOrders.splice(index, 1)
+    },
     // 省份城市联动
     provinceChange() {
       // 重置城市
       this.form.cityCode = ''
-      cityList.map((item: any) => {
-        // const val = item.value.slice(1, 3)
-        if(item.value === this.form.provinceCode) {
-          this.dynamicCity = item.children
-        }
-      })
+      if(this.form.provinceCode) {
+          cityList.map((item: any) => {
+          // const val = item.value.slice(1, 3)
+          if(item.value === this.form.provinceCode) {
+            this.dynamicCity = item.children
+          } 
+        })
+      } else {
+        // clearable
+        this.dynamicCity = [
+          {
+            label: '请先选择省份',
+            value: null,
+            disabled: true
+          }
+        ]
+      }
+      
     },
     async renderAiAlgorithm() {
       const ai: any = await getAiAlgorithm()
@@ -437,9 +435,9 @@ export default Vue.extend({
         this.$router.push({
           path: '/questionnaire/success'
         })
-        this.$message.success('新建客户成功')
+        // this.$message.success('新建客户成功')
       } catch (e) {
-        this.$message.error(e && e.message)
+        this.$message.error(e && e.data.message)
       } finally {
         this.loading = false
       }
@@ -468,8 +466,23 @@ export default Vue.extend({
     font-size: 1.4em;
   }
 
+  ::v-deep .el-checkbox {
+    width: 48%;
+  }
+
   ::v-deep .el-checkbox__label {
     font-size: 1.4em;
+    font-weight: normal;
+  }
+
+  ::v-deep .el-checkbox__inner {
+    width: 20px;
+    height: 20px;
+
+    &::after {
+      height: 11px;
+      left: 7px;
+    }
   }
 
   ::v-deep .el-input__inner {
@@ -495,8 +508,9 @@ export default Vue.extend({
 
 .form_col-level2 {
   position: relative;
-  font-weight: bolder;
-  font-size: 1.6em;
+  font-size: 1.4em;
+  color: #606266;
+  margin-bottom: 0.5em;
 }
 
 .form_col-level3 {
@@ -512,6 +526,10 @@ export default Vue.extend({
   height: 20px;
   background-color: #fa8334;
   margin: 0.2em -0.8em;
+}
+
+.form_order {
+  border: 1px solid #eee;
 }
 
 .descriptions-Info {
