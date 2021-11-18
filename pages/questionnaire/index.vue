@@ -10,8 +10,8 @@
     >
       <div class="form_title"><h2>天翼云视频监控需求问卷</h2></div>
       <div class="form_col-level1">基本信息</div>
-      <el-form-item label="企业名称:" prop="companyName">
-        <el-input v-model="form.companyName" clearable />
+      <el-form-item label="企业名称" prop="companyName">
+        <el-input v-model="form.companyName" />
       </el-form-item>
       <el-form-item label="省份" prop="provinceCode">
         <el-select
@@ -19,7 +19,6 @@
           @change="provinceChange"
           :popper-append-to-body="false"
           placeholder="请选择省份"
-          clearable
         >
           <el-option
             v-for="item in provinceList"
@@ -34,7 +33,6 @@
           v-model="form.cityCode"
           :popper-append-to-body="false"
           placeholder="请选择城市"
-          clearable
         >
           <el-option
             v-for="item in dynamicCity"
@@ -60,13 +58,13 @@
         </el-select>
       </el-form-item>
       <el-form-item label="企业联系人姓名" prop="contactName">
-        <el-input v-model="form.contactName" clearable />
+        <el-input v-model="form.contactName" />
       </el-form-item>
       <el-form-item label="企业联系人电话" prop="contactTel">
-        <el-input v-model="form.contactTel" clearable />
+        <el-input v-model="form.contactTel" />
       </el-form-item>
       <el-form-item label="企业联系人邮箱" prop="contactEmail">
-        <el-input v-model="form.contactEmail" clearable />
+        <el-input v-model="form.contactEmail" />
       </el-form-item>
       <div class="form_col-level1">需求信息</div>
       <el-form-item>
@@ -92,11 +90,11 @@
           </el-checkbox-group>
         </div>
         <div class="descriptions-Info">其他</div>
-        <el-input v-model="form.aiAlgorithmOther" :rows="1" class="needWidth" clearable />
+        <el-input v-model="form.aiAlgorithmOther" :rows="1" class="needWidth" />
       </el-form-item>
       <el-form-item>
         <div class="form_col-level2">接入信息列表</div>
-        <div v-for="(item, index) in form.potentialVideoOrders" :key="index">
+        <div class="form_order" v-for="(item, index) in form.potentialVideoOrders" :key="index">
           <el-form-item class="insertMessage">
             <el-select
               v-model="form.potentialVideoOrders[index].coderate"
@@ -468,8 +466,23 @@ export default Vue.extend({
     font-size: 1.4em;
   }
 
+  ::v-deep .el-checkbox {
+    width: 48%;
+  }
+
   ::v-deep .el-checkbox__label {
     font-size: 1.4em;
+    font-weight: normal;
+  }
+
+  ::v-deep .el-checkbox__inner {
+    width: 20px;
+    height: 20px;
+
+    &::after {
+      height: 11px;
+      left: 7px;
+    }
   }
 
   ::v-deep .el-input__inner {
@@ -495,8 +508,9 @@ export default Vue.extend({
 
 .form_col-level2 {
   position: relative;
-  font-weight: bolder;
-  font-size: 1.6em;
+  font-size: 1.4em;
+  color: #606266;
+  margin-bottom: 0.5em;
 }
 
 .form_col-level3 {
@@ -512,6 +526,10 @@ export default Vue.extend({
   height: 20px;
   background-color: #fa8334;
   margin: 0.2em -0.8em;
+}
+
+.form_order {
+  border: 1px solid #eee;
 }
 
 .descriptions-Info {

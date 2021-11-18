@@ -18,6 +18,7 @@ export default {
   // Global CSS (https://go.nuxtjs.dev/config-css)
   css: [
     'element-ui/lib/theme-chalk/index.css',
+    './assets/css/element-variables.scss',
     './assets/css/base.scss'
   ],
 
@@ -70,6 +71,6 @@ export default {
 
   server: {
     port: 9190,
-    // host: '172.24.6.68'
+    host: '172.24.6.30'
   }
 }
