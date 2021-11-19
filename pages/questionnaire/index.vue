@@ -401,7 +401,7 @@ export default Vue.extend({
           title: '天翼云视频监控需求问卷',
           desc: `这里有专业的技术构架师，为您提供专业咨询，助您轻松上云！`,
           link,
-          imgUrl: 'https://vcn.ctyun.cn/document/api/_nuxt/img/logo.0952cb8.svg'
+          imgUrl: 'https://console.vcn.ctyun.cn/vss/img/landing.10348bce.png'
         }
         // @ts-ignore
         wx.updateTimelineShareData(config)
