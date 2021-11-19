@@ -380,17 +380,16 @@ export default Vue.extend({
   methods: {
     async setShareInfo() {
       const link = `https://vcn.ctyun.cn/questionnaire/`
-      const res: any = await signature({
+      const { data } = await signature({
         url: link
       })
-      alert(JSON.stringify(res))
       // @ts-ignore
       wx.config({
-        debug: true,
-        appId: res.appId,
-        timestamp: res.timestamp,
-        nonceStr: res.noncestr,
-        signature: res.signature,
+        debug: false,
+        appId: data.appId,
+        timestamp: data.timestamp,
+        nonceStr: data.noncestr,
+        signature: data.signature,
         jsApiList: [
           'updateTimelineShareData',
           'updateAppMessageShareData'
