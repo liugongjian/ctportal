@@ -383,6 +383,7 @@ export default Vue.extend({
       const res: any = await signature({
         url: link
       })
+      alert(JSON.stringify(res))
       // @ts-ignore
       wx.config({
         debug: true,
