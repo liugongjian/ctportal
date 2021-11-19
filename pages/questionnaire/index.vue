@@ -505,7 +505,7 @@ export default Vue.extend({
   }
 
   ::v-deep .el-checkbox {
-    width: 48%;
+    width: 100%;
   }
 
   ::v-deep .el-checkbox__label {
