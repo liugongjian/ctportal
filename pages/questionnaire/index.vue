@@ -385,7 +385,7 @@ export default Vue.extend({
       })
       // @ts-ignore
       wx.config({
-        debug: false,
+        debug: true,
         appId: res.appId,
         timestamp: res.timestamp,
         nonceStr: res.noncestr,
@@ -399,9 +399,9 @@ export default Vue.extend({
       wx.ready(() => {
         var config = {
           title: '天翼云视频监控需求问卷',
-          desc: `天翼云视频监控需求问卷`,
+          desc: `这里有专业的技术构架师，为您提供专业咨询，助您轻松上云！`,
           link,
-          imgUrl: 'https://vcn.ctyun.cn/document/api/_nuxt/img/logo.0952cb8.svg'
+          imgUrl: 'https://vcn.ctyun.cn/covid/poster.png'
         }
         // @ts-ignore
         wx.updateTimelineShareData(config)
