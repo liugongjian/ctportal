@@ -506,6 +506,7 @@ export default Vue.extend({
 
   ::v-deep .el-checkbox {
     width: 100%;
+    margin: 0;
   }
 
   ::v-deep .el-checkbox__label {
@@ -547,7 +548,7 @@ export default Vue.extend({
 .form_col-level2 {
   position: relative;
   font-size: 1.3em;
-  color: #606266;
+  color: #000;
   margin-bottom: 0.5em;
 }
 
