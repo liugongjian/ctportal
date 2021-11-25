@@ -10,6 +10,9 @@ export default {
       { name: 'viewport', content: 'width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no' },
       { hid: 'description', name: 'description', content: '' }
     ],
+    script: [
+      { src: 'https://res.wx.qq.com/open/js/jweixin-1.6.0.js' }
+    ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
@@ -67,6 +70,7 @@ export default {
 
   proxy: {
     '/operation/v1': 'http://182.43.127.35:9190',
+    '/v1/custom': 'https://vcn.ctyun.cn/v1/custom',
   },
 
   server: {

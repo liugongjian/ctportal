@@ -245,6 +245,12 @@ import { getAiAlgorithm, createCustomer } from '@/api/potential'
 import { signature } from '@/api/wx'
 
 export default Vue.extend({
+  layout: 'h5',
+  head(){
+  return {
+      title: '天翼云视频监控需求问卷'
+    }
+  },
   data() {
     // 验证规则
     let validateUserName = (rule: any, value: any, callback: Function) => {
@@ -367,39 +373,39 @@ export default Vue.extend({
       }
     }
   },
-  layout: 'h5',
   async mounted() {
-    await this.renderAiAlgorithm()
     this.setShareInfo()
+    await this.renderAiAlgorithm()
   },
   methods: {
     async setShareInfo() {
-      const link = `https://vcn.ctyun.cn/questionnaire`
-      // @ts-ignore
-      const wx: any = window.wx
-      const res: any = await signature({
+      const link = `https://vcn.ctyun.cn/questionnaire/`
+      const { data } = await signature({
         url: link
       })
-
+      // @ts-ignore
       wx.config({
         debug: false,
-        appId: res.appId,
-        timestamp: res.timestamp,
-        nonceStr: res.noncestr,
-        signature: res.signature,
+        appId: data.appId,
+        timestamp: data.timestamp,
+        nonceStr: data.noncestr,
+        signature: data.signature,
         jsApiList: [
           'updateTimelineShareData',
           'updateAppMessageShareData'
         ]
       })
+      // @ts-ignore
       wx.ready(() => {
         var config = {
           title: '天翼云视频监控需求问卷',
-          desc: `天翼云视频监控需求问卷`,
+          desc: `这里有专业的技术构架师，为您提供专业咨询，助您轻松上云！`,
           link,
-          imgUrl: 'https://vcn.ctyun.cn/document-vaas/api/_nuxt/img/logo.0952cb8.svg'
+          imgUrl: 'https://console.vcn.ctyun.cn/vss/img/landing.10348bce.png'
         }
+        // @ts-ignore
         wx.updateTimelineShareData(config)
+        // @ts-ignore
         wx.updateAppMessageShareData(config)
       })
     },
@@ -495,15 +501,16 @@ export default Vue.extend({
   }
 
   ::v-deep .el-form-item__label {
-    font-size: 1.4em;
+    font-size: 1.3em;
   }
 
   ::v-deep .el-checkbox {
-    width: 48%;
+    width: 100%;
+    margin: 0;
   }
 
   ::v-deep .el-checkbox__label {
-    font-size: 1.4em;
+    font-size: 1.3em;
     font-weight: normal;
   }
 
@@ -518,17 +525,17 @@ export default Vue.extend({
   }
 
   ::v-deep .el-input__inner {
-    font-size: 1.4em;
+    font-size: 1.3em;
   }
 
   ::v-deep .el-select-dropdown__item {
-    font-size: 1.4em;
+    font-size: 1.3em;
   }
 }
 
 .form_title {
   text-align: center;
-  font-size: 1.4em;
+  font-size: 1.3em;
 }
 
 .form_col-level1 {
@@ -540,15 +547,15 @@ export default Vue.extend({
 
 .form_col-level2 {
   position: relative;
-  font-size: 1.4em;
-  color: #606266;
+  font-size: 1.3em;
+  color: #000;
   margin-bottom: 0.5em;
 }
 
 .form_col-level3 {
   position: relative;
   font-weight: bolder;
-  font-size: 1.4em;
+  font-size: 1.3em;
 }
 
 .form_col-level1::before {
@@ -565,7 +572,7 @@ export default Vue.extend({
 }
 
 .descriptions-Info {
-  font-size: 1.4em;
+  font-size: 1.3em;
   font-weight: bolder;
 }
 
@@ -591,7 +598,7 @@ export default Vue.extend({
 
 .form_remarks {
   color: darkgray;
-  line-height: 1.4em;
+  line-height: 1.3em;
   margin-bottom: 1em;
 }
 </style>
