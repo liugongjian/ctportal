@@ -1,9 +1,8 @@
 <template>
   <div class="container">
-    <HomeSlider />
-    <HomeAi />
-    <HomeAdvantage />
-    <HomeMap />
+    <SolutionsSlider />
+    <SolutionsList />
+    <SolutionsArchitect />
   </div>
 </template>
 

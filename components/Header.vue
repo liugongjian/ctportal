@@ -22,7 +22,7 @@
             @mouseenter.self="showSubmenu"
             @mouseleave="hideSubmenu"
           >
-            产品<svg-icon name="arrow-down" width="10" height="10" />                                                                                                                                                                                                                       
+            产品<svg-icon name="arrow-down" width="10" height="10" />
           </div> -->
           <div
             class="header__navigation__item sub"
@@ -71,7 +71,12 @@
         <li>实时音视频</li>
       </ul>
       <ul v-if="currentSubMenu === 'solution'">
-        敬请期待
+        <li @click="goto('/solutions','city')">行业解决方案-智慧城市</li>
+        <li @click="goto('/solutions','education')">行业解决方案-智慧教育</li>
+        <li @click="goto('/solutions','community')">行业解决方案-智慧社区</li>
+        <li @click="goto('/solutions','site')">行业解决方案-智慧工地</li>
+        <li @click="goto('/solutions','retail')">行业解决方案-智慧零售</li>
+        <li @click="goto('/solutions','logistics')">行业解决方案-智慧物流</li>
       </ul>
       <ul v-if="currentSubMenu === 'developer'">
         <li @click="goto('/developer')">API Explorer</li>
@@ -187,8 +192,11 @@ export default Vue.extend({
         this.currentSubMenu = null
       }, 200)
     },
-    goto(pageName) {
-      this.$router.push(pageName)
+    goto(pageName, info='') {
+      this.$router.push({
+        path: pageName,
+        query: { info }
+      })
       this.hidePanel()
       this.hideSubmenu()
     }
@@ -270,7 +278,7 @@ export default Vue.extend({
         }
       }
     }
-    
+
     &__panel {
       display: none;
       position: absolute;
@@ -290,7 +298,7 @@ export default Vue.extend({
         &__item {
           font-size: 16px;
           padding: 10px 0 10px 50px;
-          
+
           &:hover {
             background: $darkBg;
           }
@@ -320,7 +328,7 @@ export default Vue.extend({
         }
       }
     }
-    
+
     &__submenu {
       position: absolute;
       top: 60px;
