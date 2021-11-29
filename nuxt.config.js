@@ -69,12 +69,12 @@ export default {
   },
 
   proxy: {
-    '/operation/v1': 'http://182.43.127.35:9190',
+    '/operation/v1': 'http://182.43.127.35:9080',
     '/v1/custom': 'https://vcn.ctyun.cn/v1/custom',
   },
 
   server: {
-    port: 9190,
-    host: '172.24.6.30'
+    port: 9080,
+    // host: '172.24.6.30'
   }
 }
