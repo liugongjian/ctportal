@@ -54,7 +54,7 @@ export const bitRateList = [
 
 export const accessQuantityList = [
   {
-    value: '50',
+    value: '<50',
     label: '<50路'
   },
   {
@@ -82,8 +82,12 @@ export const accessQuantityList = [
     label: '5000路-10000路'
   },
   {
-    value: '10000',
+    value: '>10000',
     label: '>10000路'
+  },
+  {
+    value: 'custom',
+    label: '自定义设备路数'
   }
 ]
 

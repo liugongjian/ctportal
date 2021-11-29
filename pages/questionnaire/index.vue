@@ -112,7 +112,7 @@
           <el-form-item class="insertMessage">
             <el-select
               v-model="form.potentialVideoOrders[index].value"
-              placeholder="请选择预计接入数量"
+              placeholder="请选择预计接入设备数量"
               :popper-append-to-body="false"
             >
               <el-option
@@ -122,6 +122,14 @@
                 :value="num.value"
               />
             </el-select>
+            <el-input
+                v-if="form.potentialVideoOrders[index].value === 'custom'"
+                v-model="form.potentialVideoOrders[index].customOrders"
+                onkeyup="value=value.replace(/[^\d]/g,'')"
+                :rows="1"
+                class="value-orders"
+                placeholder="请输入自定义接入设备数量"
+              />
           </el-form-item>
           <el-form-item class="insertMessage">
             <el-select
@@ -317,7 +325,8 @@ export default Vue.extend({
             value: null,
             coderate: null,
             storageTime: null,
-            orderDuration: null
+            orderDuration: null,
+            customOrders: null
           }
         ],
       inProtocol: [],
@@ -620,5 +629,10 @@ export default Vue.extend({
   color: darkgray;
   line-height: 1.3em;
   margin-bottom: 1em;
+}
+
+.value-orders {
+  display: block;
+  margin-top: 15px;
 }
 </style>
