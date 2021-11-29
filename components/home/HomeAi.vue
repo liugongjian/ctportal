@@ -102,11 +102,14 @@ export default Vue.extend({
       @include container;
       @include containerPadding;
       display: flex;
+      flex-direction: column;
     }
     &__title {
       font-size: 40px;
-      width: 160px;
+      // width: 160px;
       margin-right: 110px;
+      margin-bottom: 50px;
+      text-align: center;
     }
     &__right {
       flex: 1;

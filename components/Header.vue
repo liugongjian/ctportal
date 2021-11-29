@@ -332,7 +332,7 @@ export default Vue.extend({
     &__submenu {
       position: absolute;
       top: 60px;
-      background: #23232c;
+      background: #fff;
       width: 250px;
       animation-duration: 100ms;
       animation-name: slideInDown;

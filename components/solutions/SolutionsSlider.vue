@@ -1,5 +1,5 @@
 <template>
-  <Slider v-bind="{title,desc,picSrc,btnDesc,btnSrc}" />
+  <Slider v-bind="{title,desc,picName,btnDesc,btnSrc}" />
 </template>
 
 <script lang="ts">
@@ -10,7 +10,7 @@ import  Slider from '../Slider.vue'
 export default class extends Vue{
   private title = ''
   private desc = '重点面向城市人流、车流信息，以及社会面视频数据的统一纳管，支持智能检测与分析'
-  private picSrc = '/_nuxt/assets/mock/home_slider.png'
+  private picName = 'home_slider'
   private btnDesc = '服务咨询'
   private btnSrc = ''
 

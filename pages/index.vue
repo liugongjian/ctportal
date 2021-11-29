@@ -3,6 +3,7 @@
     <HomeSlider />
     <HomeAi />
     <HomeAdvantage />
+    <HomeSolutions />
     <HomeMap />
   </div>
 </template>

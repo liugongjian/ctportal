@@ -1,10 +1,14 @@
 <template>
   <div class="map-wrapper">
+    <div class="map-wrapper__title">天翼云全国云资源布局</div>
+    <div class="map-wrapper__desc">天翼云视频监控节点分布在全国15省，27个地理区域，提供高速稳定、贴近客户的视频云网服务</div>
     <div id="home-amap"/>
     <div class="map-wrapper__region">
-      <ul>
-        <li>华东</li>
-        <li>华北</li>
+      <ul @mouseleave="getRegionDetail('')">
+        <li @mouseover="getRegionDetail('huadong')">华东</li>
+        <li @mouseover="getRegionDetail('huabei')">华北</li>
+        <li @mouseover="getRegionDetail('huanan')">华南</li>
+        <li @mouseover="getRegionDetail('dongbei')">东北</li>
       </ul>
     </div>
   </div>
@@ -15,7 +19,7 @@ import { Vue, Component} from 'vue-property-decorator'
 declare let AMap: any
 declare let echarts: any
 
-let geoCoordMap:any = {
+let geoCoordMap: any = {
     '海门':[121.15,31.89],
     '鄂尔多斯':[109.781327,39.608266],
     '招远':[120.38,37.35],
@@ -208,58 +212,122 @@ let geoCoordMap:any = {
     '大庆':[125.03,46.58]
 };
 
+let regions: any = {
+  'huadong':['海门', '鄂尔多斯', '招远', '舟山'],
+  'huabei':['齐齐哈尔', '盐城', '赤峰', '青岛'],
+  'huanan':['乳山', '金昌', '泉州', '莱西'],
+  'dongbei':['日照', '胶南', '南通', '拉萨'],
+}
+let data = [
+          {name: '海门', value: 20},
+          {name: '鄂尔多斯', value: 30},
+          {name: '招远', value: 50},
+          {name: '舟山', value: 100},
+          {name: '齐齐哈尔', value: 100},
+          {name: '盐城', value: 100},
+          {name: '赤峰', value: 80},
+          {name: '青岛', value: 100},
+          {name: '乳山', value: 20},
+          {name: '金昌', value: 100},
+          {name: '泉州', value: 53},
+          {name: '莱西', value: 100},
+          {name: '日照', value: 25},
+          {name: '胶南', value: 100},
+          {name: '南通', value: 75},
+          {name: '拉萨', value: 100},
+          {name: '云浮', value: 36},
+          {name: '梅州', value: 50},
+          {name: '文登', value: 37},
+          {name: '上海', value: 84},
+          {name: '攀枝花', value: 29}
+      ];
+
 @Component
 export default class extends Vue{
+
+  public chart:any
+  public amap:any
   public mounted(){
-        let data = [
-            {name: '海门', value: 100},
-            {name: '鄂尔多斯', value: 100},
-            {name: '招远', value: 100},
-            {name: '舟山', value: 100},
-            {name: '齐齐哈尔', value: 100},
-            {name: '盐城', value: 100},
-            {name: '赤峰', value: 100},
-            {name: '青岛', value: 100},
-            {name: '乳山', value: 100},
-            {name: '金昌', value: 100},
-            {name: '泉州', value: 100},
-            {name: '莱西', value: 100},
-            {name: '日照', value: 100},
-            {name: '胶南', value: 100},
-            {name: '南通', value: 100},
-            {name: '拉萨', value: 100},
-            {name: '云浮', value: 100},
-            {name: '梅州', value: 100},
-            {name: '文登', value: 100},
-            {name: '上海', value: 100},
-            {name: '攀枝花', value: 100}
-        ];
-
-
         // ECharts Option配置
-        let option = {
-            amap: {
-                center: [115.39, 36.9],
-                zoom: 5,
-                zoomEnable:false,
-                dragEnable: false,
-                resizeEnable: true,
-                renderOnMoving: true,
-                // 自定义地图样式主题
-                mapStyle:'amap://styles/dark'
-            },
-            tooltip: {
-                trigger: 'item'
-            },
-            animation: true,
-            series: this.generateSeries(data)
-        };
+        let option = this.generateOption(data, 'scatter', false)
         // 初始化ECharts
-        let chart = echarts.init(document.getElementById('home-amap'));
-        chart.setOption(option);
+        this.chart = echarts.init(document.getElementById('home-amap'));
+        this.chart.setOption(option);
         // 从ECharts实例中取到高德地图组件实例
-        let amap = chart.getModel().getComponent('amap').getAMap();
+        this.amap = this.chart.getModel().getComponent('amap').getAMap();
 
+  }
+
+  private async getRegionDetail(region: string){
+    // await
+    let option
+    if(region.length > 0){
+      const d = regions[region].map((city: string) => {
+        let res = data.filter(item => city === item.name)
+        if(res.length > 0){
+          return {name:city, value:res[0].value}
+        }
+      })
+      option = this.generateOption(d, 'effectScatter', true)
+    }else{
+      option = this.generateOption(data, 'scatter', false)
+    }
+    this.chart.setOption(option)
+  }
+
+  public generateOption(data:any, type:string, onHover:boolean){
+
+    return {
+              amap: {
+                  center: [115.39, 36.9],
+                  zoom: 5,
+                  zoomEnable:false,
+                  dragEnable: false,
+                  resizeEnable: true,
+                  renderOnMoving: true,
+                  // 自定义地图样式主题
+                  mapStyle:'amap://styles/dark'
+              },
+              tooltip: {
+                  trigger: 'item'
+              },
+              animation: true,
+              series: this.generateSeries(data, type, onHover)
+          }
+  }
+  public generateSeries(data:any, type:string, onHover:boolean){
+
+    const format = onHover ? '{b}:\n节点数：{@[2]}' : '{b}'
+    return [{
+              name: '节点数',
+              type: type,
+              // 使用高德地图坐标系
+              coordinateSystem: 'amap',
+              data: this.convertData(data),
+              symbolSize: function (val:any) {
+                  // return val[2] / 10;
+                  return 10
+              },
+              encode: {
+                // 编码使用数组中第三个元素作为value维度
+                value: 2
+              },
+              label: {
+                  normal: {
+                      formatter: format,
+                      position: 'right',
+                      show: true
+                  },
+                  emphasis: {
+                      show: true
+                  }
+              },
+              itemStyle: {
+                  normal: {
+                      color: '#00c1de'
+                  }
+              }
+          }]
   }
 
   public convertData(data:any) {
@@ -276,38 +344,7 @@ export default class extends Vue{
     return res;
   }
 
-  public generateSeries(data:any){
 
-    return [{
-              name: '节点数',
-              type: 'scatter',
-              // 使用高德地图坐标系
-              coordinateSystem: 'amap',
-              data: this.convertData(data),
-              symbolSize: function (val:any) {
-                  return val[2] / 10;
-              },
-              encode: {
-                // 编码使用数组中第三个元素作为value维度
-                value: 2
-              },
-              label: {
-                  normal: {
-                      formatter: '{b}',
-                      position: 'right',
-                      show: true
-                  },
-                  emphasis: {
-                      show: true
-                  }
-              },
-              itemStyle: {
-                  normal: {
-                      color: '#00c1de'
-                  }
-              }
-          }]
-  }
 }
 </script>
 <style lang="scss">
@@ -317,6 +354,23 @@ export default class extends Vue{
   #home-amap {
       width: 100%;
       height: 100%;
+  }
+  &__title{
+    position: absolute;
+    z-index: 999;
+    font-size: 40px;
+    top: 3%;
+    left: 50%;
+    transform: translate(-50%);
+    color: #fff;
+  }
+  &__desc{
+    position: absolute;
+    z-index: 999;
+    top: 8%;
+    left: 50%;
+    transform: translate(-50%);
+    color: #fff;
   }
   &__region{
     position: absolute;

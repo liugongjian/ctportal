@@ -10,7 +10,8 @@
           <el-button type="primary">{{btnDesc}}</el-button>
         </div>
         <div class="slider__item__right">
-          <img class="slider__item__img" :src="picSrc"/>
+          <!-- <img class="slider__item__img" :src="require(`${picSrc}.png`)"/> -->
+          <img class="slider__item__img" :src="require('../assets/mock/' + picName + '.png')"/>
         </div>
       </div>
     </div>
@@ -26,7 +27,7 @@ import { Vue, Prop, Component} from 'vue-property-decorator'
 export default class extends Vue{
   @Prop() private title!: string
   @Prop() private desc!: string
-  @Prop() private picSrc!: string
+  @Prop() private picName!: string
   @Prop() private btnDesc!: string
   @Prop() private btnSrc!: string
 }
