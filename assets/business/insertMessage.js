@@ -89,6 +89,10 @@ export const accessQuantityList = [
 
 export const storageCycleList = [
   {
+    value: '0',
+    label: '0天'
+  },
+  {
     value: '3',
     label: '3天'
   },

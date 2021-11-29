@@ -69,13 +69,13 @@
       <div class="form_col-level1">需求信息</div>
       <el-form-item>
         <div class="form_col-level2">需要哪些通用能力</div>
-        <el-checkbox-group v-model="form.ability">
-          <el-checkbox label="1" disabled>视频接入</el-checkbox>
-          <el-checkbox label="2">云存储</el-checkbox>
-          <el-checkbox label="3">AI算法</el-checkbox>
+        <el-checkbox-group v-model="form.ability" @change="resetStorageTime">
+          <el-checkbox :label="ability1" disabled>视频接入</el-checkbox>
+          <el-checkbox :label="ability2">云存储</el-checkbox>
+          <el-checkbox :label="ability3">AI算法</el-checkbox>
         </el-checkbox-group>
       </el-form-item>
-      <el-form-item v-if="form.ability.indexOf('3') > -1">
+      <el-form-item v-if="form.ability.indexOf(3) > -1">
         <div class="form_col-level2">AI算法</div>
         <div v-for="item in ais" :key="item.name">
           <div class="descriptions-Info">{{ item.name }}</div>
@@ -126,7 +126,8 @@
           <el-form-item class="insertMessage">
             <el-select
               v-model="form.potentialVideoOrders[index].storageTime"
-              placeholder="请选择存储周期"
+              :placeholder="storageHolder"
+              :disabled="form.ability.indexOf(2) < 0"
               :popper-append-to-body="false"
             >
               <el-option
@@ -220,7 +221,7 @@
     <!-- </el-card> -->
   </div>
 </template>
-<script lang="ts">
+<script>
 import Vue from 'vue'
 import {
   cityList,
@@ -253,21 +254,21 @@ export default Vue.extend({
   },
   data() {
     // 验证规则
-    let validateUserName = (rule: any, value: any, callback: Function) => {
+    let validateUserName = (rule, value, callback) => {
       if (!/^[\u4E00-\u9FA5\uF900-\uFA2D|\w]{2,16}$/.test(value)) {
         callback(new Error('2-16位，可包含字母、中文、数字、下划线'))
       } else {
         callback()
       }
     }
-    let validatePhone = (rule: any, value: string, callback: Function) => {
+    let validatePhone = (rule, value, callback) => {
       if (value && !/^\d{11}$/.test(value)) {
         callback(new Error('请输入正确的手机号'))
       } else {
         callback()
       }
     }
-    let validateEmail = (rule: any, value: string, callback: Function) => {
+    let validateEmail = (rule, value, callback) => {
       if (
         value &&
         !/^[\w-]+@[a-zA-Z\d-]+(\.[a-zA-Z]{2,8}){1,2}$/gi.test(value)
@@ -277,7 +278,7 @@ export default Vue.extend({
         callback()
       }
     }
-    let validateAddress = (rule: any, value: string, callback: Function) => {
+    let validateAddress = (rule, value, callback) => {
       if (value.length !== 2) {
         callback(new Error('请选择客户属地'))
       } else {
@@ -294,8 +295,13 @@ export default Vue.extend({
           disabled: true
         }
       ],
+      ability1:1,
+      ability2:2,
+      ability3:3,
+      storageHolder: '0天',
+      oldStorageTime: null,
       form: {
-        ability: ['1'],
+        ability: [1],
         // provinceCity: [],
         industry: null,
         companyName: '',
@@ -376,6 +382,7 @@ export default Vue.extend({
   async mounted() {
     this.setShareInfo()
     await this.renderAiAlgorithm()
+    this.oldStorageTime = this.form.ability
   },
   methods: {
     async setShareInfo() {
@@ -413,11 +420,20 @@ export default Vue.extend({
       this.form.potentialVideoOrders.push({
         value: null,
         coderate: null,
-        storageTime: null,
+        storageTime: '0',
         orderDuration: null
       })
     },
-    deletInsert(index: any) {
+    resetStorageTime(val) {
+    if ((val.indexOf(2) > 0 && this.oldStorageTime.indexOf(2) < 0) || (val.indexOf(2) < 0 && this.oldStorageTime.indexOf(2) > 0)) {
+      this.storageHolder = '0天'
+      this.form.potentialVideoOrders.map((item) => {
+        item.storageTime = '0'
+      })
+      this.oldStorageTime = val
+    }
+  },
+    deletInsert(index) {
       this.form.potentialVideoOrders.splice(index, 1)
     },
     // 省份城市联动
@@ -425,7 +441,7 @@ export default Vue.extend({
       // 重置城市
       this.form.cityCode = ''
       if(this.form.provinceCode) {
-          cityList.map((item: any) => {
+          cityList.map((item) => {
           // const val = item.value.slice(1, 3)
           if(item.value === this.form.provinceCode) {
             this.dynamicCity = item.children
@@ -444,12 +460,12 @@ export default Vue.extend({
       
     },
     async renderAiAlgorithm() {
-      const ai: any = await getAiAlgorithm()
+      const ai = await getAiAlgorithm()
       this.ais = ai.info
     },
     async submit() {
-      const form: any = this.$refs.userForm
-      form.validate(async (valid: any) => {
+      const form = this.$refs.userForm
+      form.validate(async (valid) => {
         if (!valid) {
           this.$message.error('请修改错误信息！')
           return
@@ -463,8 +479,12 @@ export default Vue.extend({
         this.form.progress = +this.form.progress
         // this.form.cityCode = this.form.provinceCity[1]
         // this.form.provinceCode = this.form.provinceCity[0]
-        this.form.ability.forEach(function (v: any, i: any, a: any) {
-          a[i] = +v
+        params.aiAlgorithm = params.ability.indexOf(3) > 0 ? this.form.aiAlgorithm : []
+        params.potentialVideoOrders.map((item) => {
+          item.value = (item.value === 'custom' ? item.customOrders : item.value) || undefined
+          item.coderate = item.coderate || undefined
+          item.storageTime = params.ability.indexOf(2) > 0 ? item.storageTime : undefined
+          item.orderDuration = item.orderDuration || undefined
         })
         const params = {
           ...this.form
