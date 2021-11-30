@@ -503,7 +503,7 @@ export default Vue.extend({
           path: '/questionnaire/success'
         })
       } catch (e) {
-        this.$message.error(e && e.message)
+        this.$message.error(e && (e.message || e.data.message))
       } finally {
         this.loading = false
       }
