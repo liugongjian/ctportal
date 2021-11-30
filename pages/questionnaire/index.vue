@@ -486,6 +486,9 @@ export default Vue.extend({
       try {
         this.loading = true
         this.form.progress = +this.form.progress
+        const params = {
+          ...this.form
+        }
         // this.form.cityCode = this.form.provinceCity[1]
         // this.form.provinceCode = this.form.provinceCity[0]
         params.aiAlgorithm = params.ability.indexOf(3) > 0 ? this.form.aiAlgorithm : []
@@ -495,16 +498,13 @@ export default Vue.extend({
           item.storageTime = params.ability.indexOf(2) > 0 ? item.storageTime : undefined
           item.orderDuration = item.orderDuration || undefined
         })
-        const params = {
-          ...this.form
-        }
         await createCustomer(params)
         this.$router.push({
           path: '/questionnaire/success'
         })
         // this.$message.success('新建客户成功')
       } catch (e) {
-        this.$message.error(e && e.data.message)
+        this.$message.error(e && e.message)
       } finally {
         this.loading = false
       }
