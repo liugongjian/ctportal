@@ -6,9 +6,11 @@
     <div class="map-wrapper__region">
       <ul @mouseleave="getRegionDetail('')">
         <li @mouseover="getRegionDetail('huadong')">华东</li>
-        <li @mouseover="getRegionDetail('huabei')">华北</li>
+        <li @mouseover="getRegionDetail('beifang')">北方</li>
         <li @mouseover="getRegionDetail('huanan')">华南</li>
-        <li @mouseover="getRegionDetail('dongbei')">东北</li>
+        <li @mouseover="getRegionDetail('xinan')">西南</li>
+        <li @mouseover="getRegionDetail('guizhou')">贵州云基地</li>
+        <li @mouseover="getRegionDetail('xibei')">西北</li>
       </ul>
     </div>
   </div>
@@ -17,37 +19,14 @@
 <script lang="ts">
 declare let echarts: any
 import { Vue, Component} from 'vue-property-decorator'
-import { city } from '@/assets/ts/city'
-
-let regions: any = {
-  'huadong':['上海市', '盐城市', '济宁市', '舟山市'],
-  'huabei':['齐齐哈尔市', '济南市', '赤峰市'],
-  'huanan':['广州市', '福州市', '泉州市', '厦门市'],
-  'dongbei':['吉林市', '哈尔滨市', '长春市', '大连市'],
-}
-
-let city_info: any = [
-    {name: '上海市', value: 20},
-    {name: '盐城市', value: 30},
-    {name: '济宁市', value: 50},
-    {name: '舟山市', value: 100},
-    {name: '齐齐哈尔市', value: 100},
-    {name: '济南市', value: 100},
-    {name: '赤峰市', value: 80},
-    {name: '广州市', value: 100},
-    {name: '福州市', value: 20},
-    {name: '泉州市', value: 100},
-    {name: '厦门市', value: 53},
-    {name: '吉林市', value: 100},
-    {name: '哈尔滨市', value: 25},
-    {name: '长春市', value: 100},
-    {name: '大连市', value: 75}
-]
+import { city, regions, city_info } from '@/assets/ts/city'
+import { deounbce } from '@/assets/ts/debounce'
 
 @Component
 export default class extends Vue{
 
   public chart:any
+
   public mounted(){
 
         const map_data = city_info.map((info:any) =>{
@@ -64,11 +43,15 @@ export default class extends Vue{
         // 初始化ECharts
         this.chart = echarts.init(document.getElementById('home-amap'));
         this.chart.setOption(option);
+        //处理resize
+        const debounce_resize = deounbce(() => this.chart.resize(), 200)
+        window.onresize = () => debounce_resize()
   }
 
 
   public generateOption(data :any, type :string, onHover :boolean){
-    const format = onHover ? '{b}:\n节点数：{@[2]}' : '{b}'
+    // const format = onHover ? '{b}:\n节点数：{@[2]}' : '{b}'
+    const format = '{b}'
     return {
             geo: {
               map: 'china',
@@ -94,9 +77,10 @@ export default class extends Vue{
             tooltip: {
               trigger: 'item',
               formatter: function(params:any) {
-                var html = params.name + '<br/>';
-                html += params.seriesName + ":";
-                html += params.value[2]
+                var html = params.name
+                // var html = params.name + '<br/>';
+                // html += params.seriesName + ":";
+                // html += params.value[2]
                 return html;
               }
             },
@@ -131,7 +115,7 @@ export default class extends Vue{
 
   public getRegionDetail(region:any){
     if(region !== ''){
-      const city_data = city_info.filter((info:any) => regions[region].indexOf(info.name) > 0)
+      const city_data = city_info.filter((info:any) => regions[region].indexOf(info.name) > -1)
       const map_data = city_data.map((data:any) =>{
         const temp = city.filter((item:any) => data.name === item.name)
         if(temp.length > 0){

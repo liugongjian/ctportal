@@ -1,3 +1,43 @@
+
+export const regions: any = {
+  'huadong':['泰州市', '镇江市', '芜湖市'],
+  'beifang':['长春市'],
+  'huanan':['广州市', '福州市', '武汉市', '海口市', '柳州市'],
+  'guizhou':['贵阳市'],
+  'xinan':['重庆市'],
+  'xibei':['兰州市', '嘉峪关市', '定西市', '平凉市', '庆阳市', '张掖市', '白银市', '酒泉市', '中卫市', '吴忠市', '固原市', '银川市', '延安市', '西安市', '西宁市', '昌吉回族自治州'],
+}
+
+export const city_info: any = [
+    {name: '泰州市', value: 20},
+    {name: '镇江市', value: 30},
+    {name: '芜湖市', value: 50},
+    {name: '长春市', value: 100},
+    {name: '广州市', value: 100},
+    {name: '福州市', value: 100},
+    {name: '武汉市', value: 80},
+    {name: '海口市', value: 100},
+    {name: '柳州市', value: 20},
+    {name: '贵阳市', value: 100},
+    {name: '重庆市', value: 53},
+    {name: '兰州市', value: 100},
+    {name: '嘉峪关市', value: 25},
+    {name: '定西市', value: 100},
+    {name: '平凉市', value: 75},
+    {name: '庆阳市', value: 20},
+    {name: '张掖市', value: 30},
+    {name: '白银市', value: 50},
+    {name: '酒泉市', value: 100},
+    {name: '中卫市', value: 100},
+    {name: '吴忠市', value: 100},
+    {name: '固原市', value: 80},
+    {name: '银川市', value: 100},
+    {name: '延安市', value: 20},
+    {name: '西安市', value: 100},
+    {name: '西宁市', value: 53},
+    {name: '昌吉回族自治州', value: 100}
+]
+
 export const city: any =[
       {
           "id": "2",
