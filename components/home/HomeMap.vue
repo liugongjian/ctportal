@@ -74,16 +74,16 @@ export default class extends Vue{
                 }
               }
             },
-            tooltip: {
-              trigger: 'item',
-              formatter: function(params:any) {
-                var html = params.name
-                // var html = params.name + '<br/>';
-                // html += params.seriesName + ":";
-                // html += params.value[2]
-                return html;
-              }
-            },
+            // tooltip: {
+            //   trigger: 'item',
+            //   formatter: function(params:any) {
+            //     var html = params.name
+            //     // var html = params.name + '<br/>';
+            //     // html += params.seriesName + ":";
+            //     // html += params.value[2]
+            //     return html;
+            //   }
+            // },
             //配置属性
             series: [{
               name: '节点数',
