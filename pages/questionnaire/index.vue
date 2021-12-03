@@ -104,6 +104,7 @@
               <el-option
                 v-for="rate in bitRateList"
                 :key="rate.value"
+                :disabled="rate.disabled"
                 :label="rate.label"
                 :value="rate.value"
               />
@@ -118,6 +119,7 @@
               <el-option
                 v-for="num in accessQuantityList"
                 :key="num.value"
+                :disabled="num.disabled"
                 :label="num.label"
                 :value="num.value"
               />
@@ -134,13 +136,14 @@
           <el-form-item class="insertMessage">
             <el-select
               v-model="form.potentialVideoOrders[index].storageTime"
-              :placeholder="storageHolder"
+              placeholder="请选择存储周期"
               :disabled="form.ability.indexOf(2) < 0"
               :popper-append-to-body="false"
             >
               <el-option
                 v-for="storage in storageCycleList"
                 :key="storage.value"
+                :disabled="storage.disabled"
                 :label="storage.label"
                 :value="storage.value"
               />
@@ -155,6 +158,7 @@
               <el-option
                 v-for="storage in subDurationList"
                 :key="storage.value"
+                :disabled="storage.disabled"
                 :label="storage.label"
                 :value="storage.value"
               />
@@ -306,7 +310,7 @@ export default Vue.extend({
       ability1:1,
       ability2:2,
       ability3:3,
-      storageHolder: '0天',
+      // storageHolder: '0天',
       oldStorageTime: null,
       form: {
         ability: [1],
@@ -429,15 +433,14 @@ export default Vue.extend({
       this.form.potentialVideoOrders.push({
         value: null,
         coderate: null,
-        storageTime: '0',
+        storageTime: null,
         orderDuration: null
       })
     },
     resetStorageTime(val) {
     if ((val.indexOf(2) > 0 && this.oldStorageTime.indexOf(2) < 0) || (val.indexOf(2) < 0 && this.oldStorageTime.indexOf(2) > 0)) {
-      this.storageHolder = '0天'
       this.form.potentialVideoOrders.map((item) => {
-        item.storageTime = '0'
+        item.storageTime = null
       })
       this.oldStorageTime = val
     }
@@ -503,6 +506,7 @@ export default Vue.extend({
           path: '/questionnaire/success'
         })
       } catch (e) {
+        console.log(e)
         this.$message.error(e && (e.message || e.data.message))
       } finally {
         this.loading = false

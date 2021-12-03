@@ -15,6 +15,10 @@ export const speedS = [
 
 export const bitRateList = [
   {
+    label: '请选择预计码率',
+    disabled: true
+  },
+  {
     value: '0.5',
     label: '0.5Mbps'
   },
@@ -53,6 +57,10 @@ export const bitRateList = [
 ]
 
 export const accessQuantityList = [
+  {
+    label: '请选择预计接入设备数量',
+    disabled: true
+  },
   {
     value: '<50',
     label: '<50路'
@@ -93,6 +101,10 @@ export const accessQuantityList = [
 
 export const storageCycleList = [
   {
+    label: '请选择预计存储周期',
+    disabled: true
+  },
+  {
     value: '0',
     label: '0天'
   },
@@ -123,6 +135,10 @@ export const storageCycleList = [
 ]
 
 export const subDurationList = [
+  {
+    label: '请选择预计订购时长',
+    disabled: true
+  },
   {
     value: '1',
     label: '1个月'
