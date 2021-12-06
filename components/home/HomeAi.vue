@@ -132,7 +132,10 @@ export default Vue.extend({
         margin-right: 1%;
         margin-bottom: 1%;
         cursor: pointer;
-        background: #f2f2f2;
+        background: #f7f7f7;
+        border: 1px solid #eee;
+        border-radius: 10px;
+        overflow: hidden;
         &__img {
           height: 100%;
         }
