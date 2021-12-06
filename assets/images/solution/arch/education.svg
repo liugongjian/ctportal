@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 24.2.3, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 598 420" style="enable-background:new 0 0 598 420;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:none;stroke:#3B3D51;stroke-width:0.75;stroke-linecap:square;}
+	.st1{fill-rule:evenodd;clip-rule:evenodd;fill:#3B3D51;}
+	.st2{fill-rule:evenodd;clip-rule:evenodd;fill:#FA8334;fill-opacity:0.2;}
+	.st3{fill:#6D7DC5;}
+	.st4{font-family:'PingFangSC-Regular-GBpc-EUC-H';}
+	.st5{font-size:9px;}
+	.st6{fill-rule:evenodd;clip-rule:evenodd;fill:#FFFFFF;}
+	.st7{fill-rule:evenodd;clip-rule:evenodd;fill:#FFFFFF;stroke:#9899A4;}
+	.st8{fill:#3B3D51;}
+	.st9{font-size:10.5px;}
+	.st10{fill:#FA8334;}
+	.st11{fill:#F8F8F8;}
+	.st12{font-size:11.2041px;}
+	.st13{fill-rule:evenodd;clip-rule:evenodd;fill:#E6E7EB;}
+</style>
+<desc>Created with Sketch.</desc>
+<g id="编组-12备份-61" transform="translate(231.000000, 157.000000)">
+	<line id="直线" class="st0" x1="-50.6" y1="-35.6" x2="-50.6" y2="1.9"/>
+	<polygon id="矩形" class="st1" points="-50.6,-39 -47.2,-35.3 -54,-35.3 	"/>
+</g>
+<g id="编组-12备份-62" transform="translate(481.000000, 157.000000)">
+	<line id="直线_1_" class="st0" x1="-50.6" y1="-35.6" x2="-50.6" y2="1.9"/>
+	<polygon id="矩形_1_" class="st1" points="-50.6,-39 -47.2,-35.3 -54,-35.3 	"/>
+</g>
+<path id="矩形备份-482" class="st2" d="M1,160h596v173H1V160z"/>
+<text transform="matrix(1 0 0 1 188.4865 142)" class="st3 st4 st5">OpenAPI</text>
+<text transform="matrix(1 0 0 1 438 142)" class="st3 st4 st5">视频流与结构化数据</text>
+<path id="矩形备份-487" class="st6" d="M63,173h126v102H63V173z"/>
+<path id="矩形备份-488" class="st6" d="M63,281h522v39H63V281z"/>
+<path id="矩形备份-489" class="st6" d="M310,173h143v102H310V173z"/>
+<path id="矩形备份-490" class="st6" d="M458,173h127v102H458V173z"/>
+<path id="矩形备份-491" class="st6" d="M195,173h109v102H195V173z"/>
+<g id="矩形备份-492">
+	<rect id="path-1_1_" x="71" y="199" class="st7" width="48" height="30"/>
+</g>
+<g id="矩形备份-493">
+	<rect id="path-3_1_" x="151" y="286" class="st7" width="95" height="30"/>
+</g>
+<g id="矩形备份-250">
+	<rect id="path-5_1_" x="261.7" y="286" class="st7" width="95" height="30"/>
+</g>
+<text transform="matrix(1 0 0 1 279.6667 304)" class="st8 st4 st9">GA1400协议</text>
+<g id="矩形备份-251">
+	<rect id="path-7_1_" x="372.3" y="286" class="st7" width="95" height="30"/>
+</g>
+<text transform="matrix(1 0 0 1 396.3333 304)" class="st8 st4 st9">RTSP协议</text>
+<g id="矩形备份-494">
+	<rect id="path-9_1_" x="483" y="286" class="st7" width="95" height="30"/>
+</g>
+<g id="矩形备份-495">
+	<rect id="path-11_1_" x="318" y="199" class="st7" width="75" height="30"/>
+</g>
+<g id="矩形备份-496">
+	<rect id="path-13_1_" x="466" y="199" class="st7" width="60" height="30"/>
+</g>
+<g id="矩形备份-497">
+	<rect id="path-15_1_" x="203" y="199" class="st7" width="34" height="30"/>
+</g>
+<path id="矩形备份-500" class="st6" d="M16,173h38v147H16V173z"/>
+<g id="矩形备份-502">
+	<rect id="path-17_1_" x="71" y="235" class="st7" width="48" height="30"/>
+</g>
+<g id="矩形备份-503">
+	<rect id="path-19_1_" x="318" y="235" class="st7" width="75" height="30"/>
+</g>
+<g id="矩形备份-504">
+	<rect id="path-21_1_" x="466" y="235" class="st7" width="60" height="30"/>
+</g>
+<g id="矩形备份-505">
+	<rect id="path-23_1_" x="203" y="235" class="st7" width="34" height="30"/>
+</g>
+<g id="矩形备份-506">
+	<rect id="path-25_1_" x="122" y="199" class="st7" width="60" height="30"/>
+</g>
+<g id="矩形备份-507">
+	<rect id="path-27_1_" x="397" y="199" class="st7" width="48" height="30"/>
+</g>
+<g id="矩形备份-508">
+	<rect id="path-29_1_" x="530" y="199" class="st7" width="48" height="30"/>
+</g>
+<g id="矩形备份-509">
+	<rect id="path-31_1_" x="243" y="199" class="st7" width="52" height="30"/>
+</g>
+<g id="矩形备份-511">
+	<rect id="path-33_1_" x="122" y="235" class="st7" width="60" height="30"/>
+</g>
+<g id="矩形备份-512">
+	<rect id="path-35_1_" x="397" y="235" class="st7" width="48" height="30"/>
+</g>
+<g id="矩形备份-513">
+	<rect id="path-37_1_" x="530" y="235" class="st7" width="48" height="30"/>
+</g>
+<g id="矩形备份-514">
+	<rect id="path-39_1_" x="243" y="235" class="st7" width="52" height="30"/>
+</g>
+<g id="编组备份-33" transform="translate(70.000000, 185.000000)">
+	<g id="矩形_4_">
+		<g>
+			<rect id="path-43" x="-54" y="-39" width="75" height="16.8"/>
+		</g>
+		<g>
+			<rect id="path-43_1_" x="-54" y="-39" class="st10" width="75" height="16.8"/>
+		</g>
+	</g>
+	<text transform="matrix(1 0 0 1 -50.1123 -26.25)" class="st11 st4 st12">视频云网平台</text>
+</g>
+<text transform="matrix(1 0 0 1 74 217)" class="st8 st4 st9">原始视频</text>
+<text transform="matrix(1 0 0 1 167 304)" class="st8 st4 st9">GB28181协议</text>
+<text transform="matrix(1 0 0 1 505 304)" class="st8 st4 st9">RTMP协议</text>
+<text transform="matrix(1 0 0 1 324 217)" class="st8 st4 st9">视频质量诊断</text>
+<text transform="matrix(1 0 0 1 475 217)" class="st8 st4 st9">用户管理</text>
+<text transform="matrix(1 0 0 1 209.5 217)" class="st8 st4 st9">点播</text>
+<text transform="matrix(1 0 0 1 71 189)" class="st8 st4 st9">视频存储服务</text>
+<text transform="matrix(1 0 0 1 29.75 213)" class="st8 st4 st9">全</text>
+<text transform="matrix(1 0 0 1 40.25 213)" class="st8 st4 st9"> </text>
+<text transform="matrix(1 0 0 1 29.75 228)" class="st8 st4 st9">网</text>
+<text transform="matrix(1 0 0 1 40.25 228)" class="st8 st4 st9"> </text>
+<text transform="matrix(1 0 0 1 29.75 243)" class="st8 st4 st9">管</text>
+<text transform="matrix(1 0 0 1 40.25 243)" class="st8 st4 st9"> </text>
+<text transform="matrix(1 0 0 1 29.75 258)" class="st8 st4 st9">控</text>
+<text transform="matrix(1 0 0 1 40.25 258)" class="st8 st4 st9"> </text>
+<text transform="matrix(1 0 0 1 29.75 273)" class="st8 st4 st9">中</text>
+<text transform="matrix(1 0 0 1 40.25 273)" class="st8 st4 st9"> </text>
+<text transform="matrix(1 0 0 1 29.75 288)" class="st8 st4 st9">心</text>
+<text transform="matrix(1 0 0 1 71 304)" class="st8 st4 st9">视频接入服务</text>
+<text transform="matrix(1 0 0 1 317 189)" class="st8 st4 st9">视频分析服务</text>
+<text transform="matrix(1 0 0 1 466.176 189)" class="st8 st4 st9">视频IAM服务</text>
+<text transform="matrix(1 0 0 1 202 189)" class="st8 st4 st9">视频分发服务</text>
+<text transform="matrix(1 0 0 1 74 253)" class="st8 st4 st9">原始图片</text>
+<text transform="matrix(1 0 0 1 324 253)" class="st8 st4 st9">人脸人体分析</text>
+<text transform="matrix(1 0 0 1 470.25 253)" class="st8 st4 st9">跨帐号访问</text>
+<text transform="matrix(1 0 0 1 209.5 253)" class="st8 st4 st9">直播</text>
+<text transform="matrix(1 0 0 1 131 217)" class="st8 st4 st9">分析结果</text>
+<text transform="matrix(1 0 0 1 400 217)" class="st8 st4 st9">算法仓库</text>
+<text transform="matrix(1 0 0 1 533 217)" class="st8 st4 st9">精细访问</text>
+<text transform="matrix(1 0 0 1 248.5 217)" class="st8 st4 st9">视频共享</text>
+<text transform="matrix(1 0 0 1 123.125 253)" class="st8 st4 st9">人脸/车辆库</text>
+<text transform="matrix(1 0 0 1 400 253)" class="st8 st4 st9">车辆分析</text>
+<text transform="matrix(1 0 0 1 542.891 253)" class="st8 st4 st9">MFA</text>
+<text transform="matrix(1 0 0 1 245.875 253)" class="st8 st4 st9">截图/转码</text>
+<path id="矩形备份-444" class="st13" d="M3,16.1h596v101H3V16.1z"/>
+<path id="矩形备份-446" class="st6" d="M143,65.1h83v30h-83V65.1z"/>
+<g id="编组-21" transform="translate(372.500000, 105.000000)">
+	<path id="矩形备份-461" class="st6" d="M-51-39.9h83v30h-83V-39.9z"/>
+	<text transform="matrix(1 0 0 1 -31 -20.8575)" class="st8 st4 st9">平安校园</text>
+</g>
+<path id="矩形备份-462" class="st6" d="M143,29.1h140v30H143V29.1z"/>
+<path id="矩形备份-465" class="st6" d="M293,29.1h140v30H293V29.1z"/>
+<path id="矩形备份-464" class="st6" d="M443,29.1h140v30H443V29.1z"/>
+<g id="编组-20" transform="translate(283.250000, 105.000000)">
+	<path id="矩形备份-471" class="st6" d="M-51-39.9h83v30h-83V-39.9z"/>
+	<text transform="matrix(1 0 0 1 -31 -20.8575)" class="st8 st4 st9">智慧课堂</text>
+</g>
+<g id="编组-22" transform="translate(461.750000, 105.000000)">
+	<path id="矩形备份-476" class="st6" d="M-51-39.9h83v30h-83V-39.9z"/>
+	<text transform="matrix(1 0 0 1 -41.5 -20.8575)" class="st8 st4 st9">行为规范检测</text>
+</g>
+<path id="矩形备份-477" class="st6" d="M500,65.1h83v30h-83V65.1z"/>
+<g id="编组备份-30" transform="translate(70.000000, 42.000000)">
+	<g id="矩形_3_">
+		<g>
+			<rect id="path-41_2_" x="-51" y="-39.9" width="75" height="16.8"/>
+		</g>
+		<g>
+			<rect id="path-41_1_" x="-51" y="-39.9" class="st3" width="75" height="16.8"/>
+		</g>
+	</g>
+	<text transform="matrix(1 0 0 1 -47.1123 -27.1075)" class="st11 st4 st12">智慧教育应用</text>
+</g>
+<text transform="matrix(1 0 0 1 163 84.1425)" class="st8 st4 st9">安全巡查</text>
+<text transform="matrix(1 0 0 1 182 48.1425)" class="st8 st4 st9">教育监管系统</text>
+<text transform="matrix(1 0 0 1 344.5 48.1425)" class="st8 st4 st9">公安系统</text>
+<text transform="matrix(1 0 0 1 24 48.1425)" class="st8 st4 st9">政府主管部门</text>
+<text transform="matrix(1 0 0 1 24.25 84.1425)" class="st8 st4 st9">学校、家长</text>
+<text transform="matrix(1 0 0 1 471 48.1425)" class="st8 st4 st9">食品安全监管机构</text>
+<text transform="matrix(1 0 0 1 520 84.1425)" class="st8 st4 st9">考勤管理</text>
+<g id="编组-12备份-73" transform="translate(160.000000, 32.000000)">
+	<line id="直线_2_" class="st0" x1="78.4" y1="333.9" x2="78.4" y2="371.4"/>
+</g>
+<g id="编组-12备份-73_1_" transform="translate(284.000000, 32.000000)">
+	<line id="直线_3_" class="st0" x1="78.4" y1="333.9" x2="78.4" y2="371.4"/>
+</g>
+<path id="矩形备份-588" class="st7" d="M75,388.6h83v30H75V388.6z"/>
+<g id="编组-12备份-72" transform="translate(40.000000, 0.000000)">
+	<line id="直线_4_" class="st0" x1="229.6" y1="336.9" x2="229.5" y2="364.1"/>
+	<polyline id="直线备份-2" class="st0" points="445.4,387.7 445.4,365.6 75.4,365.6 75.4,387.7 	"/>
+	<polygon id="矩形_2_" class="st1" points="229.6,333.6 233,337.2 226.2,337.2 	"/>
+</g>
+<text transform="matrix(1 0 0 1 274.434 355.5639)" class="st3 st4 st5">5G/互联网/专线</text>
+<path id="矩形备份-589" class="st7" d="M198,388.6h83v30h-83V388.6z"/>
+<path id="矩形备份-590" class="st7" d="M321,388.6h83v30h-83V388.6z"/>
+<text transform="matrix(1 0 0 1 106 407.5639)" class="st8 st4 st9">教室</text>
+<path id="矩形备份-588_1_" class="st7" d="M444,388.6h83v30h-83V388.6z"/>
+<text transform="matrix(1 0 0 1 475 407.5639)" class="st8 st4 st9">操场</text>
+<text transform="matrix(1 0 0 1 229 407.5639)" class="st8 st4 st9">校门</text>
+<text transform="matrix(1 0 0 1 352 407.5639)" class="st8 st4 st9">楼道</text>
+</svg>

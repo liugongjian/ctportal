@@ -11,7 +11,7 @@ export default class extends Vue{
   private title = ''
   private desc = ''
   private picName = 'home_slider'
-  private btnDesc = '服务咨询'
+  private btnDesc = ''
   private btnSrc = ''
 
   @Watch('$route.query', { deep: true, immediate: true })

@@ -2,7 +2,7 @@
   <div class="architect__wrapper">
     <div class="architect__title">方案架构</div>
     <div class="architect__content">
-      <div class="architect__content__pic"><img :src="require('../assets/mock/' + picName+ '.png')"/></div>
+      <div class="architect__content__pic"><img :src="picName"/></div>
       <div class="architect__content__desc">
         <div class="architect__content__desc__title">方案介绍</div>
         <div class="architect__content__desc__detail">{{introDetail}}</div>

@@ -36,7 +36,7 @@ export default class extends Vue{
     &__title {
       font-size: 40px;
       text-align: center;
-      margin-bottom: 80px;
+      margin-bottom: 50px;
     }
     &__item__wrap {
       display: flex;
