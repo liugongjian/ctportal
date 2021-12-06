@@ -7,7 +7,7 @@
           <div class="slider__item__content">
             {{desc}}
           </div>
-          <el-button type="primary">{{btnDesc}}</el-button>
+          <a class="el-button el-button--primary" :href="btnSrc" target="_blank">{{btnDesc}}</a>
         </div>
         <div class="slider__item__right">
           <!-- <img class="slider__item__img" :src="require(`${picSrc}.png`)"/> -->

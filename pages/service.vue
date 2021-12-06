@@ -1,7 +1,6 @@
 <template>
   <div class="container">
     <ServiceSlider />
-    <ServiceBefore />
     <ServiceAfter />
   </div>
 </template>

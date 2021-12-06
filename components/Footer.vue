@@ -2,7 +2,7 @@
   <div id="ctyun-cn-open-footer">
     <div>
       <div>
-        <div class="ctcloud-footer-wrapper">
+        <div v-if="false" class="ctcloud-footer-wrapper">
           <div class="container-wrapper ctcloud">
             <div class="icon-tip-list ctcloud-layout__clearfix">
               <div class="list-item shouhou">
@@ -150,23 +150,13 @@
             <div class="row-no-gutters ctcloud-layout__clearfix">
               <div class="col-md-7">
                 <div>
-                  ©<span class="year">2020</span>
-                  <span
-                    >中国电信股份有限公司云计算分公司版权所有<a
-                      href="/ctyun/beian-gov"
-                      >京ICP备 12022551号</a
-                    >
-                    增值电信业务经营许可证A2.B1.B2-20090001</span
-                  >
+                  ©<span class="year">2021</span>
+                  <span>天翼云科技有限公司版权所有<a href="/ctyun/beian-gov">京ICP备 2021034386号</a> 增值电信业务经营许可证A2.B1.B2-20090001</span>
                 </div>
-                <div>公司地址：北京市西城区金融大街31号1-1613</div>
+                <div>公司地址：北京市东城区青龙胡同甲1号、3号2幢2层205-32室</div>
               </div>
               <div class="col-md-5 links">
-                <ul class="link-list" ref="link-list">
-                  <li><a>用户协议</a></li>
-                  <li><a>隐私政策</a></li>
-                  <li><a>法律声明</a></li>
-                </ul>
+                <ul class="link-list" ref="link-list"><li><a>用户协议</a></li><li><a>隐私政策</a></li><li><a>法律声明</a></li></ul>
               </div>
             </div>
           </div>
@@ -434,5 +424,7 @@
     color: #fff;
     text-decoration: none
 }
-
+.col-md-5 {
+  width: 41%;
+}
 </style>

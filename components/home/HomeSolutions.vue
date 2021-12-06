@@ -1,28 +1,31 @@
 <template>
-  <div class="advantage">
-    <div class="advantage__container">
-      <div class="advantage__title">行业解决方案</div>
-      <div class="advantage__item__wrap">
+  <div class="solution">
+    <div class="solution__container">
+      <div class="solution__title">行业解决方案</div>
+      <div class="solution__item__wrap">
         <el-tabs v-model="activeName">
           <el-tab-pane label="智慧城市" name="city" />
           <el-tab-pane label="智慧教育" name="education" />
           <el-tab-pane label="智慧社区" name="community" />
-          <el-tab-pane label="智慧工地" name="cite" />
+          <el-tab-pane label="智慧工地" name="site" />
           <el-tab-pane label="智慧零售" name="retail" />
           <el-tab-pane label="智慧物流" name="logistics" />
         </el-tabs>
-        <div class="advantage__item__wrap__desc">
-          <img src="~/assets/mock/home_slider.png" />
-          <div class="advantage__item__wrap__desc__content">
-            <div class="advantage__item__wrap__desc__content__title">
-              {{active.c_name}}
+        <div class="solution__item__wrap__desc">
+          <img :src="active.image" />
+          <div class="solution__item__wrap__desc__content">
+            <div class="solution__item__wrap__desc__content__title">
+              {{ active.c_name }}
             </div>
-            <div class="advantage__item__wrap__desc__content__tag">
+            <div class="solution__item__wrap__desc__content__tag">
               <el-tag type="warning" v-for="(tag,index) in active.tags" :key="index">{{tag}}</el-tag>
             </div>
-            <div class="advantage__item__wrap__desc__content__detail">
-              <div v-for="(item,index) in active.desc" :key="index">{{item}}</div>
+            <div class="solution__item__wrap__desc__content__detail">
+              {{ active.desc }}
             </div>
+            <ul class="solution__item__wrap__desc__content__list">
+              <li v-for="(item,index) in active.list" :key="index">{{item}}</li>
+            </ul>
           </div>
         </div>
       </div>
@@ -35,22 +38,21 @@ import { Vue, Component} from 'vue-property-decorator'
 @Component
 export default class extends Vue{
   private activeName = 'city'
-  private solutions = [{name:'city', c_name:'智慧城市',tags:['视频接入', '录像存储', '车辆分析', '人流分析'], desc:['重点面向城市人流、车流信息，以及社会面视频数据的统一纳管，支持智能检测与分析。','- 适用于对城市安全、应急管理、交通调度有迫切需求的城市。','- 进行实时的智能监管，从而及时发现问题。','- 可以快速协同调度资源，以解决问题。','- 进行视频数据、结构化数据等多维度大数据的统一管理和应用。']},
-                        {name:'education', c_name:'智慧教育',tags:[ '录像存储', '车辆分析', '人流分析'],  desc:['重点面向城市人流、车流信息，以及社会面视频数据的统一纳管，支持智能检测与分析。','- 适用于对城市安全、应急管理、交通调度有迫切需求的城市。','- 进行实时的智能监管，从而及时发现问题。','- 可以快速协同调度资源，以解决问题。','- 进行视频数据、结构化数据等多维度大数据的统一管理和应用。']},
-                        {name:'community', c_name:'智慧社区',tags:['视频接入', '录像存储', '人流分析'],  desc:['重点面向城市人流、车流信息，以及社会面视频数据的统一纳管，支持智能检测与分析。','- 适用于对城市安全、应急管理、交通调度有迫切需求的城市。','- 进行实时的智能监管，从而及时发现问题。','- 可以快速协同调度资源，以解决问题。','- 进行视频数据、结构化数据等多维度大数据的统一管理和应用。']},
-                        {name:'cite', c_name:'智慧工地',tags:['视频接入', '录像存储', '车辆分析', '人流分析'],  desc:['重点面向城市人流、车流信息，以及社会面视频数据的统一纳管，支持智能检测与分析。','- 适用于对城市安全、应急管理、交通调度有迫切需求的城市。','- 进行实时的智能监管，从而及时发现问题。','- 可以快速协同调度资源，以解决问题。','- 进行视频数据、结构化数据等多维度大数据的统一管理和应用。']},
-                        {name:'retail', c_name:'智慧零售',tags:['视频接入', '车辆分析', '人流分析'],  desc:['重点面向城市人流、车流信息，以及社会面视频数据的统一纳管，支持智能检测与分析。','- 适用于对城市安全、应急管理、交通调度有迫切需求的城市。','- 进行实时的智能监管，从而及时发现问题。','- 可以快速协同调度资源，以解决问题。','- 进行视频数据、结构化数据等多维度大数据的统一管理和应用。']},
-                        {name:'logistics', c_name:'智慧物流',tags:['视频接入', '录像存储', '车辆分析'],  desc:['重点面向城市人流、车流信息，以及社会面视频数据的统一纳管，支持智能检测与分析。','- 适用于对城市安全、应急管理、交通调度有迫切需求的城市。','- 进行实时的智能监管，从而及时发现问题。','- 可以快速协同调度资源，以解决问题。','- 进行视频数据、结构化数据等多维度大数据的统一管理和应用。']}]
+  private solutions = [
+    { name:'city', c_name:'智慧城市', image: require('~/assets/images/solution/city.jpg'), tags:['视频接入', '录像存储', '车辆分析', '人流分析'], desc: '重点面向城市人流、车流信息，以及社会面视频数据的统一纳管，支持智能检测与分析。', list: ['大规模部署推流接入点，就近接入，保证各场合稳定推流', '提供AI内容审核增值服务，可人脸识别，人员聚集检测、车辆牌号检索等', '支持多种播流格式，支持全网加速分发', '整合多渠道数据信息，智能统计与分析，丰富数据资产，助力城市管理数字化转型'] },
+    { name:'education', c_name:'智慧教育', image: require('~/assets/images/solution/education.jpg'), tags:[ '视频接入', '录像存储', '人脸分析', '车辆分析'],  desc: '重点面向校园、培训机构等行业客户的视频监控需求，实现安全的内容分发和高价值内容录制留存。', list: ['建设周期短，成本低廉，适合技术能力薄弱的学校或者教育机构', '支持设备接入、存储和分发一体化解决方案，按需扩容，提升资源利用率', '支持AI算法仓库统一管理，GPU算力智能调度，AI算法统一编排'] },
+    { name:'community', c_name:'智慧社区', image: require('~/assets/images/solution/community.jpg'), tags:['视频接入', '录像存储', '人流分析'],  desc: '重点面向涉及社区客户在线监控服务：如楼宇、小区、园区等，支持大并发就近上云。', list: ['兼容主流视频终端设备，支持GB28181、GAT1400、RTMP、RTSP等协议直接接入，启动快、成本低', '基于云原生架构部署、按需扩容，可支持百万级设备接入、存储和分发，提升资源利用率', '提供向上级联能力，便于视频资源的共享，实现上级平台对社区视频资源的纳管'] },
+    { name:'site', c_name:'智慧工地', image: require('~/assets/images/solution/site.jpg'), tags:['视频接入', '录像存储', '危险区域告警', '安全帽反光服识别'],  desc:'重点面向建筑行业客户，纳管所有工地视频，实现精准识别，提前告警等。' , list: ['建设周期短，成本低廉，云端汇聚组网方式更简单明了，可用性更强，后续运维简单可靠','大规模部署推流接入点，就近接入，满足多种形态视频资源的稳定接入', '集成AI内容审核，进行人脸识别，人员聚集检测、车辆牌号检索等工地现场管控'] },
+    { name:'retail', c_name:'智慧零售', image: require('~/assets/images/solution/retail.jpg'), tags:['视频接入', '车辆分析', '人流分析'],  desc: '重点面向零售行业客户，提供智能远程视频点检、远程看店，最终实现数字化精细化运营。', list: ['前端设备、平台公网/专线接入，设备统一接入与管理','根据业务特点，随时随地播放实时流、历史流，查看截图，支持监控内容的按需播放与调取，实现远程巡店', '支持多种算法部署升级、算力弹性扩容，智能统计分析客流情况，智能预警'] },
+    { name:'logistics', c_name:'智慧物流', image: require('~/assets/images/solution/logistics.jpg'), tags:['视频接入', '录像存储', '车辆分析'],  desc: '重点面向物流行业客户，支持智能检测与分析，实现货物轨迹动态跟踪。', list: ['智能分拣物件，规范从业人员行为规范管理','打破数据孤岛，将港口、车辆、仓库和快递柜等货物运输流程的视频云上集中管理','解决了企业物流运输任务的总体分配与调度，实时监控货物运输情况，形成物流数字化网络，提升对企业的综合服务能力'] }
+  ]
   get active() {
-    let actv = this.solutions.filter(item => item.name === this.activeName)
-    if(actv.length > 0){
-      return actv[0]
-    }
+    return this.solutions.find(item => item.name === this.activeName)
   }
 }
 </script>
 <style lang="scss" scoped>
-  .advantage {
+  .solution {
     background: #fff;
     &__container {
       @include container;
@@ -59,19 +61,21 @@ export default class extends Vue{
     &__title {
       font-size: 40px;
       text-align: center;
-      margin-bottom: 80px;
+      margin-bottom: 50px;
     }
     &__item__wrap {
       display: flex;
       flex-direction: column;
       &__desc {
-        height: 450px;
+        height: 370px;
+        margin-top: 20px;
         display: flex;
         justify-content: space-around;
         &__content{
+          width: 570px;
           &__title{
             font-size: 30px;
-            margin: 40px 0;
+            margin: 40px 0 15px 0;
           }
           &__tag{
             .el-tag{
@@ -80,8 +84,13 @@ export default class extends Vue{
           }
           &__detail{
             margin-top: 40px;
-            & > div:nth-child(1){
-              margin-bottom: 20px;
+            font-weight: bold;
+          }
+          &__list {
+            margin: 10px 0 0;
+            padding-left: 20px;
+            li {
+              margin-bottom: 5px;
             }
           }
         }
@@ -93,6 +102,9 @@ export default class extends Vue{
         align-self: center;
         ::v-deep .el-tabs__item{
           font-size: 20px !important;
+          padding: 0 35px;
+          height: 50px;
+          line-height: 50px;
         }
       }
     }

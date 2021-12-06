@@ -1,15 +1,14 @@
 <template>
   <div class="after">
     <div class="after__container">
-      <div class="after__title">售后咨询</div>
       <div class="after__item__wrap">
         <div class="after__item">
           <div class="after__item__img"><img src="~/assets/mock/service_after_1.svg" /></div>
           <div class="after__item__body">
-            <div class="after__item__title">自助服务</div>
-            <div class="after__item__content">为您提供多种便捷工具及常见问题指南，让您轻松使用视频云产品与服务！</div>
+            <div class="after__item__title">售前咨询</div>
+            <div class="after__item__content">为您提供专业的售前咨询，让您轻松使用视频云产品与服务！</div>
             <div class="after__item__button">
-              <el-button class="light-btn">查看详情</el-button>
+              <a class="el-button light-btn el-button--default" href="https://vcn.ctyun.cn/questionnaire/" target="_blank">查看详情</a>
             </div>
           </div>
         </div>
@@ -17,17 +16,7 @@
           <div class="after__item__img"><img src="~/assets/mock/service_after_2.svg" /></div>
           <div class="after__item__body">
             <div class="after__item__title">工单</div>
-            <div class="after__item__content">产品及技术问题，您可以登录提交 工单，将有专业的技术人员为您快 速解答</div>
-            <div class="after__item__button">
-              <el-button class="light-btn">查看详情</el-button>
-            </div>
-          </div>
-        </div>
-        <div class="after__item">
-          <div class="after__item__img"><img src="~/assets/mock/service_after_3.svg" /></div>
-          <div class="after__item__body">
-            <div class="after__item__title">智能客服</div>
-            <div class="after__item__content">智能诊断，精准定位，快速应答， 为您提供更加快捷的服务！</div>
+            <div class="after__item__content">产品及技术问题，您可以登录提交工单，将有专业的技术人员为您快速解答。</div>
             <div class="after__item__button">
               <el-button class="light-btn">查看详情</el-button>
             </div>
@@ -57,7 +46,7 @@
     &__item {
       display: flex;
       align-items: center;
-      width: 30%;
+      width: 40%;
       padding: 20px;
       background: #fff;
       border-radius: 4px;

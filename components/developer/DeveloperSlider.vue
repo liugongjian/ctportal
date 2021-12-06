@@ -7,7 +7,6 @@
           <div class="slider__item__content">
             为开发者提供API、SDK、CLI等工具，方便快捷调用天翼云视频监控开放能力
           </div>
-          <a class="slider__item__btn light-btn" href="/document/api/" target="_blank">API文档</a>
         </div>
         <div class="slider__item__right">
           <img class="slider__item__img" src="~/assets/mock/dev_slider.svg" />
