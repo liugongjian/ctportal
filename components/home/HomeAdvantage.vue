@@ -4,24 +4,24 @@
       <div class="advantage__title">产品优势</div>
       <div class="advantage__item__wrap">
         <div class="advantage__item">
-          <div class="advantage__item__img"><img src="~/assets/mock/home_feat_1.svg" /></div>
-          <div class="advantage__item__title">多前端接入</div>
-          <div class="advantage__item__content">支持通过标准协议接入摄像头、NVR/DVR、监控平台等多种前端，简单调试即可使用</div>
+          <div class="advantage__item__img"><img src="~/assets/images/feature/feature1.png" /></div>
+          <div class="advantage__item__title">快速接入</div>
+          <div class="advantage__item__content">基于云原生架构部署、按需扩容，可支持百万级设备接入。兼容主流视频终端设备，支持GB28181、GAT1400、RTMP、RTSP等协议直接接入，启动快、成本低。</div>
         </div>
         <div class="advantage__item">
-          <div class="advantage__item__img"><img src="~/assets/mock/home_feat_2.svg" /></div>
-          <div class="advantage__item__title">边缘节点智能分析</div>
-          <div class="advantage__item__content">将数据处理能力下沉到边缘节点，满足行业数字化在实时业务、敏捷连接、数据优化等方面的关键需求，使用户得到了更加极致的体验</div>
+          <div class="advantage__item__img"><img src="~/assets/images/feature/feature2.png" /></div>
+          <div class="advantage__item__title">云网融合</div>
+          <div class="advantage__item__content">“云-网-边”融合架构，用户就近接入，秒级响应。支持公有云、私有云、混合云多种形态部署，覆盖多种行业应用场景。</div>
         </div>
         <div class="advantage__item">
-          <div class="advantage__item__img"><img src="~/assets/mock/home_feat_3.svg" /></div>
-          <div class="advantage__item__title">功能丰富、实用性强</div>
-          <div class="advantage__item__content">事前及时预警，防患于未然；事中实时告警，方便管理人员快速处理；事后信息存档，便于查证和决策分析</div>
+          <div class="advantage__item__img"><img src="~/assets/images/feature/feature3.png" /></div>
+          <div class="advantage__item__title">智能生态</div>
+          <div class="advantage__item__content">支持AI算法仓库统一管理，GPU算力智能调度，AI算法统一编排。人脸/人体/车辆/物体/环境等算法全场景覆盖。</div>
         </div>
         <div class="advantage__item">
-          <div class="advantage__item__img"><img src="~/assets/mock/home_feat_4.svg" /></div>
-          <div class="advantage__item__title">海量算法库，自由组合</div>
-          <div class="advantage__item__content">支持数百种算法，且可根据具体场景优化算法效果，可广泛应用在 工业园区、生产制造企业、住宅小区、校园、景区、工地等多种场景</div>
+          <div class="advantage__item__img"><img src="~/assets/images/feature/feature4.png" /></div>
+          <div class="advantage__item__title">数据资产</div>
+          <div class="advantage__item__content">设备数据智能分析，挖掘潜在风险，防患于未然。积累数据资产，人脸库、车辆库等数据资产赋能行业应用。</div>
         </div>
       </div>
     </div>
@@ -29,7 +29,7 @@
 </template>
 <style lang="scss" scoped>
   .advantage {
-    background: #f1f1f1;
+    background: #f1f1f1 url('../../assets/images/grey_bg.png') no-repeat;
     &__container {
       @include container;
       @include containerPadding;
@@ -44,8 +44,9 @@
     }
     &__item {
       margin: 0 35px;
+      width: 25%;
       &__img {
-        height: 200px;
+        height: 130px;
         text-align: center;
         img {
           height: 100%;

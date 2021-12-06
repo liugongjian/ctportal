@@ -54,12 +54,12 @@
           >
             文档<svg-icon name="arrow-down" width="10" height="10" />
           </div> -->
-          <div
+          <!-- <div
             class="header__navigation__item"
             :class="{'actived': currentPage === 'service'}"
           >
             <NuxtLink to="/service">支持与服务</NuxtLink>
-          </div>
+          </div> -->
           <div class="header__navigation__item"><a href="http://console.vcn.ctyun.cn/" target="_blank">控制台</a></div>
           <!-- <div class="header__navigation__item"><svg-icon class="header__navigation__item__search" name="search" /></div> -->
         </div>
@@ -71,12 +71,12 @@
         <li>实时音视频</li>
       </ul>
       <ul v-if="currentSubMenu === 'solution'">
-        <li @click="goto('/solutions','city')">行业解决方案-智慧城市</li>
-        <li @click="goto('/solutions','education')">行业解决方案-智慧教育</li>
-        <li @click="goto('/solutions','community')">行业解决方案-智慧社区</li>
-        <li @click="goto('/solutions','site')">行业解决方案-智慧工地</li>
-        <li @click="goto('/solutions','retail')">行业解决方案-智慧零售</li>
-        <li @click="goto('/solutions','logistics')">行业解决方案-智慧物流</li>
+        <li @click="goto('/solutions','city')">智慧城市</li>
+        <li @click="goto('/solutions','education')">智慧教育</li>
+        <li @click="goto('/solutions','community')">智慧社区</li>
+        <li @click="goto('/solutions','site')">智慧工地</li>
+        <li @click="goto('/solutions','retail')">智慧零售</li>
+        <li @click="goto('/solutions','logistics')">智慧物流</li>
       </ul>
       <ul v-if="currentSubMenu === 'developer'">
         <li @click="goto('/developer')">API Explorer</li>
@@ -333,7 +333,7 @@ export default Vue.extend({
       position: absolute;
       top: 60px;
       background: #fff;
-      width: 250px;
+      width: 100px;
       animation-duration: 100ms;
       animation-name: slideInDown;
 

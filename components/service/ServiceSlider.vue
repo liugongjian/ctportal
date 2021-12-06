@@ -7,8 +7,6 @@
           <div class="slider__item__content">
             多样化的支持计划和专家服务，满足您从上云部署、日常运维到优化升级等的全周期需求，让您的数字化转型之路更加高效敏捷。
           </div>
-          <el-button class="slider__item__btn light-btn">售前咨询</el-button>
-          <el-button class="slider__item__btn light-btn">售后咨询</el-button>
         </div>
         <div class="slider__item__right">
           <img class="slider__item__img" src="~/assets/mock/service_slider.svg" />
