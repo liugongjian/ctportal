@@ -5,7 +5,7 @@
       <div class="list__item__wrap">
         <div class="list__item" v-for="item in list" :key="item.id">
           <div class="list__item__img"><img :src="item.src" /></div>
-          <div class="list__item__title">{{item.title}}</div>
+          <div v-if="item.title" class="list__item__title">{{item.title}}</div>
           <div class="list__item__content">{{item.content}}</div>
         </div>
       </div>
