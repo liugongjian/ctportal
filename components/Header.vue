@@ -333,7 +333,7 @@ export default Vue.extend({
       position: absolute;
       top: 60px;
       background: #fff;
-      width: 250px;
+      width: 200px;
       animation-duration: 100ms;
       animation-name: slideInDown;
 
