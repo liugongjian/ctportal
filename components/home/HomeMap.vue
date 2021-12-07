@@ -34,7 +34,7 @@ import { deounbce } from '@/assets/ts/debounce'
 })
 export default class extends Vue{
   public chart:any
-  public theRegion: any = 'nowhere'
+  public theRegion: any = ''
   public provinceShow = false
   public regions:any = regions
   public provinceInfo:any = []
@@ -82,11 +82,11 @@ export default class extends Vue{
         },
         itemStyle: { // 定义样式
           normal: { // 普通状态下的样式
-            areaColor: 'rgba(164,164,164)',
+            areaColor: 'rgba(100,100,100)',
             borderColor: '#f1f1f1'
           },
           emphasis: { // 高亮状态下的样式
-            areaColor: 'rgba(164,164,164)'
+            areaColor: 'rgba(100,100,100)'
           }
         }
       },
@@ -107,9 +107,9 @@ export default class extends Vue{
         coordinateSystem: 'geo', // series坐标系类型
         itemStyle: {
           normal: {
-            color: '#ff6a00',
-            shadowColor: 'rgba(255, 255, 255, 1)',
-            shadowBlur: 5,
+            color: '#ff8400',
+            shadowColor: 'rgba(174, 90, 0, 1)',
+            shadowBlur: 6,
             label: {
               show: onHover,
               formatter: format,
@@ -118,9 +118,7 @@ export default class extends Vue{
                 color: '#000'
               },
               backgroundColor: '#fff',
-              borderColor: '#fff',
-              borderType: 'solid',
-              borderWidth: 8
+              padding: 5
             }
           },
           emphasis: {

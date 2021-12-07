@@ -61,7 +61,7 @@ export default class extends Vue{
         text-align: center;
         font-size: 24px;
         font-weight: bold;
-        margin: 30px 0 20px 0;
+        margin: 20px 0 20px 0;
       }
       &__content {
         text-align: justify;

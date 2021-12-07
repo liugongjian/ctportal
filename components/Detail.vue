@@ -41,7 +41,7 @@ export default class extends Vue{
   .architect__title{
     font-size: 40px;
     text-align: center;
-    margin-bottom: 80px;
+    margin-bottom: 50px;
   }
   .architect__content{
     display: flex;

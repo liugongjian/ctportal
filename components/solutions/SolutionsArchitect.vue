@@ -37,6 +37,7 @@ export default class extends Vue{
         this.feature = ['兼容主流视频终端设备，支持GB28181、GAT1400、RTMP、RTSP等协议直接接入，启动快、成本低',
                         '基于云原生架构部署、按需扩容，可支持百万级设备接入、存储和分发，提升资源利用率',
                         '提供向上级联能力，便于视频资源的共享，实现上级平台对社区视频资源的纳管']
+        this.picName = require('~/assets/images/solution/arch/community.svg')
         break
       case 'site':
         this.introDetail = '重点面向建筑行业客户，纳管所有工地视频，实现精准识别，提前告警等'
@@ -78,7 +79,7 @@ export default class extends Vue{
   .architect__title{
     font-size: 40px;
     text-align: center;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
   }
   .architect__content{
     display: flex;
