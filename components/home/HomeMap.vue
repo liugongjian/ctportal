@@ -29,38 +29,38 @@ import { Vue, Component} from 'vue-property-decorator'
 import { city, regions, city_info, province} from '@/assets/ts/city'
 import { deounbce } from '@/assets/ts/debounce'
 
-@Component
+@Component({
+  name: 'HomeMap'
+})
 export default class extends Vue{
-
   public chart:any
   public theRegion: any = 'nowhere'
   public provinceShow = false
-
   public regions:any = regions
   public provinceInfo:any = []
 
   get country(){
     return Object.keys(this.regions).reduce((pre,item) => pre + regions[item].length, 0)
   }
-  public mounted(){
 
-        const map_data = city_info.map((info:any) =>{
-          const temp = city.filter((item:any) => info.name === item.name)
-          if(temp.length > 0){
-            return {
-              name: info.name,
-              value: [temp[0].lng, temp[0].lat, info.value]
-            }
-          }
-        })
-        // ECharts Option配置
-        let option = this.generateOption(map_data, 'scatter', false)
-        // 初始化ECharts
-        this.chart = echarts.init(document.getElementById('home-amap'));
-        this.chart.setOption(option);
-        //处理resize
-        const debounce_resize = deounbce(() => this.chart.resize(), 200)
-        window.onresize = debounce_resize
+  public mounted(){
+    const map_data = city_info.map((info:any) =>{
+      const temp = city.filter((item:any) => info.name === item.name)
+      if(temp.length > 0){
+        return {
+          name: info.name,
+          value: [temp[0].lng, temp[0].lat, info.value]
+        }
+      }
+    })
+    // ECharts Option配置
+    let option = this.generateOption(map_data, 'scatter', false)
+    // 初始化ECharts
+    this.chart = echarts.init(document.getElementById('home-amap'));
+    this.chart.setOption(option);
+    //处理resize
+    const debounce_resize = deounbce(() => this.chart.resize(), 200)
+    window.onresize = debounce_resize
   }
 
 
@@ -68,69 +68,69 @@ export default class extends Vue{
     // const format = onHover ? '{b}:\n节点数：{@[2]}' : '{b}'
     const format = '{b}'
     return {
-            geo: {
-              map: 'china',
-              roam: false,
-              label: { // 定义样式
-                normal: { // 普通状态下的样式
-                  show:false
-                },
-                emphasis: { // 高亮状态下的样式
-                  show:false
-                }
-              },
-              itemStyle: { // 定义样式
-                normal: { // 普通状态下的样式
-                  areaColor: 'rgba(164,164,164)',
-                  borderColor: '#fff'
-                },
-                emphasis: { // 高亮状态下的样式
-                  areaColor: 'rgba(164,164,164)'
-                }
-              }
-            },
-            // tooltip: {
-            //   trigger: 'item',
-            //   formatter: function(params:any) {
-            //     var html = params.name
-            //     // var html = params.name + '<br/>';
-            //     // html += params.seriesName + ":";
-            //     // html += params.value[2]
-            //     return html;
-            //   }
-            // },
-            //配置属性
-            series: [{
-              name: '节点数',
-              type: type,
-              coordinateSystem: 'geo', // series坐标系类型
-              itemStyle: {
-                normal: {
-                  color: '#fa8334',
-                  label: {
-                    show: onHover,
-                    formatter: format,
-                    position: 'right',
-                    textStyle: {
-                      color: "#000"
-                    }
-                  }
-                },
-                emphasis: {
-                  label: {
-                    show: true
-                  }
-                }
-              },
-              data: data
-            }]
-
+      geo: {
+        map: 'china',
+        roam: false,
+        label: { // 定义样式
+          normal: { // 普通状态下的样式
+            show:false
+          },
+          emphasis: { // 高亮状态下的样式
+            show:false
           }
+        },
+        itemStyle: { // 定义样式
+          normal: { // 普通状态下的样式
+            areaColor: 'rgba(164,164,164)',
+            borderColor: '#f1f1f1'
+          },
+          emphasis: { // 高亮状态下的样式
+            areaColor: 'rgba(164,164,164)'
+          }
+        }
+      },
+      // tooltip: {
+      //   trigger: 'item',
+      //   formatter: function(params:any) {
+      //     var html = params.name
+      //     // var html = params.name + '<br/>';
+      //     // html += params.seriesName + ":";
+      //     // html += params.value[2]
+      //     return html;
+      //   }
+      // },
+      //配置属性
+      series: [{
+        name: '节点数',
+        type: type,
+        coordinateSystem: 'geo', // series坐标系类型
+        itemStyle: {
+          normal: {
+            color: '#ff6a00',
+            label: {
+              show: onHover,
+              formatter: format,
+              position: 'right',
+              textStyle: {
+                color: '#000'
+              }
+            }
+          },
+          emphasis: {
+            label: {
+              show: true
+            }
+          }
+        },
+        data: data
+      }]
+    }
   }
 
   public fixRegion(region:any){
     this.theRegion = region
   }
+
   public toFixRegion(){
     if(this.theRegion === 'nowhere'){
       this.provinceShow = false
@@ -139,6 +139,7 @@ export default class extends Vue{
       this.getRegionDetail(this.theRegion)
     }
   }
+
   public getRegionDetail(region:any){
     if(region !== ''){
       const city_data = city_info.filter((info:any) => regions[region]?.indexOf(info.name) > -1)
@@ -178,8 +179,8 @@ export default class extends Vue{
   height: 1000px;
   position: relative;
   #home-amap {
-      width: 80%;
-      height: 100%;
+    width: 85%;
+    height: 100%;
   }
   &__title{
     position: absolute;
@@ -200,27 +201,30 @@ export default class extends Vue{
   }
   &__region{
     position: absolute;
-    top:30%;
+    top: 30%;
     right: 5%;
-    width: 25%;
+    width: 300px;
     .clicked{
       color: $primary;
     }
     &__detail{
-      border: 2px solid rgba(164,164,164);
+      border: 1px solid rgba(164,164,164);
+      background: #f7f7f7;
       width: 50%;
       display: inline-block;
       box-sizing: border-box;
+      padding: 5px 15px 10px 15px;
       &__province > div:nth-child(1){
-        font: 20px bold;
-        margin: 5px 0 10px 5px;
+        font-weight: bold;
+        font-size: 15px;
+        margin: 10px 0 10px 5px;
       }
       &__city {
         margin: 5px 10px;
       }
     }
     &>ul{
-      width: 49%;
+      width: 50%;
       float: right;
       color: rgba(51,51,51);
       list-style: none;
@@ -230,19 +234,17 @@ export default class extends Vue{
     }
     & li{
       text-align: center;
-      line-height: 50px;
-      font-size: 22px;
-      font-weight: bold;
-      border:2px solid rgba(164,164,164);
+      border: 1px solid rgba(164,164,164);
       border-bottom: none;
-      height: 50px;
+      padding: 10px 0;
       cursor: pointer;
+      background: #f7f7f7;
     }
     & li:last-child{
-      border-bottom: 2px solid rgba(164,164,164);
+      border-bottom: 1px solid rgba(164,164,164);
     }
     & li:hover{
-      border: 2px solid $primary;
+      border-color: $primary;
       background: $primary;
       color: #fff;
     }

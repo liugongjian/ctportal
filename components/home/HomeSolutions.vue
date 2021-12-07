@@ -35,7 +35,9 @@
 <script lang="ts">
 import { Vue, Component} from 'vue-property-decorator'
 
-@Component
+@Component({
+  name: 'HomeSolution'
+})
 export default class extends Vue{
   private activeName = 'city'
   private solutions = [
@@ -102,7 +104,7 @@ export default class extends Vue{
         align-self: center;
         ::v-deep .el-tabs__item{
           font-size: 20px !important;
-          padding: 0 35px;
+          padding: 0 65px;
           height: 50px;
           line-height: 50px;
         }
