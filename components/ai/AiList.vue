@@ -76,7 +76,7 @@
           <div class="list__item">
             <div class="list__item__img"><img src="~/assets/images/ai/object_02.png" /></div>
             <div class="list__item__title">动物识别</div>
-            <div class="list__item__content">识别各种动物。</div>
+            <div class="list__item__content">识别各种动物，快速识别图片中动物信息。</div>
           </div>
         </div>
       </div>
