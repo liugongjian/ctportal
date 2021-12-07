@@ -108,13 +108,19 @@ export default class extends Vue{
         itemStyle: {
           normal: {
             color: '#ff6a00',
+            shadowColor: 'rgba(255, 255, 255, 1)',
+            shadowBlur: 5,
             label: {
               show: onHover,
               formatter: format,
               position: 'right',
               textStyle: {
                 color: '#000'
-              }
+              },
+              backgroundColor: '#fff',
+              borderColor: '#fff',
+              borderType: 'solid',
+              borderWidth: 8
             }
           },
           emphasis: {
