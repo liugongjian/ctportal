@@ -71,6 +71,7 @@ export default class extends Vue{
       geo: {
         map: 'china',
         roam: false,
+        top: '20',
         label: { // 定义样式
           normal: { // 普通状态下的样式
             show:false
@@ -176,28 +177,21 @@ export default class extends Vue{
 <style lang="scss">
 .map-wrapper{
   background: #f1f1f1;
-  height: 1000px;
+  height: 1050px;
   position: relative;
+  padding-top: 70px;
   #home-amap {
     width: 85%;
     height: 100%;
   }
   &__title{
-    position: absolute;
-    z-index: 999;
     font-size: 40px;
-    top: 3%;
-    left: 50%;
-    transform: translate(-50%);
-    color: rgba(51,51,51);
+    text-align: center;
+    margin-bottom: 20px;
   }
-  &__desc{
-    position: absolute;
-    z-index: 999;
-    top: 9%;
-    left: 50%;
-    transform: translate(-50%);
-    color: rgba(51,51,51);
+  &__desc {
+    text-align: center;
+    color: $textGrey;
   }
   &__region{
     position: absolute;
@@ -208,9 +202,11 @@ export default class extends Vue{
       color: $primary;
     }
     &__detail{
-      border: 1px solid rgba(164,164,164);
+      border: 1px solid $borderGrey;
       background: #f7f7f7;
       width: 50%;
+      position: relative;
+      right: -1px;
       display: inline-block;
       box-sizing: border-box;
       padding: 5px 15px 10px 15px;
@@ -226,22 +222,21 @@ export default class extends Vue{
     &>ul{
       width: 50%;
       float: right;
-      color: rgba(51,51,51);
+      color: $text;
       list-style: none;
       padding: 0;
-      display: inline-block;
       box-sizing: border-box;
     }
     & li{
       text-align: center;
-      border: 1px solid rgba(164,164,164);
+      border: 1px solid $borderGrey;
       border-bottom: none;
       padding: 10px 0;
       cursor: pointer;
       background: #f7f7f7;
     }
     & li:last-child{
-      border-bottom: 1px solid rgba(164,164,164);
+      border-bottom: 1px solid $borderGrey;
     }
     & li:hover{
       border-color: $primary;
