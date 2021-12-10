@@ -563,18 +563,16 @@ export default Vue.extend({
     font-size: 1.3em;
   }
 
-  @media screen and (min-width: 700px) {
-    max-width: 700px;
-    margin: 0 auto;
-    padding-left: 20px;
-    padding-right: 20px;
-    color: #333333;
-    padding-top: 70px;
-    padding-bottom: 70px;
-    display: flex;
-    flex-direction: column;
-    background-color: transparent;
-  }
+  max-width: 700px;
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
+  color: #333333;
+  padding-top: 70px;
+  padding-bottom: 70px;
+  display: flex;
+  flex-direction: column;
+  background-color: transparent;
 }
 
 .form_title {
