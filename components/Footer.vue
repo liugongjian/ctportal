@@ -44,22 +44,22 @@
             </div>
             <!-- <div class="row-no-gutters ctcloud-layout__clearfix icon-tip">
         <div class="col-md-2 shouhou">
-          
+
         </div>
         <div class="col-md-2 shiyong">
-          
+
         </div>
         <div class="col-md-2 tuikuan">
-          
+
         </div>
         <div class="col-md-2 jingxiang">
-          
+
         </div>
         <div class="col-md-2 beian">
-          
+
         </div>
         <div class="col-md-2 keyong">
-          
+
         </div>
       </div> -->
 
@@ -156,7 +156,11 @@
                 <div>公司地址：北京市东城区青龙胡同甲1号、3号2幢2层205-32室</div>
               </div>
               <div class="col-md-5 links">
-                <ul class="link-list" ref="link-list"><li><a>用户协议</a></li><li><a>隐私政策</a></li><li><a>法律声明</a></li></ul>
+                <ul class="link-list" ref="link-list">
+                  <li><a href="https://www.ctyun.cn/portal/protocol/10144340">用户协议</a></li>
+                  <li><a href="https://www.ctyun.cn/portal/protocol/10139040">隐私政策</a></li>
+                  <li><a href="https://www.ctyun.cn/portal/protocol/10139038">法律声明</a></li>
+                </ul>
               </div>
             </div>
           </div>
@@ -184,6 +188,7 @@
     width: 75%
 }
 #ctyun-cn-open-footer {
+    z-index: 10000;
     font-family: -apple-system,Noto Sans,Helvetica Neue,Helvetica,Nimbus Sans L,Arial,Liberation Sans,PingFang SC,Hiragino Sans GB,Noto Sans CJK SC,Source Han Sans SC,Source Han Sans CN,Microsoft YaHei,Wenquanyi Micro Hei,WenQuanYi Zen Hei,ST Heiti,SimHei,WenQuanYi Zen Hei Sharp,sans-serif;
     font-weight: 400;
     color: #fff

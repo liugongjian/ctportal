@@ -28,7 +28,7 @@ export default class extends Vue{
       case 'education':
         this.introDetail = '重点面向校园、培训机构等行业客户的视频监控需求，实现安全的内容分发和高价值内容录制留存'
         this.feature = ['建设周期短，成本低廉，适合技术能力薄弱的学校或者教育机构',
-                        '支持设备接入、存储和分发一体化解决方案、按需扩容，提升资源利用率',
+                        '支持设备接入,存储和分发一体化解决方案、按需扩容，提升资源利用率',
                         '支持AI算法仓库统一管理，GPU算力智能调度，AI算法统一编排']
         this.picName = require('~/assets/images/solution/arch/education.svg')
         break

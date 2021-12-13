@@ -186,7 +186,7 @@ export default class extends Vue{
   padding-top: 70px;
   #home-amap {
     width: 85%;
-    height: 100%;
+    height: 900px;
   }
   &__title{
     font-size: 40px;
