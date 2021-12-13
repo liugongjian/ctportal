@@ -7,7 +7,7 @@
         <div class="list__item__wrap">
           <div class="list__item">
             <div class="list__item__img"><img src="~/assets/images/ai/10001.png" /></div>
-            <div class="list__item__title">人脸比对1:1</div>
+            <div class="list__item__title">人脸比对1:N</div>
             <div class="list__item__content">通过比对人脸库中的照片，进行1:N比对，得到人脸相似度并返回被识别的人员信息。</div>
           </div>
           <div class="list__item">
