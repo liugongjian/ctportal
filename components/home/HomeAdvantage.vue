@@ -58,6 +58,9 @@
         font-weight: bold;
         margin: 30px 0 20px 0;
       }
+      &__content {
+        text-align: justify;
+      }
     }
   }
 </style>
