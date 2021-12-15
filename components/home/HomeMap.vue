@@ -1,4 +1,5 @@
 <template>
+<div class="map">
   <div class="map-wrapper">
     <div class="map-wrapper__title">天翼云全国云资源布局</div>
     <div class="map-wrapper__desc">天翼云视频监控节点分布在全国15省，27个地理区域，提供高速稳定、贴近客户的视频云网服务</div>
@@ -20,6 +21,7 @@
         <li @mouseover="getRegionDetail('guizhou')" @click="fixRegion('guizhou')" :class="{'clicked':theRegion === 'guizhou'}">贵州云基地({{regions['guizhou'].length}})</li>
       </ul>
     </div>
+  </div>
   </div>
 </template>
 
@@ -179,73 +181,82 @@ export default class extends Vue{
 }
 </script>
 <style lang="scss">
-.map-wrapper{
+.map{
   background: #f1f1f1;
-  height: 1050px;
-  position: relative;
-  padding-top: 70px;
-  #home-amap {
-    width: 85%;
-    height: 900px;
-  }
-  &__title{
-    font-size: 40px;
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  &__desc {
-    text-align: center;
-    color: $textGrey;
-  }
-  &__region{
-    position: absolute;
-    top: 30%;
-    right: 5%;
-    width: 300px;
-    .clicked{
-      color: $primary;
+  .map-wrapper{
+    max-width: 1360px;
+    min-width: 1100px;
+    margin: 0 auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: #333333;
+    padding-top: 70px;
+    padding-bottom: 70px;
+    height: 1050px;
+    position: relative;
+    #home-amap {
+      width: 85%;
+      height: 900px;
     }
-    &__detail{
-      border: 1px solid $borderGrey;
-      background: #f7f7f7;
-      width: 50%;
-      position: relative;
-      right: -1px;
-      display: inline-block;
-      box-sizing: border-box;
-      padding: 5px 15px 10px 15px;
-      &__province > div:nth-child(1){
-        font-weight: bold;
-        font-size: 15px;
-        margin: 10px 0 10px 5px;
-      }
-      &__city {
-        margin: 5px 10px;
-      }
-    }
-    &>ul{
-      width: 50%;
-      float: right;
-      color: $text;
-      list-style: none;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    & li{
+    &__title{
+      font-size: 40px;
       text-align: center;
-      border: 1px solid $borderGrey;
-      border-bottom: none;
-      padding: 10px 0;
-      cursor: pointer;
-      background: #f7f7f7;
+      margin-bottom: 20px;
     }
-    & li:last-child{
-      border-bottom: 1px solid $borderGrey;
+    &__desc {
+      text-align: center;
+      color: $textGrey;
     }
-    & li:hover{
-      border-color: $primary;
-      background: $primary;
-      color: #fff;
+    &__region{
+      position: absolute;
+      top: 30%;
+      right: 5%;
+      width: 300px;
+      .clicked{
+        color: $primary;
+      }
+      &__detail{
+        border: 1px solid $borderGrey;
+        background: #f7f7f7;
+        width: 50%;
+        position: relative;
+        right: -1px;
+        display: inline-block;
+        box-sizing: border-box;
+        padding: 5px 15px 10px 15px;
+        &__province > div:nth-child(1){
+          font-weight: bold;
+          font-size: 15px;
+          margin: 10px 0 10px 5px;
+        }
+        &__city {
+          margin: 5px 10px;
+        }
+      }
+      &>ul{
+        width: 50%;
+        float: right;
+        color: $text;
+        list-style: none;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      & li{
+        text-align: center;
+        border: 1px solid $borderGrey;
+        border-bottom: none;
+        padding: 10px 0;
+        cursor: pointer;
+        background: #f7f7f7;
+      }
+      & li:last-child{
+        border-bottom: 1px solid $borderGrey;
+      }
+      & li:hover{
+        border-color: $primary;
+        background: $primary;
+        color: #fff;
+      }
     }
   }
 }
