@@ -18,7 +18,7 @@
             <div class="after__item__title">工单</div>
             <div class="after__item__content">产品及技术问题，您可以登录提交工单，将有专业的技术人员为您快速解答。</div>
             <div class="after__item__button">
-              <el-button class="light-btn">查看详情</el-button>
+              <a class="el-button light-btn el-button--default" href="https://www.ctyun.cn/h5/wsc/worksheet/submit/10011360" target="_blank">查看详情</a>
             </div>
           </div>
         </div>

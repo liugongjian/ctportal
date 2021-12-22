@@ -54,7 +54,7 @@
           >
             文档<svg-icon name="arrow-down" width="10" height="10" />
           </div> -->
-          <!-- <div
+          <div
             class="header__navigation__item"
             :class="{'actived': currentPage === 'service'}"
           >
