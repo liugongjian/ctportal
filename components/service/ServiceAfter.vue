@@ -8,7 +8,7 @@
             <div class="after__item__title">售前咨询</div>
             <div class="after__item__content">为您提供专业的售前咨询，让您轻松使用视频云产品与服务！</div>
             <div class="after__item__button">
-              <a class="el-button light-btn el-button--default" href="https://vcn.ctyun.cn/questionnaire/" target="_blank">查看详情</a>
+              <a class="el-button light-btn el-button--default" href="./questionnaire/" target="_blank">查看详情</a>
             </div>
           </div>
         </div>
