@@ -5,7 +5,7 @@
         <div class="slider__item__left">
           <div class="slider__item__title">支持与服务</div>
           <div class="slider__item__content">
-            多样化的支持计划和专家服务，满足您从上云部署、日常运维到优化升级等的全周期需求，让您的数字化转型之路更加高效敏捷。
+            完善的支持计划和专家服务，满足您从视频上云部署、日常运维到优化升级等的全周期需求，让您的视频上云之路更加高效敏捷。
           </div>
         </div>
         <div class="slider__item__right">
