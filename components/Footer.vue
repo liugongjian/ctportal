@@ -157,9 +157,9 @@
               </div>
               <div class="col-md-5 links">
                 <ul class="link-list" ref="link-list">
-                  <li><a href="https://www.ctyun.cn/portal/protocol/10144340">用户协议</a></li>
-                  <li><a href="https://www.ctyun.cn/portal/protocol/10139040">隐私政策</a></li>
-                  <li><a href="https://www.ctyun.cn/portal/protocol/10139038">法律声明</a></li>
+                  <li><a href="https://www.ctyun.cn/portal/protocol/10144340" target="_blank">用户协议</a></li>
+                  <li><a href="https://www.ctyun.cn/portal/protocol/10139040" target="_blank">隐私政策</a></li>
+                  <li><a href="https://www.ctyun.cn/portal/protocol/10139038" target="_blank">法律声明</a></li>
                 </ul>
               </div>
             </div>
