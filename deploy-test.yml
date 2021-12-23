@@ -16,17 +16,18 @@ spec:
         app: vss-portal-web
     spec:
       containers:
-      - name: vss-portal-web
-        image: 10.95.123.130:7080/ctyun/vss-portal-web:temptag
-        imagePullPolicy: Always
-        command:
-          - nginx
-        args:
-          - '-g daemon off;'
-        ports:
-        - containerPort: 80
+        - name: vss-portal-web
+          image: 10.95.123.130:7080/ctyun/vss-portal-web:temptag
+          imagePullPolicy: Always
+          command:
+            - nginx
+          args:
+            - '-g daemon off;'
+          ports:
+            - containerPort: 80
       nodeSelector:
-        kubernetes.io/hostname: 10.95.13.195
+        # kubernetes.io/hostname: 10.95.13.195
+        kubernetes.io/hostname: 182.43.127.36
 
 ---
 apiVersion: v1
@@ -39,9 +40,9 @@ metadata:
 spec:
   type: NodePort
   ports:
-  - port: 80
-    targetPort: 80
-    protocol: TCP
-    nodePort: 30300
+    - port: 80
+      targetPort: 80
+      protocol: TCP
+      nodePort: 30300
   selector:
     app: vss-portal-web
