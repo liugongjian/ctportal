@@ -26,8 +26,8 @@ spec:
           ports:
             - containerPort: 80
       nodeSelector:
-        # kubernetes.io/hostname: 10.95.13.195
-        kubernetes.io/hostname: 182.43.127.36
+        kubernetes.io/hostname: 10.95.13.195
+        # kubernetes.io/hostname: 182.43.127.36
 
 ---
 apiVersion: v1
