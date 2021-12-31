@@ -31,7 +31,8 @@ import { Vue, Component} from 'vue-property-decorator'
 import { city, regions, city_info, province} from '@/assets/ts/city'
 import { deounbce } from '@/assets/ts/debounce'
 import echarts from 'echarts'
-import { registerChinaMap } from '@/assets/ts/chinamap'
+// import { registerChinaMap } from '@/assets/ts/chinamap'
+import mapjson from '@/assets/json/chinamap.json'
 
 @Component({
   name: 'HomeMap'
@@ -47,6 +48,15 @@ export default class extends Vue{
     return Object.keys(this.regions).reduce((pre,item) => pre + regions[item].length, 0)
   }
 
+  public beforeUnmount() {
+    if (!this.chart) {
+        return
+    }
+    // window.removeEventListener('resize', this.__resizeHandler)
+    this.chart.dispose()
+    this.chart = null
+  }
+
   public mounted(){
     const map_data = city_info.map((info:any) =>{
       const temp = city.filter((item:any) => info.name === item.name)
@@ -59,9 +69,12 @@ export default class extends Vue{
     })
     // ECharts Option配置
     let option = this.generateOption(map_data, 'scatter', false)
-    registerChinaMap(echarts)
+
+
     // 初始化ECharts
-    this.chart = echarts.init(document.getElementById('home-amap') as HTMLDivElement);
+    this.chart = echarts.init(document.getElementById('home-amap') as HTMLDivElement)
+    // window.console.log(mapjson)
+    echarts.registerMap('china', mapjson);
     this.chart.setOption(option);
     //处理resize
     const debounce_resize = deounbce(() => this.chart.resize(), 200)
