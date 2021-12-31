@@ -151,6 +151,8 @@ export default class extends Vue{
   }
 
   public fixRegion(region:any){
+    console.log(this.chart)
+    console.log(mapjson)
     this.theRegion = region
   }
 
