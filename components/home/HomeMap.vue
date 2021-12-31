@@ -26,10 +26,12 @@
 </template>
 
 <script lang="ts">
-declare let echarts: any
+// declare let echarts: any
 import { Vue, Component} from 'vue-property-decorator'
 import { city, regions, city_info, province} from '@/assets/ts/city'
 import { deounbce } from '@/assets/ts/debounce'
+import echarts from 'echarts'
+import { registerChinaMap } from '@/assets/ts/chinamap'
 
 @Component({
   name: 'HomeMap'
@@ -57,8 +59,9 @@ export default class extends Vue{
     })
     // ECharts Option配置
     let option = this.generateOption(map_data, 'scatter', false)
+    registerChinaMap(echarts)
     // 初始化ECharts
-    this.chart = echarts.init(document.getElementById('home-amap'));
+    this.chart = echarts.init(document.getElementById('home-amap') as HTMLDivElement);
     this.chart.setOption(option);
     //处理resize
     const debounce_resize = deounbce(() => this.chart.resize(), 200)

@@ -14,8 +14,10 @@
   "dependencies": {
     "@nuxt/typescript-runtime": "^2.0.0",
     "@nuxtjs/style-resources": "^1.0.0",
+    "@types/echarts": "^4.9.12",
     "axios": "^0.24.0",
     "core-js": "^3.6.5",
+    "echarts": "^4.8.0",
     "element-ui": "^2.15.6",
     "nuxt": "^2.14.6",
     "sass": "^1.29.0",
