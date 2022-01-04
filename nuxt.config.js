@@ -16,6 +16,8 @@ export default {
       // { type: 'text/javascript', src: (process.env.base || '/')  + 'echarts.min.js' },
       // { type: 'text/javascript', src: (process.env.base || '/') + 'china.js' },
       // { type: 'text/javascript', src: '/vss-portal/' + 'echarts.min.js' },
+      { type: 'text/javascript', src: 'https://lib.baomitu.com/echarts/4.8.0/echarts.min.js' },
+      { type: 'text/javascript', src: 'china.js' },
       // { type: 'text/javascript', src: '/vss-portal/' + 'china.js' },
     ],
     link: [
