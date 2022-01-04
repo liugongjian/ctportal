@@ -57,9 +57,9 @@ export default {
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
     transpile: [/^element-ui/],
-    extend(config, { isClient }) {
+    extend(config, { isServer }) {
       // Extend only webpack config for client-bundle
-      if (isClient) {
+      if (isServer) {
         config.devtool = 'source-map'
       }
     }

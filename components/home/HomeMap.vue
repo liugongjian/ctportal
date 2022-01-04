@@ -73,10 +73,10 @@ export default class extends Vue{
 
     // 初始化ECharts
     // this.chart = echarts.init(document.getElementById('home-amap') as HTMLDivElement)
-       // @ts-ignore
+    // @ts-ignore
     this.chart = echarts.init(document.getElementById('home-amap'))
 
-    console.log('this.chart:',this.chart)
+    alert(this.chart)
     // console.log('option:',option)
     echarts.registerMap('china', mapjson);
     this.chart.setOption(option);
