@@ -48,14 +48,14 @@ export default class extends Vue{
     return Object.keys(this.regions).reduce((pre,item) => pre + regions[item].length, 0)
   }
 
-  public beforeUnmount() {
-    if (!this.chart) {
-        return
-    }
-    // window.removeEventListener('resize', this.__resizeHandler)
-    this.chart.dispose()
-    this.chart = null
-  }
+  // public beforeUnmount() {
+  //   if (!this.chart) {
+  //       return
+  //   }
+  //   // window.removeEventListener('resize', this.__resizeHandler)
+  //   this.chart.dispose()
+  //   this.chart = null
+  // }
 
   public mounted(){
     const map_data = city_info.map((info:any) =>{
