@@ -78,10 +78,17 @@ export default class extends Vue{
     // console.log('this.chart:',this.chart)
     // console.log('option:',option)
     // echarts.registerMap('china', mapjson);
+    this.log(this.chart)
     this.chart.setOption(option);
     //处理resize
     const debounce_resize = deounbce(() => this.chart.resize(), 200)
     window.onresize = debounce_resize
+  }
+
+  private log(msg:any) {
+      if (typeof console !== 'undefined') {
+          console && console.error && console.error(msg);
+      }
   }
 
 
