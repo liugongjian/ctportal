@@ -15,8 +15,8 @@ export default {
       // { type: 'text/javascript', src: 'https://webapi.amap.com/maps?v=1.4.15&key=f94d6b44b13dddb7d32c48302cd6f794&plugin=AMap.Scale,AMap.ToolBar,AMap.CustomLayer' },
       // { type: 'text/javascript', src: (process.env.base || '/')  + 'js/echarts.min.js' },
       // { type: 'text/javascript', src: (process.env.base || '/') + 'js/china.js' },
-      { type: 'text/javascript', src: '/vss-portal/' + 'js/echarts.min.js' },
-      { type: 'text/javascript', src: '/vss-portal/' + 'js/china.js' },
+      // { type: 'text/javascript', src: '/vss-portal/' + 'js/echarts.min.js' },
+      // { type: 'text/javascript', src: '/vss-portal/' + 'js/china.js' },
       // { type: 'text/javascript', src: 'https://lib.baomitu.com/echarts/4.8.0/echarts.min.js' },
       // { type: 'text/javascript', src: 'china.js' },
     ],
@@ -57,6 +57,12 @@ export default {
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
     transpile: [/^element-ui/],
+    extend(config, { isClient }) {
+      // Extend only webpack config for client-bundle
+      if (isClient) {
+        config.devtool = 'source-map'
+      }
+    }
   },
 
   router: {
