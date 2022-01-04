@@ -21,6 +21,7 @@
         <li @mouseover="getRegionDetail('guizhou')" @click="fixRegion('guizhou')" :class="{'clicked':theRegion === 'guizhou'}">贵州云基地({{regions['guizhou'].length}})</li>
       </ul>
     </div>
+    <div>{{this.chart}}</div>
   </div>
   </div>
 </template>
@@ -60,7 +61,6 @@ export default class extends Vue{
   // }
 
   public mounted(){
-    this.$nextTick(()=>{
        // @ts-ignore
      this.chart = echarts.init(document.getElementById('home-amap'))
 
@@ -87,7 +87,7 @@ export default class extends Vue{
     //处理resize
     const debounce_resize = deounbce(() => this.chart.resize(), 200)
     window.onresize = debounce_resize
-    })
+
 
   }
 
