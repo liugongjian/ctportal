@@ -33,8 +33,6 @@
     "@nuxtjs/proxy": "^2.1.0"
   },
   "eslintConfig": {
-    "rules": {
-      "no-console": "off"
-    }
+    "rules": {}
   }
 }

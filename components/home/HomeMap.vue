@@ -75,22 +75,14 @@ export default class extends Vue{
     // this.chart = echarts.init(document.getElementById('home-amap') as HTMLDivElement)
     // @ts-ignore
     this.chart = echarts.init(document.getElementById('home-amap'))
-    // console.log('this.chart:',this.chart)
+    console.log('this.chart:',this.chart)
     // console.log('option:',option)
     // echarts.registerMap('china', mapjson);
-    this.log(this.chart)
-    this.chart.setOption(option);
+    this.chart.setOption(option,true);
     //处理resize
     const debounce_resize = deounbce(() => this.chart.resize(), 200)
     window.onresize = debounce_resize
   }
-
-  private log(msg:any) {
-      if (typeof console !== 'undefined') {
-          console && console.error && console.error(msg);
-      }
-  }
-
 
   public generateOption(data :any, type :string, onHover :boolean){
     // const format = onHover ? '{b}:\n节点数：{@[2]}' : '{b}'
