@@ -58,7 +58,8 @@ export default class extends Vue{
   // }
 
   public mounted(){
-    const map_data = city_info.map((info:any) =>{
+    this.$nextTick(()=>{
+      const map_data = city_info.map((info:any) =>{
       const temp = city.filter((item:any) => info.name === item.name)
       if(temp.length > 0){
         return {
@@ -82,6 +83,8 @@ export default class extends Vue{
     //处理resize
     const debounce_resize = deounbce(() => this.chart.resize(), 200)
     window.onresize = debounce_resize
+    })
+
   }
 
   public generateOption(data :any, type :string, onHover :boolean){
