@@ -26,11 +26,11 @@
 </template>
 
 <script lang="ts">
-// declare let echarts: any
+declare let echarts: any
 import { Vue, Component} from 'vue-property-decorator'
 import { city, regions, city_info, province} from '@/assets/ts/city'
 import { deounbce } from '@/assets/ts/debounce'
-import echarts from 'echarts'
+// import echarts from 'echarts'
 // import { registerChinaMap } from '@/assets/ts/chinamap'
 import mapjson from '@/assets/json/chinamap.json'
 
@@ -72,9 +72,8 @@ export default class extends Vue{
 
 
     // 初始化ECharts
-    this.chart = echarts.init(document.getElementById('home-amap') as HTMLDivElement)
-    // window.console.log(mapjson)
-    echarts.registerMap('china', mapjson);
+    this.chart = echarts.init(document.getElementById('home-amap'))
+    // echarts.registerMap('china', mapjson);
     this.chart.setOption(option);
     //处理resize
     const debounce_resize = deounbce(() => this.chart.resize(), 200)
@@ -151,8 +150,6 @@ export default class extends Vue{
   }
 
   public fixRegion(region:any){
-    console.log(this.chart)
-    console.log(mapjson)
     this.theRegion = region
   }
 

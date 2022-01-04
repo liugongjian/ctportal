@@ -12,9 +12,9 @@ export default {
     ],
     script: [
       { src: 'https://res.wx.qq.com/open/js/jweixin-1.6.0.js' },
-      { type: 'text/javascript', src: 'https://webapi.amap.com/maps?v=1.4.15&key=f94d6b44b13dddb7d32c48302cd6f794&plugin=AMap.Scale,AMap.ToolBar,AMap.CustomLayer' },
-      // { type: 'text/javascript', src: 'https://cdn.jsdelivr.net/npm/echarts@4.8.0/dist/echarts.min.js' },
-      // { type: 'text/javascript', src: '/china.js' },
+      // { type: 'text/javascript', src: 'https://webapi.amap.com/maps?v=1.4.15&key=f94d6b44b13dddb7d32c48302cd6f794&plugin=AMap.Scale,AMap.ToolBar,AMap.CustomLayer' },
+      { type: 'text/javascript', src: '/echarts.min.js' },
+      { type: 'text/javascript', src: '/china.js' },
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
