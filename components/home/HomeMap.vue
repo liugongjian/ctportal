@@ -44,6 +44,8 @@ export default class extends Vue{
   public regions:any = regions
   public provinceInfo:any = []
 
+  private option:any = {}
+
   get country(){
     return Object.keys(this.regions).reduce((pre,item) => pre + regions[item].length, 0)
   }
@@ -59,27 +61,29 @@ export default class extends Vue{
 
   public mounted(){
     this.$nextTick(()=>{
+       // @ts-ignore
+     this.chart = echarts.init(document.getElementById('home-amap'))
+
       const map_data = city_info.map((info:any) =>{
-      const temp = city.filter((item:any) => info.name === item.name)
-      if(temp.length > 0){
-        return {
-          name: info.name,
-          value: [temp[0].lng, temp[0].lat, info.value]
+        const temp = city.filter((item:any) => info.name === item.name)
+        if(temp.length > 0){
+          return {
+            name: info.name,
+            value: [temp[0].lng, temp[0].lat, info.value]
+          }
         }
-      }
-    })
+      })
     // ECharts Option配置
-    let option = this.generateOption(map_data, 'scatter', false)
+    this.option = this.generateOption(map_data, 'scatter', false)
 
 
     // 初始化ECharts
     // this.chart = echarts.init(document.getElementById('home-amap') as HTMLDivElement)
-    // @ts-ignore
-    this.chart = echarts.init(document.getElementById('home-amap'))
+
     console.log('this.chart:',this.chart)
     // console.log('option:',option)
     // echarts.registerMap('china', mapjson);
-    this.chart.setOption(option,true);
+    this.chart.setOption(this.option,true);
     //处理resize
     const debounce_resize = deounbce(() => this.chart.resize(), 200)
     window.onresize = debounce_resize
