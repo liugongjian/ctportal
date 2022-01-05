@@ -21,6 +21,7 @@
         <li @mouseover="getRegionDetail('guizhou')" @click="fixRegion('guizhou')" :class="{'clicked':theRegion === 'guizhou'}">贵州云基地({{regions['guizhou'].length}})</li>
       </ul>
     </div>
+    <div class="test">{{this.chart.id || '空'}}</div>
   </div>
   </div>
 </template>
