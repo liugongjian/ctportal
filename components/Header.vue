@@ -13,7 +13,7 @@
             class="header__navigation__item"
             :class="{'actived': currentPage === 'index'}"
           >
-            <NuxtLink to="/vss-portal/">首页</NuxtLink>
+            <NuxtLink to="/">首页</NuxtLink>
           </div>
           <!-- <div
             class="header__navigation__item sub"
