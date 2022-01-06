@@ -3,7 +3,7 @@
   <div class="map-wrapper">
     <div class="map-wrapper__title">天翼云全国云资源布局</div>
     <div class="map-wrapper__desc">天翼云视频监控节点分布在全国15省，27个地理区域，提供高速稳定、贴近客户的视频云网服务</div>
-    <div id="home-amap"></div>
+    <div id="home-amap" ref="map"></div>
     <div class="map-wrapper__region">
       <div v-if="provinceShow" class="map-wrapper__region__detail">
         <div v-for="(item,index) in provinceInfo" :key="index" class="map-wrapper__region__detail__province">
@@ -75,17 +75,17 @@ export default class extends Vue{
 
     // 初始化ECharts
     // this.chart = echarts.init(document.getElementById('home-amap') as HTMLDivElement)
-    setTimeout(() => {
-      this.ele = document.getElementById('home-amap')
-      console.log(this.ele)
-      // @ts-ignore
-      this.chart = this.$echarts.init(this.ele)
-      // @ts-ignore
-      this.$echarts.registerMap('china', mapjson);
-      this.chart.setOption(option);
-      const debounce_resize = deounbce(() => this.chart.resize(), 200)
-      window.onresize = debounce_resize
-    },0)
+
+    this.ele = document.getElementById('home-amap')
+    this.ele = this.$refs.map
+    console.log(this.$refs.map)
+    // @ts-ignore
+    this.chart = this.$echarts.init(this.$refs.map)
+    // @ts-ignore
+    this.$echarts.registerMap('china', mapjson);
+    this.chart.setOption(option);
+    const debounce_resize = deounbce(() => this.chart.resize(), 200)
+    window.onresize = debounce_resize
   }
 
   public generateOption(data :any, type :string, onHover :boolean){
