@@ -29,11 +29,15 @@
 <script lang="ts">
 // declare let echarts: any
 import { Vue, Component} from 'vue-property-decorator'
-import { city, regions, city_info, province} from '@/assets/ts/city'
-import { deounbce } from '@/assets/ts/debounce'
 // import * as echarts from 'echarts'
 // import { registerChinaMap } from '@/assets/ts/chinamap'
-import mapjson from '@/assets/json/chinamap.json'
+// import { city, regions, city_info, province} from '@/assets/ts/city'
+// import { deounbce } from '@/assets/ts/debounce'
+// import mapjson from '@/assets/json/chinamap.json'
+
+import { city, regions, city_info, province} from '../../assets/ts/city'
+import { deounbce } from '../../assets/ts/debounce'
+import mapjson from '../../assets/json/chinamap.json'
 
 @Component({
   name: 'HomeMap'
@@ -59,6 +63,7 @@ export default class extends Vue{
   //   this.chart = null
   // }
 
+
   public mounted(){
     let map_data = city_info.map((info:any) =>{
       const temp = city.filter((item:any) => info.name === item.name)
@@ -75,7 +80,6 @@ export default class extends Vue{
 
     // 初始化ECharts
     // this.chart = echarts.init(document.getElementById('home-amap') as HTMLDivElement)
-
     this.ele = document.getElementById('home-amap')
     this.ele = this.$refs.map
     console.log(this.$refs.map)
