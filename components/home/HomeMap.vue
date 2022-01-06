@@ -75,21 +75,17 @@ export default class extends Vue{
 
     // 初始化ECharts
     // this.chart = echarts.init(document.getElementById('home-amap') as HTMLDivElement)
-    this.ele = document.getElementById('home-amap')
-    // @ts-ignore
-    this.chart = this.$echarts.init(this.ele)
-  // console.log("this.chart====>",this.chart.id)
-    // alert(this.chart.id)
-    // console.log('option:',option)
-    // @ts-ignore
-    console.log(this.ele)
-     // @ts-ignore
-    this.$echarts.registerMap('china', mapjson);
-    this.chart.setOption(option);
-    //处理resize
-    const debounce_resize = deounbce(() => this.chart.resize(), 200)
-    window.onresize = debounce_resize
-
+    setTimeout(() => {
+      this.ele = document.getElementById('home-amap')
+      console.log(this.ele)
+      // @ts-ignore
+      this.chart = this.$echarts.init(this.ele)
+      // @ts-ignore
+      this.$echarts.registerMap('china', mapjson);
+      this.chart.setOption(option);
+      const debounce_resize = deounbce(() => this.chart.resize(), 200)
+      window.onresize = debounce_resize
+    },0)
   }
 
   public generateOption(data :any, type :string, onHover :boolean){
