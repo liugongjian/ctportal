@@ -21,7 +21,7 @@
         <li @mouseover="getRegionDetail('guizhou')" @click="fixRegion('guizhou')" :class="{'clicked':theRegion === 'guizhou'}">贵州云基地({{regions['guizhou'].length}})</li>
       </ul>
     </div>
-    <div class="test">{{(this.$echarts && this.$echarts.version) || '空'}}</div>
+    <div class="test">{{(this.ele && this.ele.id) || '空'}}</div>
   </div>
   </div>
 </template>
@@ -44,6 +44,7 @@ export default class extends Vue{
   public provinceShow = false
   public regions:any = regions
   public provinceInfo:any = []
+  public ele:any
 
   get country(){
     return Object.keys(this.regions).reduce((pre,item) => pre + regions[item].length, 0)
@@ -74,13 +75,14 @@ export default class extends Vue{
 
     // 初始化ECharts
     // this.chart = echarts.init(document.getElementById('home-amap') as HTMLDivElement)
+    this.ele = document.getElementById('home-amap')
     // @ts-ignore
-    this.chart = this.$echarts.init(document.getElementById('home-amap'))
+    this.chart = this.$echarts.init(this.ele)
   // console.log("this.chart====>",this.chart.id)
     // alert(this.chart.id)
     // console.log('option:',option)
     // @ts-ignore
-    console.log(this.$echarts.version)
+    console.log(this.ele)
      // @ts-ignore
     this.$echarts.registerMap('china', mapjson);
     this.chart.setOption(option);
