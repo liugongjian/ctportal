@@ -4,9 +4,9 @@
     <HomeAi />
     <HomeAdvantage />
     <HomeSolutions />
-    <client-only>
+    <!-- <client-only> -->
       <HomeMap />
-    </client-only>
+    <!-- </client-only> -->
   </div>
 </template>
 
