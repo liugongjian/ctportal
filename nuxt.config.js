@@ -36,7 +36,7 @@ export default {
   plugins: [
     '@/plugins/element-ui',
     '@/plugins/svg-icon',
-    // '@/plugins/iview', 
+    // '@/plugins/iview',
     '@/plugins/echarts'
   ],
 
@@ -59,16 +59,10 @@ export default {
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
     transpile: [/^element-ui/],
-    extend(config, { isServer }) {
-      // Extend only webpack config for client-bundle
-      if (isServer) {
-        config.devtool = 'source-map'
-      }
-    }
   },
 
   router: {
-    base: process.env.base || '/'
+    base: process.env.base || '/vss-portal/'
   },
 
   styleResources: {
