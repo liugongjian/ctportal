@@ -21,7 +21,7 @@
         <li @mouseover="getRegionDetail('guizhou')" @click="fixRegion('guizhou')" :class="{'clicked':theRegion === 'guizhou'}">贵州云基地({{regions['guizhou'].length}})</li>
       </ul>
     </div>
-    <div class="test">{{(this.chart && this.chart.id) || '空'}}</div>
+    <div class="test">{{(this.$echarts && this.$echarts.version) || '空'}}</div>
   </div>
   </div>
 </template>
@@ -79,6 +79,8 @@ export default class extends Vue{
   // console.log("this.chart====>",this.chart.id)
     // alert(this.chart.id)
     // console.log('option:',option)
+    // @ts-ignore
+    console.log(this.$echarts.version)
      // @ts-ignore
     this.$echarts.registerMap('china', mapjson);
     this.chart.setOption(option);
