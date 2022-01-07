@@ -54,6 +54,7 @@ export default class extends Vue{
       font-size: 16px;
       margin: 35px 0;
       line-height: $baseLineHeight;
+      text-align: justify;
     }
     &__img {
       width: 100%;
