@@ -80,9 +80,9 @@ export default class extends Vue{
 
     // 初始化ECharts
     // this.chart = echarts.init(document.getElementById('home-amap') as HTMLDivElement)
-    this.ele = document.getElementById('home-amap')
+    // this.ele = document.getElementById('home-amap')
     this.ele = this.$refs.map
-    console.log(this.$refs.map)
+    // console.log(this.$refs.map)
     // @ts-ignore
     this.chart = this.$echarts.init(this.$refs.map)
     // @ts-ignore

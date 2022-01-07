@@ -62,7 +62,7 @@ export default {
   },
 
   router: {
-    base: process.env.base || '/vss-portal/'
+    base: process.env.base || '/'
   },
 
   styleResources: {

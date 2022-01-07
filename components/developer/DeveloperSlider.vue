@@ -5,7 +5,7 @@
         <div class="slider__item__left">
           <div class="slider__item__title">开发者</div>
           <div class="slider__item__content">
-            为开发者提供API、SDK、CLI等工具，方便快捷调用天翼云视频监控开放能力
+            为开发者提供API、SDK、CLI等工具，方便快捷调用天翼云视频监控开放能力。
           </div>
         </div>
         <div class="slider__item__right">
