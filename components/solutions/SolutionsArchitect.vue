@@ -33,7 +33,7 @@ export default class extends Vue{
         this.picName = require('~/assets/images/solution/arch/education.svg')
         break
       case 'community':
-        this.introDetail = '重点面向校园、培训机构等行业客户的视频监控需求，实现安全的内容分发和高价值内容录制留存'
+        this.introDetail = '重点面向涉及社区客户在线监控服务：如楼宇、小区、园区等，支持大并发就近上云'
         this.feature = ['兼容主流视频终端设备，支持GB28181、GAT1400、RTMP、RTSP等协议直接接入，启动快、成本低',
                         '基于云原生架构部署、按需扩容、可支持百万级设备接入、存储和分发，提升资源利用率',
                         '提供向上级联能力，便于视频资源的共享，实现上级平台对社区视频资源的纳管']
