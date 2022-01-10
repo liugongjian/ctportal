@@ -1,28 +1,4 @@
 export const industry = [
-  { 'value': '00',
-    'label': '社会治安路面'
-  },
-  { 'value': '01',
-    'label': '社会治安社区'
-  },
-  { 'value': '02',
-    'label': '社会治安内部'
-  },
-  { 'value': '03',
-    'label': '社会治安其他'
-  },
-  { 'value': '04',
-    'label': '交通路面'
-  },
-  { 'value': '05',
-    'label': '交通卡口'
-  },
-  { 'value': '06',
-    'label': '交通内部'
-  },
-  { 'value': '07',
-    'label': '交通其他'
-  },
   { 'value': '08',
     'label': '城市管理'
   },
