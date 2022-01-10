@@ -1,74 +1,85 @@
 <template>
-  <div :class="isMobile ? 'mobile' : ''">
-    <section class="banner">
-      <section class="container">
+  <div style="position:relative">
+    <div :class="isMobile ? 'mobile' : ''">
+      <section class="banner">
+        <section class="container">
 
-        <div class="bd">
-          <div class="logo">
-            <img src="@/assets/images/download/ctyun_logo.png" alt="">
+          <div class="bd">
+            <div class="logo">
+              <img src="@/assets/images/download/ctyun_logo.png" alt="">
+            </div>
+            <div class="title">
+              <h1>天翼云瞰</h1>
+              <h2 class="mt-10">天翼云视频监控客户端</h2>
+            </div>
+            <div class="use-help">
+              <h5>首次使用指引：</h5>
+              <p>1、注册天翼云账号并开通天翼云视频监控服务。</p>
+              <p>2、点击下方的客户端链接完成下载并安装客户端。</p>
+              <p>3、输入天翼云视频监控登录账号或邮箱以及设置的密码，开始使用天翼云瞰软件！</p>
+            </div>
           </div>
-          <div class="title">
-            <h1>天翼云瞰</h1>
-            <h2 class="mt-10">天翼云视频监控客户端</h2>
-          </div>
-          <div class="use-help">
-            <h5>首次使用指引：</h5>
-            <p>1、注册天翼云账号并开通天翼云视频监控服务。</p>
-            <p>2、点击下方的客户端链接完成下载并安装客户端。</p>
-            <p>3、输入天翼云视频监控登录账号或邮箱以及设置的密码，开始使用天翼云瞰软件！</p>
-          </div>
-        </div>
 
-        <section class="download">
-          <div class="downloadBox">
-              <div class="os">
-                  <p class="device">Android</p>
-              </div>
-              <div class="icon">
-                  <img src="@/assets/images/download/qr_android.png" alt="">
-              </div>
-              <div class="instruction">
-                  <p class="desc">V1.0.0</p>
-              </div>
+          <section class="download">
+            <div class="downloadBox">
+                <div class="os">
+                    <p class="device">Android</p>
+                </div>
+                <div class="icon">
+                    <img src="@/assets/images/download/qr_android.png" alt="">
+                </div>
+                <div class="instruction">
+                    <p class="desc">V1.0.0</p>
+                </div>
+                <div v-if="isMobile" class="os-desc">
+                  <p>适用于安卓手机</p>
+                </div>
+                <div class="btns">
+                    <button>立即下载</button>
+                </div>
+            </div>
+            <div class="downloadBox">
+                <div class="os">
+                    <p class="device">IOS</p>
+                </div>
+                <div class="icon-border">
+                    <img src="@/assets/images/download/ios.svg" alt="">
+                </div>
+                <div class="instruction">
+                    <p class="desc">V1.0.0</p>
+                </div>
+                <div v-if="isMobile" class="os-desc">
+                  <p>适用于ios手机</p>
+                </div>
+                <div class="btns-in-dev">
+                    <p>上架中，</p>
+                    <p>敬请期待</p>
+                </div>
+            </div>
+            <div v-if="!isMobile" class="downloadBox">
+                <div class="os">
+                    <p class="device">Windows</p>
+                </div>
+                <div class="icon-border">
+                    <img src="@/assets/images/download/windows.svg" alt="">
+                </div>
+                <div class="instruction">
+                    <p class="desc">V1.0.0</p>
+                </div>
 
-              <div class="btns">
-                  <el-button>立即下载</el-button>
-              </div>
-          </div>
-          <div class="downloadBox">
-              <div class="os">
-                  <p class="device">IOS</p>
-              </div>
-              <div class="icon-border">
-                  <img src="@/assets/images/download/ios.svg" alt="">
-              </div>
-              <div class="instruction">
-                  <p class="desc">V1.0.0</p>
-              </div>
+                <div class="btns-in-dev">
+                    <p>上架中，</p>
+                    <p>敬请期待</p>
+                </div>
+            </div>
+          </section>
 
-              <div class="btns-in-dev">
-                  <p>上架中，敬请期待</p>
-              </div>
-          </div>
-          <div class="downloadBox">
-              <div class="os">
-                  <p class="device">Windows</p>
-              </div>
-              <div class="icon-border">
-                  <img src="@/assets/images/download/windows.svg" alt="">
-              </div>
-              <div class="instruction">
-                  <p class="desc">V1.0.0</p>
-              </div>
-
-              <div class="btns-in-dev">
-                  <p>上架中，敬请期待</p>
-              </div>
-          </div>
         </section>
-
       </section>
-    </section>
+    </div>
+    <div v-if="isNewBrowser" class="shade">
+      <img src="@/assets/images/download/h5-shade.png" alt="">
+    </div>
   </div>
 </template>
 
@@ -78,11 +89,13 @@ export default Vue.extend({
   layout: 'clean',
   data(){
     return {
-      isMobile:false
+      isMobile:false,
+      isNewBrowser:false
     }
   },
   mounted(){
     this.isMobile = this.isMobileBrowser()
+    this.isNewBrowser = this.isweixin() || this.isqq()
   },
   methods: {
     isMobileBrowser(){
@@ -93,33 +106,52 @@ export default Vue.extend({
         return true;
       }
       return false;
+    },
+    isweixin() {
+      return /micromessenger/i.test(navigator.userAgent.toLowerCase());
+    },
+    isqq() {
+      return navigator.userAgent.indexOf('YYB_D ') > -1 || navigator.userAgent.indexOf('QQ/') > -1;
     }
   }
-
-  //   device.isweixin = function () {
-  //   return /micromessenger/i.test(window.navigator.userAgent.toLowerCase());
-  // }
-  // device.isqq = function () {
-  //   return window.navigator.userAgent.indexOf('YYB_D ') > -1 && window.navigator.userAgent.indexOf('QQ/') > -1;
-  // }
 });
 </script>
+<style lang="scss">
+html{
+  @media only screen and (min-width: 1350px) {
+    font-size: 14px;
+  }
+  @media only screen and (min-width: 850px) and (max-width: 1349px) {
+    font-size: 10px;
+  }
+  @media only screen and (min-width: 600px) and (max-width: 849px) {
+    font-size: 8px;
+  }
+  @media only screen and (min-width: 500px) and (max-width: 599px){
+    font-size: 6px;
+  }
+  @media only screen and (min-width: 300px) and (max-width: 499px){
+    font-size: 4px;
+  }
+  @media only screen and (min-width: 200px) and (max-width: 299px){
+    font-size: 3px;
+  }
+}
+</style>
 <style lang="scss" scoped>
 body{
-  background: F8F8F8;
+  background: #F8F8F8;
 }
 .banner{
-  width: 100%;
-  min-width: 1200px;
   margin: 0 auto;
   .container{
-    width: 1080px;
+    width: 77rem;
     margin: 0 auto;
     .bd{
-      padding-top: 60px;
+      padding-top: 4.3rem;
       text-align: left;
       .logo{
-        width: 113px;
+        width: 13.6rem;
         display: inline-block;
         padding: 0;
         margin: 0;
@@ -132,35 +164,35 @@ body{
         display: inline-block;
       }
       h1{
-        font-size: 36px;
+        font-size: 5.2rem;
         font-weight: normal;
         color: #101010;
       }
       h2{
-        font-size: 18px;
+        font-size: 2rem;
         font-weight: normal;
         color: #484545;
       }
       .use-help {
-        margin-top: 26px;
+        margin-top: 2rem;
         color: #85888c;
         h5 {
-          margin-bottom: 5px;
-          font-size: 13px;
+          margin-bottom: 0.6rem;
+          font-size: 1rem;
           color: #484545;
           font-weight: bold;
         }
         p {
-          margin-bottom: 5px;
-          font-size: 14px;
-          line-height: 1.5em;
+          margin-bottom: 0.6rem;
+          font-size: 1rem;
+          // line-height: 1rem;
           color: #484545;
         }
       }
     }
   }
   .download {
-    margin: 110px 0;
+    margin: 7.8rem 0;
     display: flex;
     justify-content: space-around;
     background-color: #fff;
@@ -170,61 +202,159 @@ body{
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 20px;
+      padding: 1.5rem;
       .os{
-        margin-bottom: 40px;
+        margin-bottom: 2.9rem;
         .device{
           font-weight: 400;
-          font-size: 36px;
-          line-height: 53px;
+          font-size: 2.6rem;
+          line-height: 3.8rem;
         }
       }
       .icon{
-        width: 144px;
+        width: 10.3rem;
         img{
           width: 100%;
         }
       }
       .icon-border{
-        width: 144px;
-        height: 144px;
+        width: 10.3rem;
+        height: 10.3rem;
         display: flex;
         justify-content: center;
         align-items: center;
         border: 1px solid rgb(206, 204, 204);
-        border-radius: 18px;
+        border-radius: 1.5rem;
         img{
-          width: 86px;
+          width: 6.1rem;
         }
       }
       .instruction {
           text-align: center;
           .desc{
-            font-size: 14px;
+            font-size: 1rem;
             color: rgb(206, 204, 204);
           }
       }
       .btns{
-        padding-top: 20px;
-        .el-button{
+        padding-top: 1.5rem;
+        button{
           background: rgb(238, 21, 21);
           color: #fff;
           border-color:rgb(187, 187, 187);
+          display: inline-block;
+          line-height: 1;
+          white-space: nowrap;
+          cursor: pointer;
+          border: 1px solid #DCDFE6;
+          -webkit-appearance: none;
+          text-align: center;
+          box-sizing: border-box;
+          outline: none;
+          margin: 0;
+          transition: 0.1s;
+          font-weight: 400;
+          -webkit-user-select: none;
+          padding: 1rem 1.5rem;
+          font-size: 1rem;
+          border-radius: .3rem;
         }
       }
       .btns-in-dev{
-        padding-top: 32px;
+        padding-top: 2.7rem;
+        @media only screen and (max-width: 499px){
+          padding-top: 2.8rem;
+        }
         p{
-          font-size: 14px;
-          line-height: 1.5em;
+          display: inline-block;
+          font-size: 1rem;
+          line-height: 1rem;
           color: #484545;
         }
       }
     }
   }
 }
+.mobile{
+  .container{
+    .download{
+      flex-direction: column;
+      border:none;
+      box-shadow:none;
+      .downloadBox{
+        display: grid;
+        grid-template-columns: 13rem 1fr 1fr;
+        grid-template-rows: repeat(3, 1fr);
+        place-items: center center;
+        grid-column-gap: 3rem;
+        border: 1px solid #BBBBBB;
+        box-shadow: rgb(0 0 0 / 40%) 0px 2px 6px;
+        margin-bottom: 3rem;
+        .icon{
+          grid-column-start: 1;
+          grid-column-end: 2;
+          grid-row-start: 1;
+          grid-row-end: 4;
+        }
+        .icon-border{
+          grid-column-start: 1;
+          grid-column-end: 2;
+          grid-row-start: 1;
+          grid-row-end: 4;
+        }
+        .os{
+          grid-column-start: 2;
+          grid-column-end: 3;
+          margin:0;
+          justify-self: start;
+        }
+        .instruction{
+          grid-column-start: 2;
+          grid-column-end: 3;
+          text-align: left;
+          justify-self: start;
+        }
+        .btns{
+          grid-column-start: 3;
+          grid-column-end: 4;
+          grid-row-start: 1;
+          grid-row-end: 4;
+          padding: 0;
+        }
+        .btns-in-dev{
+          grid-column-start: 3;
+          grid-column-end: 4;
+          grid-row-start: 1;
+          grid-row-end: 4;
+          padding: 0;
+          p{
+            display: block;
+            line-height: 3.2rem;
+          }
+        }
+        .os-desc{
+            font-size: 1rem;
+            color: rgb(206, 204, 204);
+            grid-column-start: 2;
+            grid-column-end: 3;
+            justify-self: start;
+        }
+      }
+    }
+  }
+}
 .mt-10 {
-    margin-top: 10px;
+    margin-top: 1rem;
+}
+.shade{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  img{
+    width: 100%;
+  }
 }
 </style>
 
