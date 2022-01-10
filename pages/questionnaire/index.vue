@@ -519,6 +519,17 @@ export default Vue.extend({
 .form {
   padding: 20px 0px;
   background-color: rgb(241, 241, 238);
+  max-width: 700px;
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
+  color: #333333;
+  padding-top: 70px;
+  padding-bottom: 70px;
+  display: flex;
+  flex-direction: column;
+  background-color: transparent;
+
   .el-select {
     width: 100%;
   }
@@ -563,17 +574,6 @@ export default Vue.extend({
   ::v-deep .el-select-dropdown__item {
     font-size: 1.3em;
   }
-
-  max-width: 700px;
-  margin: 0 auto;
-  padding-left: 20px;
-  padding-right: 20px;
-  color: #333333;
-  padding-top: 70px;
-  padding-bottom: 70px;
-  display: flex;
-  flex-direction: column;
-  background-color: transparent;
 }
 
 .form_title {
