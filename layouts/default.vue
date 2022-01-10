@@ -14,7 +14,7 @@ export default Vue.extend({
 })
 </script>
 <style scoped>
-@media (-webkit-min-device-pixel-ratio:2){
+@media (max-device-width: 500px) and (-webkit-min-device-pixel-ratio:2){
   .mobile_footer {
     display: none;
   }
