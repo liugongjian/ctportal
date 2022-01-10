@@ -1,3 +1,8 @@
+const env = {
+  production: '/',
+  test: '/vss-portal/'
+}
+
 export default {
   // Target (https://go.nuxtjs.dev/config-target)
   target: 'static',
@@ -62,7 +67,7 @@ export default {
   },
 
   router: {
-    base: process.env.base || '/vss-portal/'
+    base: env[process.env.NODE_ENV] || '/'
   },
 
   styleResources: {

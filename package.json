@@ -7,8 +7,8 @@
     "build": "nuxt-ts build",
     "start": "nuxt-ts start",
     "generate": "nuxt-ts generate",
-    "generate:prod": "nuxt-ts generate base='/'",
-    "generate:test": "nuxt-ts generate base='/vss-portal/'",
+    "generate:prod": "NODE_ENV=production nuxt-ts generate",
+    "generate:test": "NODE_ENV=test nuxt-ts generate",
     "svg": "vsvg -s ./assets/svg -t ./icons --es6"
   },
   "dependencies": {
