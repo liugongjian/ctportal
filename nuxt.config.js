@@ -62,7 +62,7 @@ export default {
   },
 
   router: {
-    base: process.env.base || '/'
+    base: process.env.base || '/vss-portal/'
   },
 
   styleResources: {
@@ -78,7 +78,7 @@ export default {
   },
 
   proxy: {
-    '/operation/v1': 'http://182.43.127.35:9190',
+    '/operation/v1': 'http://182.43.127.35:9080',
     '/v1/custom': 'https://vcn.ctyun.cn/v1/custom',
   },
 
