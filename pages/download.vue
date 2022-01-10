@@ -5,7 +5,7 @@
 
         <div class="bd">
           <div class="logo">
-            <img src="@/assets/images/ctyun_logo.png" alt="">
+            <img src="@/assets/images/download/ctyun_logo.png" alt="">
           </div>
           <div class="title">
             <h1>天翼云瞰</h1>
@@ -25,44 +25,44 @@
                   <p class="device">Android</p>
               </div>
               <div class="icon">
-                  <i class="ico ico-win"></i>
+                  <img src="@/assets/images/download/qr_android.png" alt="">
               </div>
               <div class="instruction">
                   <p class="desc">V1.0.0</p>
               </div>
 
               <div class="btns">
-                  <a href="/desktop/software/clientsoftware/download/4198" class="btn win_down_url" download="">立即下载</a>
+                  <el-button>立即下载</el-button>
               </div>
           </div>
           <div class="downloadBox">
               <div class="os">
                   <p class="device">IOS</p>
               </div>
-              <div class="icon">
-                  <i class="ico ico-win"></i>
+              <div class="icon-border">
+                  <img src="@/assets/images/download/ios.svg" alt="">
               </div>
               <div class="instruction">
                   <p class="desc">V1.0.0</p>
               </div>
 
-              <div class="btns">
-                  <a href="/desktop/software/clientsoftware/download/4198" class="btn win_down_url" download="">立即下载</a>
+              <div class="btns-in-dev">
+                  <p>上架中，敬请期待</p>
               </div>
           </div>
           <div class="downloadBox">
               <div class="os">
                   <p class="device">Windows</p>
               </div>
-              <div class="icon">
-                  <i class="ico ico-win"></i>
+              <div class="icon-border">
+                  <img src="@/assets/images/download/windows.svg" alt="">
               </div>
               <div class="instruction">
                   <p class="desc">V1.0.0</p>
               </div>
 
-              <div class="btns">
-                  <a href="/desktop/software/clientsoftware/download/4198" class="btn win_down_url" download="">立即下载</a>
+              <div class="btns-in-dev">
+                  <p>上架中，敬请期待</p>
               </div>
           </div>
         </section>
@@ -151,6 +151,7 @@ body{
           font-weight: bold;
         }
         p {
+          margin-bottom: 5px;
           font-size: 14px;
           line-height: 1.5em;
           color: #484545;
@@ -159,20 +160,65 @@ body{
     }
   }
   .download {
-    margin: 20px 0;
+    margin: 110px 0;
     display: flex;
     justify-content: space-around;
-    box-shadow: 0px 9px 8px 0 rgb(22 96 168 / 16%);
-    box-sizing: border-box;
     background-color: #fff;
-    transition: all 0.6s linear;
+    border: 1px solid #BBBBBB;
+    box-shadow: rgb(0 0 0 / 40%) 0px 2px 6px;
     .downloadBox {
       display: flex;
       flex-direction: column;
       align-items: center;
       padding: 20px;
+      .os{
+        margin-bottom: 40px;
+        .device{
+          font-weight: 400;
+          font-size: 36px;
+          line-height: 53px;
+        }
+      }
+      .icon{
+        width: 144px;
+        img{
+          width: 100%;
+        }
+      }
+      .icon-border{
+        width: 144px;
+        height: 144px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid rgb(206, 204, 204);
+        border-radius: 18px;
+        img{
+          width: 86px;
+        }
+      }
       .instruction {
           text-align: center;
+          .desc{
+            font-size: 14px;
+            color: rgb(206, 204, 204);
+          }
+      }
+      .btns{
+        padding-top: 20px;
+        .el-button{
+          background: rgb(238, 21, 21);
+          color: #fff;
+          border-color:rgb(187, 187, 187);
+        }
+      }
+      .btns-in-dev{
+        padding-top: 32px;
+        p{
+          font-size: 14px;
+          line-height: 1.5em;
+          color: #484545;
+        }
       }
     }
   }
