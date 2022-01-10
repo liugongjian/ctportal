@@ -258,8 +258,9 @@ import { getAiAlgorithm, createCustomer } from '@/api/potential'
 import { signature } from '@/api/wx'
 
 export default Vue.extend({
+  layout: 'h5',
   head(){
-  return {
+    return {
       title: '天翼云视频监控需求问卷'
     }
   },
