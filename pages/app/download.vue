@@ -16,7 +16,7 @@
               <h5>首次使用指引：</h5>
               <p>1、注册天翼云账号并开通天翼云视频监控服务。</p>
               <p>2、点击下方的客户端链接完成下载并安装客户端。</p>
-              <p>3、输入天翼云视频监控登录账号或邮箱以及设置的密码，开始使用天翼云瞰软件！</p>
+              <p>3、输入天翼云视频监控登录账号或邮箱以及设置的密码，开始使用天翼云瞰软件。</p>
             </div>
           </div>
 
@@ -35,7 +35,7 @@
                   <p>适用于安卓手机</p>
                 </div>
                 <div class="btns">
-                    <button>立即下载</button>
+                    <button><a href="http://vss.gz2oss.xstore.ctyun.cn/vss/android/prod/latest/vss-android.apk">立即下载</a></button>
                 </div>
             </div>
             <div class="downloadBox">
@@ -49,7 +49,7 @@
                     <p class="desc">V1.0.0</p>
                 </div>
                 <div v-if="isMobile" class="os-desc">
-                  <p>适用于ios手机</p>
+                  <p>适用于IOS手机</p>
                 </div>
                 <div class="btns-in-dev">
                     <p>上架中，</p>
@@ -174,7 +174,7 @@ body{
         color: #484545;
       }
       .use-help {
-        margin-top: 2rem;
+        margin-top: 5rem;
         color: #85888c;
         h5 {
           margin-bottom: 0.6rem;
@@ -192,7 +192,7 @@ body{
     }
   }
   .download {
-    margin: 7.8rem 0;
+    margin: 9rem 0;
     display: flex;
     justify-content: space-around;
     background-color: #fff;
@@ -215,6 +215,7 @@ body{
         width: 10.3rem;
         img{
           width: 100%;
+          vertical-align: middle;
         }
       }
       .icon-border{
@@ -231,8 +232,8 @@ body{
       }
       .instruction {
           text-align: center;
+          font-size: 0.6rem;
           .desc{
-            font-size: 1rem;
             color: rgb(206, 204, 204);
           }
       }
@@ -240,7 +241,6 @@ body{
         padding-top: 1.5rem;
         button{
           background: rgb(238, 21, 21);
-          color: #fff;
           border-color:rgb(187, 187, 187);
           display: inline-block;
           line-height: 1;
@@ -258,6 +258,9 @@ body{
           padding: 1rem 1.5rem;
           font-size: 1rem;
           border-radius: .3rem;
+          a{
+            color: #fff;
+          }
         }
       }
       .btns-in-dev{
@@ -284,7 +287,7 @@ body{
       .downloadBox{
         display: grid;
         grid-template-columns: 13rem 1fr 1fr;
-        grid-template-rows: repeat(3, 1fr);
+        grid-template-rows: repeat(3, auto);
         place-items: center center;
         grid-column-gap: 3rem;
         border: 1px solid #BBBBBB;
@@ -313,6 +316,8 @@ body{
           grid-column-end: 3;
           text-align: left;
           justify-self: start;
+          transform: scale(0.7);
+          transform-origin: 0;
         }
         .btns{
           grid-column-start: 3;
@@ -333,11 +338,13 @@ body{
           }
         }
         .os-desc{
-            font-size: 1rem;
+            font-size: 0.6rem;
             color: rgb(206, 204, 204);
             grid-column-start: 2;
             grid-column-end: 3;
             justify-self: start;
+            transform: scale(0.7);
+            transform-origin: 0;
         }
       }
     }
