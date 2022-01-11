@@ -122,19 +122,19 @@ html{
     font-size: 14px;
   }
   @media only screen and (min-width: 850px) and (max-width: 1349px) {
-    font-size: 10px;
+    font-size: 12px;
   }
   @media only screen and (min-width: 600px) and (max-width: 849px) {
-    font-size: 8px;
+    font-size: 10px;
   }
   @media only screen and (min-width: 500px) and (max-width: 599px){
-    font-size: 6px;
+    font-size: 9px;
   }
   @media only screen and (min-width: 300px) and (max-width: 499px){
-    font-size: 4px;
+    font-size: 8px;
   }
   @media only screen and (min-width: 200px) and (max-width: 299px){
-    font-size: 3px;
+    font-size: 6px;
   }
 }
 </style>
