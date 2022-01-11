@@ -349,7 +349,7 @@ body{
           padding: 0;
           p{
             display: block;
-            line-height: 3.2rem;
+            line-height: 2rem;
           }
         }
         .os-desc{
