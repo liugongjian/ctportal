@@ -232,7 +232,7 @@ body{
       }
       .instruction {
           text-align: center;
-          font-size: 0.6rem;
+          font-size: 1rem;
           .desc{
             color: rgb(206, 204, 204);
           }
