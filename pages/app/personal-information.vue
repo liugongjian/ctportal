@@ -1,6 +1,6 @@
 <template>
   <div class="app-article">
-    <h1>第三方数据共享</h1>
+    <h1>个人信息收集清单</h1>
     <table class="table" border="1" cellspacing="0" cellpadding="0">
       <colgroup>
         <col width="33%">
