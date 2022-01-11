@@ -145,7 +145,8 @@ body{
 .banner{
   margin: 0 auto;
   .container{
-    width: 77rem;
+    width: 80vw;
+    max-width: 77rem;
     margin: 0 auto;
     .bd{
       padding-top: 4.3rem;
@@ -280,6 +281,13 @@ body{
 }
 .mobile{
   .container{
+    .bd{
+      .use-help{
+        p,h5{
+          font-size: 2rem;
+        }
+      }
+    }
     .download{
       flex-direction: column;
       border:none;
@@ -289,7 +297,7 @@ body{
         grid-template-columns: 13rem 1fr 1fr;
         grid-template-rows: repeat(3, auto);
         place-items: center center;
-        grid-column-gap: 3rem;
+        grid-column-gap: 1.5rem;
         border: 1px solid #BBBBBB;
         box-shadow: rgb(0 0 0 / 40%) 0px 2px 6px;
         margin-bottom: 3rem;
@@ -316,7 +324,7 @@ body{
           grid-column-end: 3;
           text-align: left;
           justify-self: start;
-          transform: scale(0.7);
+          // transform: scale(0.7);
           transform-origin: 0;
         }
         .btns{
@@ -343,7 +351,7 @@ body{
             grid-column-start: 2;
             grid-column-end: 3;
             justify-self: start;
-            transform: scale(0.7);
+            // transform: scale(0.7);
             transform-origin: 0;
         }
       }
