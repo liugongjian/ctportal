@@ -32,7 +32,40 @@
     <p>2.3 忘记密码</p>
     <p>本App不提供忘记密码功能。如果您忘记密码，需要在天翼云平台管理控制台提供个人用户的手机号码或者邮箱进行密码找回。</p>
     <p>2.4 第三方SDK类服务商</p>
-    <p>本App不包含第三方SDK。</p>
+    <p><u>我们产品中会包含第三方SDK，如您在我们平台上使用这类由第三方提供的服务时，您同意将由其直接收集和处理您的信息。</u></p>
+    <p>本APP接入以下SDK （如表格所示）。</p>
+    <table class="table" border="1" cellspacing="0" cellpadding="0">
+      <tr>
+        <th>SDK名称</th>
+        <th>SDK用途</th>
+        <th>使用的权限或收集的信息</th>
+        <th>开发者名称</th>
+      </tr>
+      <tr>
+        <td>glide</td>
+        <td>图片查看</td>
+        <td>该SDK会在安卓手机上用到以下权限：读取设备外部存储空间</td>
+        <td>开源软件</td>
+      </tr>
+      <tr>
+        <td>ijkplayer</td>
+        <td>视频播放</td>
+        <td>该SDK会在安卓手机上用到以下权限：访问互联网权限</td>
+        <td>上海宽娱数码科技有限公司</td>
+      </tr>
+      <tr>
+        <td>IJKMediaFramework</td>
+        <td>查看大图，图片浏览</td>
+        <td>该SDK会在IOS手机上用到以下权限：读取设备外部存储空间</td>
+        <td>开源软件</td>
+      </tr>
+      <tr>
+        <td>YBImageBrowser</td>
+        <td>视频播放</td>
+        <td>该SDK会在IOS手机上用到以下权限：访问互联网权限</td>
+        <td>上海宽娱数码科技有限公司</td>
+      </tr>
+    </table>
     <p>2.5 访问网络资源</p>
     <p>为了充分访问网络资源，我们会获取“完全的网络访问权限”。如不授权该权限将不能使用该功能服务，但不影响您使用本App的其他功能。</p>
     <p><u>2.6 为您提供本App的其他具体服务，我们会通过弹框方式获取您的相关手机终端权限:</u></p>
@@ -101,3 +134,8 @@ export default Vue.extend({
   layout: 'app'
 })
 </script>
+<style scoped>
+  .table td, .table th {
+    padding: 10px;
+  }
+</style>
