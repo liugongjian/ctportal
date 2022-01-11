@@ -283,8 +283,11 @@ body{
   .container{
     .bd{
       .use-help{
-        p,h5{
+        h5{
           font-size: 2rem;
+        }
+        p{
+          font-size: 1.8rem;
         }
       }
     }
@@ -326,8 +329,9 @@ body{
           text-align: left;
           justify-self: start;
           // transform: scale(0.7);
-          transform-origin: 0;
+          // transform-origin: 0;
           p{
+            font-size: 1.5rem;
             color: #484545;
           }
         }
@@ -356,8 +360,9 @@ body{
             grid-column-end: 3;
             justify-self: start;
             // transform: scale(0.7);
-            transform-origin: 0;
+            // transform-origin: 0;
             p{
+              font-size: 1.5rem;
               color: #484545;
             }
         }
