@@ -86,7 +86,7 @@
 <script>
 import Vue from "vue";
 export default Vue.extend({
-  layout: 'clean',
+  layout: 'download',
   data(){
     return {
       isMobile:false,
