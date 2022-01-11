@@ -242,12 +242,11 @@ body{
         padding-top: 1.5rem;
         button{
           background: rgb(238, 21, 21);
-          border-color:rgb(187, 187, 187);
           display: inline-block;
           line-height: 1;
           white-space: nowrap;
           cursor: pointer;
-          border: 1px solid #DCDFE6;
+          border: none;
           -webkit-appearance: none;
           text-align: center;
           box-sizing: border-box;
