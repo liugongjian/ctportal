@@ -299,6 +299,7 @@ body{
         place-items: center center;
         grid-column-gap: 1.5rem;
         border: 1px solid #BBBBBB;
+        border-radius: 6px;
         box-shadow: rgb(0 0 0 / 40%) 0px 2px 6px;
         margin-bottom: 3rem;
         .icon{
@@ -326,6 +327,9 @@ body{
           justify-self: start;
           // transform: scale(0.7);
           transform-origin: 0;
+          p{
+            color: #484545;
+          }
         }
         .btns{
           grid-column-start: 3;
@@ -353,6 +357,9 @@ body{
             justify-self: start;
             // transform: scale(0.7);
             transform-origin: 0;
+            p{
+              color: #484545;
+            }
         }
       }
     }
