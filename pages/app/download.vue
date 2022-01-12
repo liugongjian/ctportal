@@ -35,7 +35,7 @@
                   <p>适用于安卓手机</p>
                 </div>
                 <div class="btns">
-                    <button><a href="http://vss.gz2oss.xstore.ctyun.cn/vss/android/prod/latest/vss-android.apk">立即下载</a></button>
+                    <button><a href="https://vss.guiyang.vcn.ctyun.cn/app/android/latest/vss-android.apk">立即下载</a></button>
                 </div>
             </div>
             <div class="downloadBox">
