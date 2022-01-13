@@ -194,6 +194,9 @@ body{
   }
   .download {
     margin: 9rem 0;
+    @media only screen and (min-width: 850px){
+      margin: 6rem 0 !important;
+    }
     display: flex;
     justify-content: space-around;
     background-color: #fff;
@@ -206,6 +209,9 @@ body{
       padding: 1.5rem;
       .os{
         margin-bottom: 2.9rem;
+        @media only screen and (min-width: 850px){
+          margin: 0 !important;
+        }
         .device{
           font-weight: 400;
           font-size: 2.6rem;
@@ -240,6 +246,9 @@ body{
       }
       .btns{
         padding-top: 1.5rem;
+        @media only screen and (min-width: 850px){
+          padding-top: 0.5rem !important;
+        }
         button{
           background: rgb(238, 21, 21);
           display: inline-block;
@@ -267,6 +276,9 @@ body{
         padding-top: 2.7rem;
         @media only screen and (max-width: 499px){
           padding-top: 2.8rem;
+        }
+        @media only screen and (min-width: 850px){
+          padding-top: 1.3rem !important;
         }
         p{
           display: inline-block;
