@@ -1,5 +1,8 @@
 <template>
   <div>
+    <Header class="mobile_header"/>
+    <Nuxt />
+    <Footer class="mobile_footer"/>
   </div>
 </template>
 
