@@ -220,6 +220,9 @@ body{
       }
       .icon{
         width: 10.3rem;
+        @media only screen and (min-width: 850px){
+          height: 100%; // 兼容IE
+        }
         img{
           width: 100%;
           vertical-align: middle;
