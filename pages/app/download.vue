@@ -256,7 +256,7 @@ body{
           background: rgb(238, 21, 21);
           display: inline-block;
           line-height: 1;
-          white-space: nowrap;
+          // white-space: nowrap;
           cursor: pointer;
           border: none;
           -webkit-appearance: none;
