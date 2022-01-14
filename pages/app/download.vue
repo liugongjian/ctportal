@@ -147,7 +147,7 @@ body{
   .container{
     width: 80vw;
     max-width: 77rem;
-    min-width: 50rem;
+    min-width: 40rem;
     margin: 0 auto;
     .bd{
       padding-top: 4.3rem;
