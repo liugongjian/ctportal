@@ -147,6 +147,7 @@ body{
   .container{
     width: 80vw;
     max-width: 77rem;
+    min-width: 50rem;
     margin: 0 auto;
     .bd{
       padding-top: 4.3rem;
@@ -193,7 +194,7 @@ body{
     }
   }
   .download {
-    margin: 9rem 0;
+    margin: 9rem auto;
     @media only screen and (min-width: 850px){
       margin: 6rem 0 !important;
     }
