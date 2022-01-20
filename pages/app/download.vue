@@ -77,8 +77,9 @@
         </section>
       </section>
     </div>
-    <div v-if="isNewBrowser" class="shade">
+    <div v-if="isNewBrowser&&!clicked" class="shade">
       <img src="@/assets/images/download/h5-shade.png" alt="">
+      <button class="btn" @click="() => clicked = true">我知道了</button>
     </div>
   </div>
 </template>
@@ -90,7 +91,8 @@ export default Vue.extend({
   data(){
     return {
       isMobile:false,
-      isNewBrowser:false
+      isNewBrowser:false,
+      clicked:false
     }
   },
   mounted(){
@@ -396,6 +398,23 @@ body{
   height: 100vh;
   img{
     width: 100%;
+  }
+  .btn{
+    position: absolute;
+    bottom: 8%;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    width: 24.82667rem;
+    height: 12.33333rem;
+    padding-bottom: 0.04rem;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAagAAADICAMAAACK74UcAAAAn1BMVEUAAAD///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////8Kd3m4AAAANHRSTlMAvz91ivoFCrfi5u7Lpo8gaTQnLBP0g07rsVJjDt5w09nEQwF6EaoXA1qfSTH88Bs6vJNUhAYebQAACDxJREFUeNrs3Gt3mkAQBuChsoiAgHKNFUHwEtOY6/v/f1sXk57TC7amJzVDnecrH4fZndlZIPHPNAWWJPjbAg4J/m6BkgR/GfBIgr8UMEnwZwAzEuytFbAlwd5nSHXeC4/AggR7wR64J8GeCdgk2Bu6wJfjT0kwEQJVQ0ekSjphJqwRsPhNPYiYBAch4AypW62AMQkOfpdQUxfwZJPiYXE8odYVMJK6nYe1ezShLANIbkmw4AOVRZ1uIEe1bEwVkFGnAYABCR5swKBO2R64IcHDDNjfUpfbBDAsEiwMR8ATddmOgEI6XS5MwFl3RtAD3CkJHiIF7KhDswFUTYKHa+9YJZECCEkwsQKSKXXYAfBJMDFNjvRJDwqwr0nwcL0EvK5wBDlQzkkwkQEqol/NSyAP6O9Y2ygg8a4me6y6Es0G1AO9XfBsPubQnkm8q7qmDk8AdvRG8+ypwAu5G30eIYCU3iQODYVXe6fcyADrDGoFbBo63XxnKxy4dprdNyTOYXr3ptF7U28SHHjpg9Tz5xMXwGhLJ9quChwYoXxgcFbW8vTRe/PlSqHlDWRPOrfPwD6jUwzDCq3clxP2DxCeOHoP/Du0jJ0MFj+Etavpzz5t9tBcU5KJsSbz0KpCuZbJmPW5Qsv+Iv0SY8PFCFryFJHga5260O5M6Zk4W6d30JyBzKk4i1/CVIRSjnMWmwm0cieneZzNX8P0LIUeb1fQypmEibsS8DIJE3/3ZkbsWNFsdbMsi1zhv6PyolzerGZR3yu368nATnABEnsw6W/9NvFzXJDcn1APzQclLk7Zu0OG9hDrG8f2wzoK4r6v4x2sOIjq0Lcd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) no-repeat;
+    background-size: 100% 100%;
+    font-size: 2.21333rem;
+    line-height: 2.2rem;
+    color: #fff;
+    border: none;
+    outline: none;
   }
 }
 </style>
