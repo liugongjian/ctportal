@@ -141,38 +141,38 @@ html{
 }
 </style>
 <style lang="scss" scoped>
-body{
+body {
   background: #F8F8F8;
 }
-.banner{
+.banner {
   margin: 0 auto;
-  .container{
+  .container {
     width: 80vw;
     max-width: 77rem;
     min-width: 40rem;
     margin: 0 auto;
-    .bd{
+    .bd {
       padding-top: 4.3rem;
       text-align: left;
-      .logo{
+      .logo {
         width: 13.6rem;
         display: inline-block;
         padding: 0;
         margin: 0;
         font-size: 0;
-        img{
+        img {
           width: 100%;
         }
       }
-      .title{
+      .title {
         display: inline-block;
       }
-      h1{
+      h1 {
         font-size: 5.2rem;
         font-weight: normal;
         color: #101010;
       }
-      h2{
+      h2 {
         font-size: 2rem;
         font-weight: normal;
         color: #484545;
@@ -210,23 +210,23 @@ body{
       flex-direction: column;
       align-items: center;
       padding: 1.5rem;
-      .os{
+      .os {
         margin-bottom: 2.9rem;
         @media only screen and (min-width: 850px){
           margin: 0 !important;
         }
-        .device{
+        .device {
           font-weight: 400;
           font-size: 2.6rem;
           line-height: 3.8rem;
         }
       }
-      .icon{
+      .icon {
         width: 10.3rem;
-        @media only screen and (min-width: 850px){
+        @media only screen and (min-width: 850px) {
           height: 100%; // 兼容IE
         }
-        img{
+        img {
           width: 100%;
           vertical-align: middle;
         }
@@ -239,7 +239,7 @@ body{
         align-items: center;
         border: 1px solid rgb(206, 204, 204);
         border-radius: 1.5rem;
-        img{
+        img {
           width: 6.1rem;
         }
       }
@@ -255,7 +255,7 @@ body{
         @media only screen and (min-width: 850px){
           padding-top: 0.5rem !important;
         }
-        button{
+        button {
           background: rgb(238, 21, 21);
           display: inline-block;
           line-height: 1;
@@ -278,7 +278,7 @@ body{
           }
         }
       }
-      .btns-in-dev{
+      .btns-in-dev {
         padding-top: 2.7rem;
         @media only screen and (max-width: 499px){
           padding-top: 2.8rem;
@@ -286,7 +286,7 @@ body{
         @media only screen and (min-width: 850px){
           padding-top: 1.3rem !important;
         }
-        p{
+        p {
           display: inline-block;
           font-size: 1rem;
           line-height: 1rem;
