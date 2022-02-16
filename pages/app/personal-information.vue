@@ -35,7 +35,7 @@ export default Vue.extend({
   layout: 'app',
   data(){
     return {
-      pInfoShow: true
+      pInfoShow: false
     }
   },
   mounted(){
