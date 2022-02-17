@@ -38,17 +38,26 @@ export default Vue.extend({
       pInfoShow: false
     }
   },
-  mounted(){
-    this.pInfoShow = this.show()
+  created(){
+    this.show()
   },
   methods:{
     show(){
       // @ts-ignore
       if(typeof app !== "undefined"){
         // @ts-ignore
-        return app.hasStoragePermissions()
+        this.pInfoShow = app.hasStoragePermissions()
+      } else {
+        this.$nextTick(() => {
+          // @ts-ignore
+          window.permissions = p => {
+            this.pInfoShow = p
+          }
+        })
+
       }
-      return false
+
+
     }
   }
 })
