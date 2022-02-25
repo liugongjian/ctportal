@@ -42,8 +42,8 @@
                 <div class="os">
                     <p class="device">IOS</p>
                 </div>
-                <div class="icon-border">
-                    <img src="@/assets/images/download/ios.svg" alt="">
+                <div class="icon">
+                    <img src="@/assets/images/download/ios_qr.png" alt="">
                 </div>
                 <div class="instruction">
                     <p class="desc">V1.0.0</p>
