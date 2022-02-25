@@ -51,9 +51,8 @@
                 <div v-if="isMobile" class="os-desc">
                   <p>适用于IOS手机</p>
                 </div>
-                <div class="btns-in-dev">
-                    <p>上架中，</p>
-                    <p>敬请期待</p>
+                <div class="btns">
+                    <button><a href="https://apps.apple.com/cn/app/天翼云瞰/id1609919930">立即下载</a></button>
                 </div>
             </div>
             <div v-if="!isMobile" class="downloadBox">
