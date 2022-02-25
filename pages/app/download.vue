@@ -52,7 +52,7 @@
                   <p>适用于IOS手机</p>
                 </div>
                 <div class="btns">
-                    <button><a href="https://apps.apple.com/cn/app/天翼云瞰/id1609919930">立即下载</a></button>
+                    <button><a href="https://apps.apple.com/cn/app/天翼云电脑/id1454784442">立即下载</a></button>
                 </div>
             </div>
             <div v-if="!isMobile" class="downloadBox">
