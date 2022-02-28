@@ -55,7 +55,7 @@
                     <button><a href="https://apps.apple.com/cn/app/天翼云瞰/id1609919930">立即下载</a></button>
                 </div>
             </div>
-            <div v-if="!isMobile" class="downloadBox">
+            <div class="downloadBox">
                 <div class="os">
                     <p class="device">Windows</p>
                 </div>
@@ -65,7 +65,9 @@
                 <div class="instruction">
                     <p class="desc">V1.0.0</p>
                 </div>
-
+                <div v-if="isMobile" class="os-desc">
+                  <p>适用于PC端</p>
+                </div>
                 <div class="btns-in-dev">
                     <p>上架中，</p>
                     <p>敬请期待</p>
