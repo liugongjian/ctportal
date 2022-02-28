@@ -261,7 +261,10 @@ export default Vue.extend({
   layout: 'h5',
   head(){
     return {
-      title: '天翼云视频监控需求问卷'
+      title: '天翼云视频监控需求问卷',
+      script: [
+        { src: 'https://res.wx.qq.com/open/js/jweixin-1.6.0.js' }
+      ],
     }
   },
   data() {
