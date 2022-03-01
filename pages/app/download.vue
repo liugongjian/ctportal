@@ -89,6 +89,11 @@
 import Vue from "vue";
 export default Vue.extend({
   layout: 'download',
+  head(){
+    return {
+      title: '天翼云 - 视频监控'
+    }
+  },
   data(){
     return {
       isMobile:false,
