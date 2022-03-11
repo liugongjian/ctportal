@@ -51,7 +51,7 @@
         <td>视频播放</td>
         <td>该SDK会在IOS手机上用到以下权限：访问互联网权限</td>
         <td>上海宽娱数码科技有限公司</td>
-        <td>官网连接：https://github.com/AAChartModel/AAChartKit-Swift<br>隐私政策：开源SDK隐私政策暂未发布</td>
+        <td>官网连接：https://github.com/Bilibili/ijkplayer<br>隐私政策：开源SDK隐私政策暂未发布</td>
       </tr>
     </table>
     <p>1.5 访问网络资源</p>
@@ -160,7 +160,7 @@
         <td>视频播放</td>
         <td>该SDK会在IOS手机上用到以下权限：访问互联网权限</td>
         <td>上海宽娱数码科技有限公司</td>
-        <td>官网连接：https://github.com/AAChartModel/AAChartKit-Swift<br>隐私政策：开源SDK隐私政策暂未发布</td>
+        <td>官网连接：https://github.com/Bilibili/ijkplayer<br>隐私政策：开源SDK隐私政策暂未发布</td>
       </tr>
     </table>
     <p>2.5 访问网络资源</p>
@@ -206,7 +206,7 @@
     <p>6.3 删除</p>
     <p><u>若您发现我们未按照法律法规的规定或者本隐私政策约定收集和使用您的信息，您可以通过App内-"我"-"反馈"功能或者通过邮件 service@chinatelecom.cn、电话400-810-9889等方式联系我们对相关信息进行删除。</u>我们将在7个工作日内为您完成信息删除。</p>
     <p>6.4 用户账户注销</p>
-    <p><u>本App不直接支持账户的注销，账户的注销请在天翼云官网控制台进行，注销详情请参考<a href="https://www.ctyun.cn/h5/help2/10000036/10013065" target="_blank">https://www.ctyun.cn/h5/help2/10000036/10013065</a>。</u></p>
+    <p><u>本App不直接支持账户的注销，账户的注销请在天翼云官网控制台进行，注销详情请参考<a href="https://www.ctyun.cn/document/10000036/10012860" target="_blank">https://www.ctyun.cn/document/10000036/10012860</a>。</u></p>
     <p>6.5 改变或撤回您的授权信息</p>
     <p>对于您已经授权同意我们收集和使用的终端设备权限信息，您可以通过在终端设备进行设置，通过进入手机设置中的权限管理页面，改变或撤回您的授权同意；您改变或撤回授权同意后，可能无法使用相应的功能服务。</p>
     <p><br></p>
