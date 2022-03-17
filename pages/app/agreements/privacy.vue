@@ -242,6 +242,8 @@ export default Vue.extend({
 <style scoped>
   .table td, .table th {
     padding: 10px;
+    word-wrap: break-word;
+    word-break: break-all;
   }
   .align-right{
     text-align: right;
