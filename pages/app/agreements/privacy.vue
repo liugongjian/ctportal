@@ -248,4 +248,7 @@ export default Vue.extend({
   .align-right{
     text-align: right;
   }
+  h1 {
+    line-height: 100%;
+  }
 </style>
