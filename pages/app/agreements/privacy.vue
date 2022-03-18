@@ -17,7 +17,7 @@
     <p>1.4 第三方SDK类服务商</p>
     <p><u> 我们产品中会包含第三方SDK，如您在我们平台上使用这类由第三方提供的服务时，您同意将由其直接收集和处理您的信息。</u></p>
     <p>本APP接入以下SDK （如表格所示）。</p>
-    <table class="table" border="1" cellspacing="0" cellpadding="0">
+     <table class="table" border="1" cellspacing="0" cellpadding="0">
       <tr>
         <th>SDK名称</th>
         <th>SDK用途</th>
@@ -30,28 +30,28 @@
         <td>图片查看</td>
         <td>该SDK会在安卓手机上用到以下权限：读取设备外部存储空间</td>
         <td>开源软件</td>
-        <td>官网连接：https://github.com/bumptech/glide<br>隐私政策：开源SDK隐私政策暂未发布</td>
+        <td>官网连接：<a href="https://github.com/bumptech/glide">https://github.com/bumptech/glide</a><br>隐私政策：开源SDK隐私政策暂未发布</td>
       </tr>
       <tr>
         <td>ijkplayer</td>
         <td>视频播放</td>
         <td>该SDK会在安卓手机上用到以下权限：访问互联网权限</td>
         <td>上海宽娱数码科技有限公司</td>
-        <td>官网连接：https://github.com/Bilibili/ijkplayer<br>隐私政策：开源SDK隐私政策暂未发布</td>
+        <td>官网连接：<a href="https://github.com/Bilibili/ijkplayer">https://github.com/Bilibili/ijkplayer</a><br>隐私政策：开源SDK隐私政策暂未发布</td>
       </tr>
       <tr>
         <td>YBImageBrowser</td>
         <td>查看大图，图片浏览</td>
         <td>该SDK会在IOS手机上用到以下权限：读取设备外部存储空间</td>
         <td>开源软件</td>
-        <td>官网连接：https://github.com/indulgeIn/YBImageBrowser<br>隐私政策：开源SDK隐私政策暂未发布</td>
+        <td>官网连接：<a href="https://github.com/indulgeIn/YBImageBrowser">https://github.com/indulgeIn/YBImageBrowser</a><br>隐私政策：开源SDK隐私政策暂未发布</td>
       </tr>
       <tr>
         <td>IJKMediaFramework</td>
         <td>视频播放</td>
         <td>该SDK会在IOS手机上用到以下权限：访问互联网权限</td>
         <td>上海宽娱数码科技有限公司</td>
-        <td>官网连接：https://github.com/Bilibili/ijkplayer<br>隐私政策：开源SDK隐私政策暂未发布</td>
+        <td>官网连接：<a href="https://github.com/Bilibili/ijkplayer">https://github.com/Bilibili/ijkplayer</a><br>隐私政策：开源SDK隐私政策暂未发布</td>
       </tr>
     </table>
     <p>1.5 访问网络资源</p>
@@ -139,28 +139,28 @@
         <td>图片查看</td>
         <td>该SDK会在安卓手机上用到以下权限：读取设备外部存储空间</td>
         <td>开源软件</td>
-        <td>官网连接：https://github.com/bumptech/glide<br>隐私政策：开源SDK隐私政策暂未发布</td>
+        <td>官网连接：<a href="https://github.com/bumptech/glide">https://github.com/bumptech/glide</a><br>隐私政策：开源SDK隐私政策暂未发布</td>
       </tr>
       <tr>
         <td>ijkplayer</td>
         <td>视频播放</td>
         <td>该SDK会在安卓手机上用到以下权限：访问互联网权限</td>
         <td>上海宽娱数码科技有限公司</td>
-        <td>官网连接：https://github.com/Bilibili/ijkplayer<br>隐私政策：开源SDK隐私政策暂未发布</td>
+        <td>官网连接：<a href="https://github.com/Bilibili/ijkplayer">https://github.com/Bilibili/ijkplayer</a><br>隐私政策：开源SDK隐私政策暂未发布</td>
       </tr>
       <tr>
         <td>YBImageBrowser</td>
         <td>查看大图，图片浏览</td>
         <td>该SDK会在IOS手机上用到以下权限：读取设备外部存储空间</td>
         <td>开源软件</td>
-        <td>官网连接：https://github.com/indulgeIn/YBImageBrowser<br>隐私政策：开源SDK隐私政策暂未发布</td>
+        <td>官网连接：<a href="https://github.com/indulgeIn/YBImageBrowser">https://github.com/indulgeIn/YBImageBrowser</a><br>隐私政策：开源SDK隐私政策暂未发布</td>
       </tr>
       <tr>
         <td>IJKMediaFramework</td>
         <td>视频播放</td>
         <td>该SDK会在IOS手机上用到以下权限：访问互联网权限</td>
         <td>上海宽娱数码科技有限公司</td>
-        <td>官网连接：https://github.com/Bilibili/ijkplayer<br>隐私政策：开源SDK隐私政策暂未发布</td>
+        <td>官网连接：<a href="https://github.com/Bilibili/ijkplayer">https://github.com/Bilibili/ijkplayer</a><br>隐私政策：开源SDK隐私政策暂未发布</td>
       </tr>
     </table>
     <p>2.5 访问网络资源</p>
