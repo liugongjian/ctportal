@@ -13,25 +13,25 @@
     <p><b>隐私政策：</b>开源SDK隐私政策暂未发布</p>
     <p><b>备注：</b>安卓APP</p>
     <p><br></p>
-    
+
     <p><br></p>
-    <h4>Ljkplayer SDK</h4>
+    <h4>Ijkplayer SDK</h4>
     <p><b>使用目的：</b>视频播放器</p>
     <p><b>涉及的个人信息类型：</b>访问互联网权限</p>
     <p><b>第三方主体：</b>开源软件</p>
     <p><b>官网连接：</b>https://github.com/Bilibili/ijkplayer</p>
     <p><b>隐私政策：</b>开源SDK隐私政策暂未发布</p>
     <p><b>备注：</b>安卓APP</p>
-    
+
     <p><br></p>
     <h4>IJKMediaFramework SDK</h4>
     <p><b>使用目的：</b>视频播放器</p>
     <p><b>涉及的个人信息类型：</b>访问网络权限</p>
     <p><b>第三方主体：</b>开源软件</p>
-    <p><b>官网连接：</b>https://github.com/AAChartModel/AAChartKit-Swift</p>
+    <p><b>官网连接：</b>https://github.com/Bilibili/ijkplayer</p>
     <p><b>隐私政策：</b>开源SDK隐私政策暂未发布</p>
     <p><b>备注：</b>苹果APP</p>
-    
+
     <p><br></p>
     <h4>YBImageBrowser SDK</h4>
     <p><b>使用目的：</b>查看大图，图片浏览，保持图片到相册</p>
@@ -40,12 +40,17 @@
     <p><b>官网连接：</b>https://github.com/indulgeIn/YBImageBrowser</p>
     <p><b>隐私政策：</b>开源SDK隐私政策暂未发布</p>
     <p><b>备注：</b>苹果APP</p>
-    
+
   </div>
 </template>
 <script lang="ts">
 import Vue from 'vue'
 export default Vue.extend({
-  layout: 'app'
+  layout: 'app',
+  head(){
+    return {
+      title: '天翼云 - 视频监控'
+    }
+  }
 })
 </script>
