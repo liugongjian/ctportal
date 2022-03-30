@@ -21,7 +21,8 @@ export default Vue.extend({
       if (!HlsJS.isSupported()) {
         throw new Error('当前浏览器不支持Hls播放器')
       }
-      const url = window.atob(this.getQueryVariable('video'))
+      const videoUrl = this.getQueryVariable('video')
+      const url = window.atob(decodeURIComponent(videoUrl))
       const videoElement = document.createElement('video')
       const container = this.$refs.container as HTMLDivElement
       container.innerHTML = ''
