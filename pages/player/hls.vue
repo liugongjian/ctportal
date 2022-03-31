@@ -31,7 +31,8 @@ export default Vue.extend({
       videoElement.autoplay = true
       container.append(videoElement)
       const hls = new HlsJS({
-        manifestLoadingMaxRetry: 2
+        manifestLoadingMaxRetry: 2,
+        manifestLoadingTimeOut: 600000
       })
       hls.loadSource(url)
       hls.attachMedia(videoElement)
