@@ -18,9 +18,6 @@ export default Vue.extend({
   },
   methods: {
     init() {
-      if (!HlsJS.isSupported()) {
-        throw new Error('当前浏览器不支持Hls播放器')
-      }
       const title = this.getQueryVariable('title')
       document.title = decodeURIComponent(title) || '天翼云 - 视频监控'
       const videoUrl = this.getQueryVariable('video')
@@ -32,12 +29,19 @@ export default Vue.extend({
       videoElement.controls = true
       videoElement.autoplay = true
       container.append(videoElement)
-      const hls = new HlsJS({
-        manifestLoadingMaxRetry: 2,
-        manifestLoadingTimeOut: 600000
-      })
-      hls.loadSource(url)
-      hls.attachMedia(videoElement)
+      if (!HlsJS.isSupported()) {
+        videoElement.src = url
+        videoElement.addEventListener('loadedmetadata', function() {
+          videoElement.play()
+        })
+      } else {
+        const hls = new HlsJS({
+          manifestLoadingMaxRetry: 2,
+          manifestLoadingTimeOut: 600000
+        })
+        hls.loadSource(url)
+        hls.attachMedia(videoElement)
+      }
     },
     getQueryVariable(variable: any): string {
       var query = window.location.search.substring(1)
