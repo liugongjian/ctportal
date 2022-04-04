@@ -10,7 +10,7 @@ export default Vue.extend({
   layout: 'app',
   head(){
     return {
-      title: '天翼云 - 视频监控'
+      title: 'VSS Player'
     }
   },
   mounted() {
@@ -21,6 +21,8 @@ export default Vue.extend({
       if (!HlsJS.isSupported()) {
         throw new Error('当前浏览器不支持Hls播放器')
       }
+      const title = this.getQueryVariable('title')
+      document.title = decodeURIComponent(title) || '天翼云 - 视频监控'
       const videoUrl = this.getQueryVariable('video')
       const url = window.atob(decodeURIComponent(videoUrl))
       const videoElement = document.createElement('video')
