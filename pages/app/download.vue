@@ -29,7 +29,7 @@
                     <img src="@/assets/images/download/qr_android.png" alt="">
                 </div>
                 <div class="instruction">
-                    <p class="desc">V1.1.0</p>
+                    <p class="desc">V1.1.1</p>
                 </div>
                 <div v-if="isMobile" class="os-desc">
                   <p>适用于安卓手机</p>
@@ -46,7 +46,7 @@
                     <img src="@/assets/images/download/ios_qr.png" alt="">
                 </div>
                 <div class="instruction">
-                    <p class="desc">V1.1.0</p>
+                    <p class="desc">V1.1.1</p>
                 </div>
                 <div v-if="isMobile" class="os-desc">
                   <p>适用于IOS手机</p>
