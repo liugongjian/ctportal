@@ -46,6 +46,7 @@
                     <img src="@/assets/images/download/ios_qr.png" alt="">
                 </div>
                 <div class="instruction">
+                  <!-- 20220518 update from 1.1.0 to 1.1.1 -->
                     <p class="desc">V1.1.1</p>
                 </div>
                 <div v-if="isMobile" class="os-desc">
@@ -63,6 +64,7 @@
                     <img src="@/assets/images/download/windows.svg" alt="">
                 </div>
                 <div class="instruction">
+                  <!-- 20220518 update from 1.1.0 to 1.1.1 -->
                     <p class="desc">V1.0.0</p>
                 </div>
                 <div v-if="isMobile" class="os-desc">
