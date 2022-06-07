@@ -25,7 +25,7 @@
         <td>终端存储权限</td>
         <td>存储和读取用户对视频进行截图操作后生成的图片；</td>
       </tr>
-      <tr v-if="pInfoShow">
+      <tr v-if="cInfoShow">
         <td>附加功能</td>
         <td>相机权限</td>
         <td>扫码识别视频监控摄像头的SN码时，需要打开相机。</td>
@@ -45,7 +45,8 @@ export default Vue.extend({
   },
   data(){
     return {
-      pInfoShow: false
+      pInfoShow: false,
+      cInfoShow: false
     }
   },
   mounted(){
@@ -57,10 +58,16 @@ export default Vue.extend({
       if(typeof app !== "undefined"){
         // @ts-ignore
         this.pInfoShow = app.hasStoragePermissions()
+        // @ts-ignore
+        this.cInfoShow = app.hasCameraPermissions()
       } else {
         // @ts-ignore
         window.permissions = p => {
           this.pInfoShow = p
+        }
+                // @ts-ignore
+        window.hasCameraPermissions = p => {
+          this.cInfoShow = p
         }
       }
     }
