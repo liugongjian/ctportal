@@ -31,7 +31,8 @@
         <td>扫码识别视频监控摄像头的SN码时，需要打开相机。</td>
       </tr>
     </table>
-
+    <br>
+    <p v-if="pInfoShow || cInfoShow">附加功能在特定场景下用户使用相关功能时才会申请询问，用户拒绝不影响用户使用基本功能。</p>
   </div>
 </template>
 <script lang="ts">
