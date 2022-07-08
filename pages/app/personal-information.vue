@@ -20,6 +20,11 @@
         <td>账号、密码</td>
         <td>用于账号登录</td>
       </tr>
+      <tr>
+        <td>{{userName}}</td>
+        <td>开启存储权限</td>
+        <td>开启相机权限</td>
+      </tr>
       <tr v-if="pInfoShow">
         <td>附加功能</td>
         <td>终端存储权限</td>
@@ -47,7 +52,8 @@ export default Vue.extend({
   data(){
     return {
       pInfoShow: false,
-      cInfoShow: false
+      cInfoShow: false,
+      userName: ''
     }
   },
   mounted(){
@@ -61,6 +67,8 @@ export default Vue.extend({
         this.pInfoShow = app.hasStoragePermissions()
         // @ts-ignore
         this.cInfoShow = app.hasCameraPermissions()
+        // @ts-ignore
+        this.userName = app.getUserName()
       } else {
         // @ts-ignore
         window.permissions = p => {
@@ -69,6 +77,10 @@ export default Vue.extend({
                 // @ts-ignore
         window.hasCameraPermissions = p => {
           this.cInfoShow = p
+        }
+        // @ts-ignore
+        window.getUserName = n => {
+          this.userName = n
         }
       }
     }
