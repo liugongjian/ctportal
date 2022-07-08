@@ -11,29 +11,28 @@
         <td colspan="3">个人信息收集清单</td>
       </tr>
       <tr>
-        <td>场景/功能业务</td>
+        <td>使用场景</td>
         <td>个人信息种类</td>
-        <td>场景/目的</td>
+        <td>使用目的</td>
+        <td>收集内容</td>
       </tr>
       <tr>
         <td>登录</td>
-        <td>账号、密码</td>
+        <td>用户账号信息</td>
         <td>用于账号登录</td>
-      </tr>
-      <tr>
         <td>{{userName}}</td>
-        <td>开启存储权限</td>
-        <td>开启相机权限</td>
       </tr>
       <tr v-if="pInfoShow">
         <td>附加功能</td>
         <td>终端存储权限</td>
         <td>存储和读取用户对视频进行截图操作后生成的图片；</td>
+        <td>开启存储权限</td>
       </tr>
       <tr v-if="cInfoShow">
         <td>附加功能</td>
         <td>相机权限</td>
         <td>扫码识别视频监控摄像头的SN码时，需要打开相机。</td>
+        <td>开启相机权限</td>
       </tr>
     </table>
     <br>
