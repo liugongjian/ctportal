@@ -58,7 +58,6 @@ export default Vue.extend({
   },
   mounted(){
     this.show()
-    alert(`userName: ${this.userName}`)
   },
   methods:{
     show(){
@@ -75,7 +74,7 @@ export default Vue.extend({
         window.permissions = p => {
           this.pInfoShow = p
         }
-                // @ts-ignore
+        // @ts-ignore
         window.hasCameraPermissions = p => {
           this.cInfoShow = p
         }
