@@ -58,6 +58,7 @@ export default Vue.extend({
   },
   mounted(){
     this.show()
+    alert(`userName: ${this.userName}`)
   },
   methods:{
     show(){
