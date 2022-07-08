@@ -3,12 +3,13 @@
     <h1>个人信息收集清单</h1>
     <table class="table" border="1" cellspacing="0" cellpadding="0">
       <colgroup>
-        <col width="33%">
-        <col width="33%">
-        <col width="33%">
+        <col width="25%">
+        <col width="25%">
+        <col width="25%">
+        <col width="25%">
       </colgroup>
       <tr>
-        <td colspan="3">个人信息收集清单</td>
+        <td colspan="4">个人信息收集清单</td>
       </tr>
       <tr>
         <td>使用场景</td>
