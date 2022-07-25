@@ -1,0 +1,114 @@
+<template>
+  <div ref="banner" class="navigation__wrapper">
+    <el-tabs v-model="activeName" @tab-click="handleClick" ref="tabs">
+      <el-tab-pane v-for="nav in navigation" :label="nav.label" :name="nav.name" :key="nav.name"/>
+    </el-tabs>
+  </div>
+</template>
+
+<script lang="ts">
+import { Vue, Prop, Component} from 'vue-property-decorator'
+
+
+@Component
+export default class extends Vue{
+  @Prop() private navigation!: any
+  private activeName = 'ai'
+  private bann: any
+  private bannerTop = 500
+
+  private mounted() {
+      window.addEventListener("scroll", this.handScroll)
+      this.bann = this.$refs.banner
+      this.bannerTop = this.bann?.offsetTop
+      console.log("offsetTop", this.bannerTop)
+  }
+
+  private handScroll() {
+      let scrolltop =
+        document.documentElement.scrollTop ||
+        document.body.scrollTop ||
+        window.pageYOffset;
+      if (scrolltop >= this.bannerTop) {
+        this.bann.classList.add("isTop");
+        //如果滑动到导航就绑定样式让它吸顶
+      } else {
+        this.bann.classList.remove("isTop");
+      }
+  }
+
+
+
+  private handleClick(){
+    const tabEl: any = this.$refs.tabs
+    const $el:any = tabEl.$el
+    this.resetActivePosition($el)
+    console.log('activeName:',this.activeName)
+    this.jumpTo(this.activeName)
+  }
+
+  private resetActivePosition($el:any) {
+      this.$nextTick(() => {
+        const activeEl = $el.querySelector('.el-tabs__item.is-active');
+        const lineEl = $el.querySelector('.el-tabs__active-bar');
+        const style: any = getComputedStyle(activeEl);
+        const pl = style.paddingLeft.match(/\d+/)[0] * 1;
+        const pr = style.paddingRight.match(/\d+/)[0] * 1;
+        const w = style.width.match(/\d+/)[0] * 1;
+        lineEl.style.transform = 'translateX(' + (activeEl.offsetLeft + pl) + 'px)';
+        lineEl.style.width = (w - pl - pr)+'px';
+      })
+  }
+
+  private jumpTo(elName :any){
+    const activeNav = this.navigation.filter( (nav:any) => nav.name === elName)[0]
+    activeNav.el.scrollIntoView({behavior: "smooth"})
+  }
+
+}
+</script>
+
+
+<style lang="scss" scoped>
+.isTop {
+  position: sticky;
+  top: 0;
+  background: white;
+  z-index: 1000;
+}
+.navigation__wrapper{
+  font-size: 22px;
+  font-weight: 500;
+  ::v-deep .el-tabs__nav-wrap{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .el-tabs__nav-scroll{
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      .el-tabs__nav{
+        height: 96px;
+        max-width: 1360px;
+        min-width: 1100px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        .el-tabs__active-bar{
+          background: #DF0629;
+          height: 4px;
+        }
+        .el-tabs__item{
+          margin-top: 32px;
+        }
+        .el-tabs__item:hover{
+          color: #DF0629;
+        }
+      }
+    }
+  }
+  ::v-deep .is-active {
+    color:#DF0629;
+  }
+}
+</style>

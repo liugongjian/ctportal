@@ -3,33 +3,27 @@
     <div class="advantage__container">
       <div class="advantage__title">产品优势</div>
       <div class="advantage__item__wrap">
-        <div class="advantage__item">
-          <div class="advantage__item__img"><img src="~/assets/images/feature/feature1.png" /></div>
-          <div class="advantage__item__title">快速接入</div>
-          <div class="advantage__item__content">基于云原生架构部署、按需扩容，可支持百万级设备接入。兼容主流视频终端设备，支持GB28181、GAT1400、RTMP、RTSP等协议直接接入，启动快、成本低。</div>
-        </div>
-        <div class="advantage__item">
-          <div class="advantage__item__img"><img src="~/assets/images/feature/feature2.png" /></div>
-          <div class="advantage__item__title">云网融合</div>
-          <div class="advantage__item__content">“云-网-边”融合架构，用户就近接入，秒级响应。支持公有云、私有云、混合云多种形态部署，覆盖多种行业应用场景。</div>
-        </div>
-        <div class="advantage__item">
-          <div class="advantage__item__img"><img src="~/assets/images/feature/feature3.png" /></div>
-          <div class="advantage__item__title">智能生态</div>
-          <div class="advantage__item__content">支持AI算法仓库统一管理，GPU算力智能调度，AI算法统一编排。人脸/人体/车辆/物体/环境等算法全场景覆盖。</div>
-        </div>
-        <div class="advantage__item">
-          <div class="advantage__item__img"><img src="~/assets/images/feature/feature4.png" /></div>
-          <div class="advantage__item__title">数据资产</div>
-          <div class="advantage__item__content">设备数据智能分析，挖掘潜在风险，防患于未然。积累数据资产，人脸库、车辆库等数据资产赋能行业应用。</div>
-        </div>
+        <list-item-2 v-for="item in list" :key="item.src" :item="item" />
       </div>
     </div>
   </div>
 </template>
+<script lang="ts">
+import { Vue, Component} from 'vue-property-decorator'
+
+@Component
+export default class extends Vue{
+  private list = [
+    { src: 'all', title: '覆盖/全网范围', content: 'VSS平台基于全国25+节点，采用云原生与边缘计算技术，构建一张全国范围广覆盖云边协同的视频云网，具备全网统一接入调度、全网统一存储调度和全网统一分析调度等能力'},
+    { src: 'close', title: '延迟/就近接入', content: '视频设备/平台上传视频流时，可以选择就近接入天翼云，平台通过全网统一调度系统，将视频流接入距离客户较近的节点，以实现较低的观看延迟和AI分析延迟'},
+    { src: 'data_safty', title: '安全/数据安全', content: '支持专线接入保证客户数据与互联网物理隔绝，所有操作均可以通过HTTPS协议加密传输，支持防盗链等安全技术，全链路保障数据安全'},
+    { src: 'open', title: '生态/开放生态', content: '适配市场主流设备，算法仓库一键托管，场景化API赋能行业应用，支持AI算法仓库统一管理，GPU算力智能调度，AI算法统一编排，对人脸/人体/车辆/物体/环境等算法全场景覆盖'}
+  ]
+}
+</script>
 <style lang="scss" scoped>
   .advantage {
-    background: #f1f1f1 url('../../assets/images/grey_bg.png') no-repeat;
+    background: #f1f1f1;
     &__container {
       @include container;
       @include containerPadding;
@@ -41,26 +35,8 @@
     }
     &__item__wrap {
       display: flex;
-    }
-    &__item {
-      margin: 0 35px;
-      width: 25%;
-      &__img {
-        height: 130px;
-        text-align: center;
-        img {
-          height: 100%;
-        }
-      }
-      &__title {
-        text-align: center;
-        font-size: 24px;
-        font-weight: bold;
-        margin: 30px 0 20px 0;
-      }
-      &__content {
-        text-align: justify;
-      }
+      flex-wrap: wrap;
+      justify-content: space-between;
     }
   }
 </style>

@@ -110,8 +110,8 @@ export default class extends Vue{
         },
         itemStyle: { // 定义样式
           normal: { // 普通状态下的样式
-            areaColor: 'rgba(100,100,100)',
-            borderColor: '#f1f1f1'
+            areaColor: '#F1F3F5',
+            borderColor: '#fff'
           },
           emphasis: { // 高亮状态下的样式
             areaColor: 'rgba(100,100,100)'
@@ -135,7 +135,7 @@ export default class extends Vue{
         coordinateSystem: 'geo', // series坐标系类型
         itemStyle: {
           normal: {
-            color: '#ff8400',
+            color: '#DF0629',
             shadowColor: 'rgba(174, 90, 0, 1)',
             shadowBlur: 6,
             label: {
@@ -208,7 +208,7 @@ export default class extends Vue{
 </script>
 <style lang="scss">
 .map{
-  background: #f1f1f1;
+  background: #fff;
   .map-wrapper{
     max-width: 1360px;
     min-width: 1100px;
@@ -239,7 +239,7 @@ export default class extends Vue{
       right: 5%;
       width: 300px;
       .clicked{
-        color: $primary;
+        color: #DF0629;
       }
       &__detail{
         border: 1px solid $borderGrey;
@@ -279,8 +279,8 @@ export default class extends Vue{
         border-bottom: 1px solid $borderGrey;
       }
       & li:hover{
-        border-color: $primary;
-        background: $primary;
+        border-color: #DF0629;
+        background: #DF0629;
         color: #fff;
       }
     }

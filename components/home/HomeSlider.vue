@@ -1,5 +1,5 @@
 <template>
-  <Slider v-bind="{title,desc,picName,btnDesc,btnSrc}" />
+  <Slider v-bind="{ title, desc, fontStyle, picName, btnDesc, btnSrc, backgroundStyle }" />
 </template>
 
 <script lang="ts">
@@ -7,11 +7,13 @@ import { Vue, Component} from 'vue-property-decorator'
 
 @Component
 export default class extends Vue{
-  private title = '抢先体验视频监控服务'
-  private desc = '视频监控服务（Video Surveillance Service，VSS）依托天翼云遍布全国的边缘节点、出色的视频技术和AI能力，面向智慧城市、智慧教育、智慧零售、智慧社区、智慧物流、智慧工地等场景提供云边协同的视频接入、视频存储、视频分发、视频分析和视频IAM服务，助力政企数字化转型。'
+  private title = '抢先体验视频监控AI能力'
+  private desc = '机器视觉是智能世界的眼睛，万物感知入口，行业数字化抓手。天翼云视频监控面向智慧城市、社区、乡村等提供极简部署、普惠AI、智能业务闭环的监控解决方案。'
+  private fontStyle = { color: '#F1C482' }
   // private picSrc = '~/assets/mock/home_slider.png'
-  private picName = 'home_slider'
-  private btnDesc = '立即体验'
+  private picName = 'slider_home'
+  private btnDesc = '立即开通'
   private btnSrc = 'https://www.ctyun.cn/products/10011360'
+  private backgroundStyle = { 'background-image': 'linear-gradient(179deg, #23233C 34%, #56566E 94%)' }
 }
 </script>

@@ -1,10 +1,10 @@
 <template>
-  <div class="slider">
+  <div class="slider" :style="backgroundStyle">
     <div class="slider__item slider__item--1">
       <div class="slider__item__container">
         <div class="slider__item__left">
-          <div class="slider__item__title">{{title}}</div>
-          <div class="slider__item__content">
+          <div class="slider__item__title" :style="fontStyle">{{title}}</div>
+          <div class="slider__item__content" :style="fontStyle">
             {{desc}}
           </div>
           <a v-if="btnDesc" class="el-button el-button--primary" :href="btnSrc" target="_blank">{{btnDesc}}</a>
@@ -30,40 +30,53 @@ export default class extends Vue{
   @Prop() private picName!: string
   @Prop() private btnDesc!: string
   @Prop() private btnSrc!: string
+  @Prop() private fontStyle!: Object
+  @Prop() private backgroundStyle!: Object
 }
 </script>
 
 
 <style lang="scss" scoped>
+.slider{
+  height: 450px;
   .slider__item {
     &__container {
       @include container;
+      height: 100%;
       display: flex;
     }
     &__left {
-      flex: 6;
-      align-self: center;
+      width: 450px;
+      margin-top: 78px;
+      .el-button--primary{
+        background: #DF0629;
+        border: none;
+        width: 120px;
+        height: 44px;
+      }
     }
     &__right {
-      flex: 5;
+      align-self: center;
     }
     &__title {
       font-size: 40px;
     }
     &__content {
       font-size: 16px;
-      margin: 35px 0;
+      margin-top: 16px;
+      margin-bottom: 86px;
       line-height: $baseLineHeight;
       text-align: justify;
     }
     &__img {
-      width: 100%;
-      display: block;
+      width: 503px;
+      height: 402px;
+      margin-top: 51px;
+      margin-left: 180px;
     }
 
     &--1 {
-      background: #212126;
-      color: #fff;
+      height: 100%;
       .slider__item__container {
         color: #fff;
       }
@@ -80,4 +93,5 @@ export default class extends Vue{
       }
     }
   }
+}
 </style>

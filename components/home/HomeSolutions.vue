@@ -12,20 +12,26 @@
           <el-tab-pane label="智慧物流" name="logistics" />
         </el-tabs>
         <div class="solution__item__wrap__desc">
-          <img :src="active.image" />
-          <div class="solution__item__wrap__desc__content">
-            <div class="solution__item__wrap__desc__content__title">
-              {{ active.c_name }}
+          <div>
+            <div class="solution__item__wrap__desc__content">
+              <div class="solution__item__wrap__desc__content__title">
+                {{ active.c_name }}
+              </div>
+              <div class="solution__item__wrap__desc__content__detail">
+                {{ active.desc }}
+              </div>
+              <div style="margin:20px 0;font-size:16px;font-weight:bold;">应用场景:</div>
+              <ul class="solution__item__wrap__desc__content__list">
+                <li v-for="(item,index) in active.list" :key="index">{{item}}</li>
+              </ul>
             </div>
-            <div class="solution__item__wrap__desc__content__tag">
-              <el-tag type="warning" v-for="(tag,index) in active.tags" :key="index">{{tag}}</el-tag>
+            <div class="solution__item__wrap__desc__feature">
+              <span v-for="(tag,index) in active.tags" :key="index" class="tag">{{tag}}</span>
             </div>
-            <div class="solution__item__wrap__desc__content__detail">
-              {{ active.desc }}
-            </div>
-            <ul class="solution__item__wrap__desc__content__list">
-              <li v-for="(item,index) in active.list" :key="index">{{item}}</li>
-            </ul>
+          </div>
+          <div class="solution__item__wrap__desc__img">
+            <img :src="active.image" />
+            <div class="detail">查看详情</div>
           </div>
         </div>
       </div>
@@ -55,7 +61,9 @@ export default class extends Vue{
 </script>
 <style lang="scss" scoped>
   .solution {
-    background: #fff;
+
+    background: #F8F9FB url('../../assets/mock/solution/home_background.png') no-repeat;
+    background-size:100%;
     &__container {
       @include container;
       @include containerPadding;
@@ -64,20 +72,60 @@ export default class extends Vue{
       font-size: 40px;
       text-align: center;
       margin-bottom: 50px;
+      color: #fff;
     }
     &__item__wrap {
       display: flex;
       flex-direction: column;
+      ::v-deep .el-tabs__nav-wrap::after{
+        display: none;
+      }
+      ::v-deep .el-tabs__active-bar{
+        background-color: #fff;
+        height: 4px;
+      }
+      ::v-deep .el-tabs__item{
+        color: rgba(255,255,255,0.80);
+        font-size: 16px;
+      }
       &__desc {
-        height: 370px;
+        height: 500px;
         margin-top: 20px;
+        background: #FFFFFF;
+        box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.1);
+        border-radius: 4px;
         display: flex;
-        justify-content: space-around;
+        justify-content: space-between;
+        &__feature{
+          margin: 28px 0 0 32px;
+          .tag{
+            color: #828282;
+            font-size: 14px;
+            display: inline-flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 110px;
+            margin-right: 55px;
+          }
+          .tag::after{
+            content: '';
+            display: inline-block;
+            width: 1px;
+            height: 33px;
+            background: #828282;
+          }
+          .tag:last-child::after{
+            display: none;
+          }
+        }
         &__content{
           width: 570px;
+          height: 375px;
+          margin-left: 32px;
           &__title{
-            font-size: 30px;
-            margin: 40px 0 15px 0;
+            font-size: 22px;
+            font-weight: 500;
+            margin: 40px 0 30px 0;
           }
           &__tag{
             .el-tag{
@@ -85,19 +133,31 @@ export default class extends Vue{
             }
           }
           &__detail{
-            margin-top: 40px;
-            font-weight: bold;
+            margin-top: 16px;
+            font-size: 14px;
+            color: #828282;
+            font-weight: 500;
           }
           &__list {
             margin: 10px 0 0;
             padding-left: 20px;
             li {
-              margin-bottom: 5px;
+              margin-bottom: 20px;
+              list-style-image:url('../../assets/mock/solution/tick.png');
             }
           }
         }
-        & > img {
-          height: 100%;
+        img {
+          width: 406px;
+          height: 385px;
+          margin-top: 30px;
+          margin-right: 32px;
+          border-radius: 4px;
+        }
+        .detail{
+          font-size: 14px;
+          color: #DF0629;
+          margin-top: 28px;
         }
       }
       .el-tabs{
