@@ -5,7 +5,7 @@
       <div class="list__item__seperator"/>
       <div class="list__item__content">{{item.content}}</div>
     </div>
-    <div class="list__item__img"><img :src="require('../assets/mock/ai/' + item.src + '.png')" /></div>
+    <div class="list__item__img"><img :src="item.src" /></div>
   </div>
 </template>
 <script lang="ts">

@@ -1,6 +1,6 @@
 <template>
   <div class="list__item">
-    <div class="list__item__img"><img :src="require('../assets/mock/ai/' + item.src + '.png')" /></div>
+    <div class="list__item__img"><img :src="item.src" /></div>
     <div class="list__item__title">{{item.title}}</div>
     <div class="list__item__content">{{item.content}}</div>
   </div>

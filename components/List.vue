@@ -1,14 +1,13 @@
 <template>
-  <div class="list" :class="{'even':isEven}">
-    <div class="list__container">
-      <div class="list__title">{{ title }}</div>
-      <div class="list__item__wrap">
-        <div class="list__item" v-for="item in list" :key="item.id">
-          <div class="list__item__img"><img :src="item.src" /></div>
-          <div v-if="item.title" class="list__item__title">{{item.title}}</div>
-          <div class="list__item__content">{{item.content}}</div>
-        </div>
-      </div>
+  <div class="section light-bg" ref="face">
+    <div class="title">
+      应用场景
+    </div>
+    <div v-if="isEven" class="list-wrapper-single-line">
+      <list-item-3 v-for="item in list" :item="item" :key="item.src"/>
+    </div>
+    <div v-else class="list-wrapper-single-line">
+      <list-item v-for="item in list" :item="item" :key="item.src"/>
     </div>
   </div>
 </template>

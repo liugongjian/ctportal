@@ -1,6 +1,6 @@
 <template>
   <div class="list__item2">
-    <div class="list__item2__img"><img :src="require('../assets/mock/advantage/' + item.src + '.png')" /></div>
+    <div class="list__item2__img"><img :src="item.src" /></div>
     <div class="list__item2__word">
       <div class="list__item2__title">{{item.title}}</div>
       <div class="list__item2__content">{{item.content}}</div>

@@ -23,12 +23,12 @@ export default Vue.extend({
   data(){
     return {
       list: [
-        { src:'face', title:'人脸识别', content:'通过比对人脸库中的照片，进行1:N比对，基于输出的符合质量标准的图片，返回被识别的人员信息。' },
-        { src:'mask', title:'口罩检测', content:'通过人脸和人体分析的方式检测用户是否佩戴口罩。' },
-        { src:'passenger', title:'行人检测', content:'适用于3米以上的中远距离俯拍，以人体为识别目标统计画面中的瞬时人数。' },
-        { src:'dangerzone', title:'危险区域检测', content:'对危险监控区域内的人员靠近行为进行识别。' },
-        { src:'body', title:'人体属性检测', content:'检测图像中的所有人体，识别多种属性信息，包含性别年龄、服饰类别、服饰颜色等。' },
-        { src:'smoke', title:'吸烟检测', content:'检测画面中的人员是否有吸烟行为，包括手中拿烟、嘴上叼烟。' }
+        { src:require('~/assets/mock/ai/face.png'), title:'人脸识别', content:'通过比对人脸库中的照片，进行1:N比对，基于输出的符合质量标准的图片，返回被识别的人员信息。' },
+        { src:require('~/assets/mock/ai/mask.png'), title:'口罩检测', content:'通过人脸和人体分析的方式检测用户是否佩戴口罩。' },
+        { src:require('~/assets/mock/ai/passenger.png'), title:'行人检测', content:'适用于3米以上的中远距离俯拍，以人体为识别目标统计画面中的瞬时人数。' },
+        { src:require('~/assets/mock/ai/dangerzone.png'), title:'危险区域检测', content:'对危险监控区域内的人员靠近行为进行识别。' },
+        { src:require('~/assets/mock/ai/body.png'), title:'人体属性检测', content:'检测图像中的所有人体，识别多种属性信息，包含性别年龄、服饰类别、服饰颜色等。' },
+        { src:require('~/assets/mock/ai/smoke.png'), title:'吸烟检测', content:'检测画面中的人员是否有吸烟行为，包括手中拿烟、嘴上叼烟。' }
       ]
     }
   },
