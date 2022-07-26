@@ -13,12 +13,12 @@
       </div>
       <ul @mouseleave="toFixRegion()">
         <li @mouseover="getRegionDetail('')" @click="fixRegion('')" :class="{'clicked':theRegion === ''}">全国({{country}})</li>
+        <li @mouseover="getRegionDetail('guizhou')" @click="fixRegion('guizhou')" :class="{'clicked':theRegion === 'guizhou'}">贵州云基地({{regions['guizhou'].length}})</li>
         <li @mouseover="getRegionDetail('huadong')" @click="fixRegion('huadong')" :class="{'clicked':theRegion === 'huadong'}">华东({{regions['huadong'].length}})</li>
-        <li @mouseover="getRegionDetail('xinan')" @click="fixRegion('xinan')" :class="{'clicked':theRegion === 'xinan'}">西南({{regions['xinan'].length}})</li>
-        <li @mouseover="getRegionDetail('beifang')" @click="fixRegion('beifang')" :class="{'clicked':theRegion === 'beifang'}">北方({{regions['beifang'].length}})</li>
         <li @mouseover="getRegionDetail('huanan')" @click="fixRegion('huanan')" :class="{'clicked':theRegion === 'huanan'}">华南({{regions['huanan'].length}})</li>
         <li @mouseover="getRegionDetail('xibei')" @click="fixRegion('xibei')" :class="{'clicked':theRegion === 'xibei'}">西北({{regions['xibei'].length}})</li>
-        <li @mouseover="getRegionDetail('guizhou')" @click="fixRegion('guizhou')" :class="{'clicked':theRegion === 'guizhou'}">贵州云基地({{regions['guizhou'].length}})</li>
+        <li @mouseover="getRegionDetail('xinan')" @click="fixRegion('xinan')" :class="{'clicked':theRegion === 'xinan'}">西南({{regions['xinan'].length}})</li>
+        <li @mouseover="getRegionDetail('beifang')" @click="fixRegion('beifang')" :class="{'clicked':theRegion === 'beifang'}">北方({{regions['beifang'].length}})</li>
       </ul>
     </div>
     <!-- <div class="test">{{(this.ele && this.ele.id) || 'empty'}}</div> -->

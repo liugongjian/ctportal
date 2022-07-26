@@ -6,8 +6,7 @@
         <div class="ai__intro">
           大规模数据处理能力及云基础设施的迅猛发展的背景下，AI算法的成熟让监控安防的智能化成为可能。随着场景的不断丰富和应用的不断深入，更多成熟可用的视频算法可以融入到各行业的生产流程中，赋予行业先进生产力
         </div>
-        <div class="list_container">
-          <!-- <list-item :item="{src:'/_nuxt/assets/images/ai/10001.png',title:'test',content:'test'}"/> -->
+        <div class="list-wrapper-multiple-line">
           <list-item v-for="item in list" :item="item" :key="item.src"/>
         </div>
       </div>
@@ -41,10 +40,6 @@ export default Vue.extend({
 })
 </script>
 <style lang="scss" scoped>
-.list_container{
-  display: flex;
-  flex-wrap: wrap;
-}
 .ai {
   background: #F8F9FB;
   &__container {

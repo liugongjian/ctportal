@@ -11,7 +11,7 @@
         </div>
         <div class="slider__item__right">
           <!-- <img class="slider__item__img" :src="require(`${picSrc}.png`)"/> -->
-          <img class="slider__item__img" :src="require('../assets/mock/' + picName + '.png')"/>
+          <img v-if="!!picName" class="slider__item__img" :src="require('../assets/mock/' + picName + '.png')"/>
         </div>
       </div>
     </div>

@@ -1,8 +1,11 @@
 <template>
   <div class="list__item">
+    <div class="list__item__word">
+      <div class="list__item__title">{{item.title}}</div>
+      <div class="list__item__seperator"/>
+      <div class="list__item__content">{{item.content}}</div>
+    </div>
     <div class="list__item__img"><img :src="require('../assets/mock/ai/' + item.src + '.png')" /></div>
-    <div class="list__item__title">{{item.title}}</div>
-    <div class="list__item__content">{{item.content}}</div>
   </div>
 </template>
 <script lang="ts">
@@ -17,8 +20,6 @@ export default class extends Vue{
 
 <style lang="scss" scoped>
 .list__item {
-  // width: 383px;
-  // height: 319px;
   margin: 12px 12px;
   font-family: PingFangSC-Medium;
   color: #181818;
@@ -26,17 +27,23 @@ export default class extends Vue{
   font-weight: 500;
   background: #FFFFFF;
   border-radius: 4px;
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.1);
+  &__word{
+    padding-right: 20px;
+  }
+  &__seperator{
+    width: 52px;
+    height: 3px;
+    background: #DF0629;
+    margin: 0 0 20px 27px;
+
+  }
   &__img {
-    height: 183px;
-    width: 100%;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
     img {
-      width: 100%;
-      height: 100%;
+      height: 220px;
+      width: 254px;
     }
   }
   &__title {
@@ -47,7 +54,7 @@ export default class extends Vue{
   &__content {
     font-size: 12px;
     text-align: justify;
-    margin: 0 20px 38px 27px;
+    margin-left: 27px;
   }
 }
 </style>
