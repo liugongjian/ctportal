@@ -99,7 +99,7 @@
       clip-path: inset(0 round 20px);
       background-image: linear-gradient(90deg, rgba(223,6,41,0.28), rgba(255,255,255,0));
       &__bg{
-        background-image: linear-gradient(90deg, rgba(255,255,255,1), rgba(223,6,41,0.07));
+        background-image: linear-gradient(90deg, rgba(255,255,255,1), rgba(247,242,245,0.7), rgba(255,255,255,1));
         width: calc(100% - 3px);
         height: calc(100% - 4px);
         border-radius: 20px;
