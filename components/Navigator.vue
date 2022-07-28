@@ -79,6 +79,9 @@ export default class extends Vue{
 .navigation__wrapper{
   font-size: 22px;
   font-weight: 500;
+  ::v-deep .el-tabs__header{
+    margin: 0 !important;
+  }
   ::v-deep .el-tabs__nav-wrap{
     display: flex;
     justify-content: center;
