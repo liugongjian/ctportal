@@ -7,7 +7,8 @@
 </template>
 
 <script lang="ts">
-import { Vue, Prop, Component} from 'vue-property-decorator'
+import { Vue, Prop, Component, Watch} from 'vue-property-decorator'
+import { deounbce } from '~/assets/ts/debounce'
 
 
 @Component
@@ -16,12 +17,34 @@ export default class extends Vue{
   private activeName = 'ai'
   private bann: any
   private bannerTop = 500
+  private bodyHeight = 0
+  private stopWatchFlag = false
+
+  // private debounceHandle = deounbce(() => this.followScroll(),100)
+
+  @Watch('bodyHeight')
+  public onBodyHeightScroll() {
+    if(!this.stopWatchFlag){
+      this.followScroll()
+    }
+  }
+
+  private followScroll(){
+    if(this.navigation){
+      for(let i = 0 ; i < this.navigation.length ; i++){
+        if(this.bodyHeight < this.navigation[i].el.offsetTop){
+          this.resetActivePosition()
+          this.activeName = this.navigation[i].name
+          break
+        }
+      }
+    }
+  }
 
   private mounted() {
       window.addEventListener("scroll", this.handScroll)
       this.bann = this.$refs.banner
       this.bannerTop = this.bann?.offsetTop
-      console.log("offsetTop", this.bannerTop)
   }
 
   private handScroll() {
@@ -35,19 +58,23 @@ export default class extends Vue{
       } else {
         this.bann.classList.remove("isTop");
       }
+      this.bodyHeight = scrolltop
   }
 
 
 
   private handleClick(){
-    const tabEl: any = this.$refs.tabs
-    const $el:any = tabEl.$el
-    this.resetActivePosition($el)
-    console.log('activeName:',this.activeName)
+    this.stopWatchFlag = true
+    this.resetActivePosition()
     this.jumpTo(this.activeName)
+    setTimeout(() => {
+      this.stopWatchFlag = false
+    },600)
   }
 
-  private resetActivePosition($el:any) {
+  private resetActivePosition() {
+    const tabEl: any = this.$refs.tabs
+    const $el:any = tabEl.$el
       this.$nextTick(() => {
         const activeEl = $el.querySelector('.el-tabs__item.is-active');
         const lineEl = $el.querySelector('.el-tabs__active-bar');
@@ -64,7 +91,6 @@ export default class extends Vue{
     const activeNav = this.navigation.filter( (nav:any) => nav.name === elName)[0]
     activeNav.el.scrollIntoView({behavior: "smooth"})
   }
-
 }
 </script>
 

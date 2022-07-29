@@ -1,66 +1,18 @@
 <template>
-  <div class="slider">
-    <div class="slider__item slider__item--1">
-      <div class="slider__item__container">
-        <div class="slider__item__left">
-          <div class="slider__item__title">支持与服务</div>
-          <div class="slider__item__content">
-            完善的支持计划和专家服务，满足您从视频上云部署、日常运维到优化升级等的全周期需求，让您的视频上云之路更加高效敏捷。
-          </div>
-        </div>
-        <div class="slider__item__right">
-          <img class="slider__item__img" src="~/assets/mock/service_slider.svg" />
-        </div>
-      </div>
-    </div>
-  </div>
+  <Slider v-bind="{ title, desc, fontStyle, picName, btnDesc, btnSrc, backgroundStyle }" />
 </template>
-<style lang="scss" scoped>
-  .slider__item {
-    &__container {
-      @include container;
-      display: flex;
-    }
-    &__left {
-      flex: 5;
-      align-self: center;
-    }
-    &__right {
-      flex: 7;
-    }
-    &__title {
-      font-size: 40px;
-    }
-    &__content {
-      font-size: 16px;
-      margin: 35px 0;
-      line-height: $baseLineHeight;
-    }
-    &__img {
-      width: 100%;
-      display: block;
-    }
+<script lang="ts">
+import { Vue, Component} from 'vue-property-decorator'
 
-    &--1 {
-      background: linear-gradient(90deg, #152a3c 0%, #2485de 100%);
-      color: #fff;
-      .slider__item__container {
-        color: #fff;
-      }
-      .slider__item__content {
-        color: #eee;
-      }
-      .slider__item__img {
-        padding: 30px;
-      }
-      .slider__item__btn {
-        border-color: #fff;
-        color: #fff;
-        &:hover {
-          border-color: $primary;
-          color: $primary;
-        }
-      }
-    }
-  }
-</style>
+@Component
+export default class extends Vue{
+  private title = '支持与服务'
+  private desc = '服务工程师团队为您提供7*24小时技术服务支持。若您在使用百度智能云时遇到问题，您可以通过工单、智能客服、自助服务、热线电话等寻求帮助'
+  private fontStyle = { color: '#000' }
+  // private picSrc = '~/assets/mock/home_slider.png'
+  private picName = undefined
+  private btnDesc = undefined
+  private btnSrc = 'https://www.ctyun.cn/products/10011360'
+  private backgroundStyle = { 'background': "#fff url('/_nuxt/assets/mock/service/service_banner.png') no-repeat", 'background-size': '100% 100%' }
+}
+</script>
