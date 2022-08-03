@@ -248,6 +248,7 @@ body {
   background: #F8F8F8;
 }
 .bg{
+  margin: 3.5rem 0;
   background: url('../../assets/mock/download/bg.png') no-repeat;
   background-size: cover;
 }
