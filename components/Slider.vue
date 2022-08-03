@@ -3,7 +3,10 @@
     <div class="slider__item slider__item--1">
       <div class="slider__item__container">
         <div class="slider__item__left">
-          <div class="slider__item__title" :style="fontStyle">{{title}}</div>
+          <div class="slider__item__title" :style="fontStyle">
+            {{title}}
+            <svg-icon v-if="iconColor" height="34" width="34" :color="iconColor" name="slider_play"></svg-icon>
+          </div>
           <div class="slider__item__content" :style="fontStyle">
             {{desc}}
           </div>
@@ -11,7 +14,7 @@
         </div>
         <div class="slider__item__right">
           <!-- <img class="slider__item__img" :src="require(`${picSrc}.png`)"/> -->
-          <img v-if="!!picName" class="slider__item__img" :src="require('../assets/mock/' + picName + '.png')"/>
+          <img v-if="picName" class="slider__item__img" :src="require('../assets/mock/' + picName + '.png')"/>
         </div>
       </div>
     </div>
@@ -32,6 +35,7 @@ export default class extends Vue{
   @Prop() private btnSrc!: string
   @Prop() private fontStyle!: Object
   @Prop() private backgroundStyle!: Object
+  @Prop({ default: '#DF0629' }) private iconColor!: string
 }
 </script>
 
@@ -46,7 +50,7 @@ export default class extends Vue{
       display: flex;
     }
     &__left {
-      width: 450px;
+      width: 490px;
       margin-top: 78px;
       .el-button--primary{
         background: #DF0629;
@@ -93,5 +97,10 @@ export default class extends Vue{
       }
     }
   }
+}
+.play{
+  width: 34px;
+  height: 34px;
+  color: #DF0629;
 }
 </style>

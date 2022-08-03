@@ -42,7 +42,7 @@ export default class extends Vue{
   }
   &__img {
     img {
-      height: 220px;
+      height: 100%;
       width: 254px;
     }
   }

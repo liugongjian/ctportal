@@ -2,3 +2,4 @@
 import './arrow-down'
 import './finish'
 import './search'
+import './slider_play'

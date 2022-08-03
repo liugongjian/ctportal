@@ -1,5 +1,5 @@
 <template>
-  <div class="list__item2">
+  <div class="list__item2" :class="{'small': isSmall}">
     <div class="list__item2__img"><img :src="item.src" /></div>
     <div class="list__item2__word">
       <div class="list__item2__title">{{item.title}}</div>
@@ -14,6 +14,7 @@ import { Vue, Prop, Component} from 'vue-property-decorator'
 @Component
 export default class extends Vue{
   @Prop() private item!: any
+  @Prop() private isSmall!: boolean
 }
 </script>
 
@@ -36,5 +37,8 @@ export default class extends Vue{
     font-weight: 500;
     margin-bottom: 25px;
   }
+}
+.small{
+  width: 340px;
 }
 </style>

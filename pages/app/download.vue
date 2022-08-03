@@ -1,86 +1,132 @@
 <template>
   <div style="position:relative">
-    <div :class="isMobile ? 'mobile' : ''">
+    <!-- pc端 -->
+    <div v-if="!isMobile">
       <section class="banner">
-        <section class="container">
+        <Slider v-bind="{ title, desc, fontStyle, picName, btnDesc, btnSrc, backgroundStyle }" />
+        <Navigator :navigation="navigation" />
+        <div class="bg">
+          <section class="container">
+            <section class="download" ref="download">
+              <div class="downloadBox" :class="{'qr': isHoverIos}" @mouseenter="()=>handleHover('ios')" @mouseleave="()=>handleOut('ios')">
+                  <div class="icon" :class="{'qr-size': isHoverIos}">
+                      <img v-if="!isHoverIos" src="@/assets/mock/download/icon_ios.png" alt="">
+                      <img v-else src="@/assets/images/download/ios_qr.png" alt="">
+                  </div>
+                  <div class="content">
+                    <div class="os">
+                        <p class="device">IOS</p>
+                    </div>
+                    <div class="instruction">
+                      <!-- 20220518 update from 1.1.0 to 1.1.1 -->
+                        <p class="desc">版本号: 1.3.1</p>
+                    </div>
+                    <div v-if="isHoverIos" class="btns">
+                      <button><a href="https://apps.apple.com/cn/app/天翼云瞰/id1609919930">立即下载</a></button>
+                  </div>
+                  </div>
+                  <div class="corner">
+                    <div v-if="!isHoverIos" class="half" />
+                    <img v-if="!isHoverIos" src="@/assets/mock/download/qr_imit.png" alt="">
+                  </div>
 
-          <div class="bd">
-            <div class="logo">
-              <img src="@/assets/images/download/ctyun_logo.png" alt="">
-            </div>
-            <div class="title">
-              <h1>天翼云瞰</h1>
-              <h2 class="mt-10">天翼云视频监控客户端</h2>
-            </div>
-            <div class="use-help">
-              <h5>首次使用指引：</h5>
-              <p>1、注册天翼云账号并开通天翼云视频监控服务。</p>
-              <p>2、点击下方的客户端链接完成下载并安装客户端。</p>
-              <p>3、输入天翼云视频监控登录账号或邮箱以及设置的密码，开始使用天翼云瞰软件。</p>
-            </div>
-          </div>
+              </div>
+              <div class="downloadBox" :class="{'qr': isHoverAndroid}" @mouseenter="()=>handleHover('android')" @mouseleave="()=>handleOut('android')">
+                  <div class="icon" :class="{'qr-size': isHoverAndroid}">
+                      <img v-if="!isHoverAndroid" src="@/assets/mock/download/icon_android.png" alt="">
+                      <img v-else src="@/assets/images/download/qr_android.png" alt="">
+                  </div>
+                  <div class="content">
+                    <div class="os">
+                        <p class="device">Android</p>
+                    </div>
+                    <div class="instruction">
+                      <!-- 20220518 update from 1.1.0 to 1.1.1 -->
+                        <p class="desc">版本号: 1.3.1</p>
+                    </div>
+                    <div v-if="isHoverAndroid" class="btns">
+                      <button><a href="https://vss.guiyang.vcn.ctyun.cn/app/android/latest/vss-android.apk">立即下载</a></button>
+                    </div>
+                  </div>
+                  <div class="corner">
+                    <div  v-if="!isHoverAndroid" class="half" />
+                    <img  v-if="!isHoverAndroid" src="@/assets/mock/download/qr_imit.png" alt="">
+                  </div>
+              </div>
+              <div class="downloadBox" @mouseenter="()=>handleHover('win')" @mouseleave="()=>handleOut('win')">
+                  <div class="icon">
+                      <img src="@/assets/mock/download/icon_windows.png" alt="">
+                  </div>
+                  <div class="os">
+                      <p class="device">Windows</p>
+                  </div>
+                  <div class="instruction">
+                    <!-- 20220518 update from 1.1.0 to 1.1.1 -->
+                      <p class="desc">版本号: 1.0.0</p>
+                  </div>
+                  <div v-if="isHoverWin" class="btns">
+                    <button><a href="">客户端下载</a></button>
+                  </div>
+              </div>
+            </section>
 
-          <section class="download">
-            <div class="downloadBox">
-                <div class="os">
-                    <p class="device">Android</p>
-                </div>
-                <div class="icon">
-                    <img src="@/assets/images/download/qr_android.png" alt="">
-                </div>
-                <div class="instruction">
-                  <!-- 20220518 update from 1.1.0 to 1.1.1 -->
-                    <p class="desc">V1.3.1</p>
-                </div>
-                <div v-if="isMobile" class="os-desc">
-                  <p>适用于安卓手机</p>
-                </div>
-                <div class="btns">
-                    <button><a href="https://vss.guiyang.vcn.ctyun.cn/app/android/latest/vss-android.apk">立即下载</a></button>
-                </div>
-            </div>
-            <div class="downloadBox">
-                <div class="os">
-                    <p class="device">IOS</p>
-                </div>
-                <div class="icon">
-                    <img src="@/assets/images/download/ios_qr.png" alt="">
-                </div>
-                <div class="instruction">
-                  <!-- 20220518 update from 1.1.0 to 1.1.1 -->
-                    <p class="desc">V1.3.1</p>
-                </div>
-                <div v-if="isMobile" class="os-desc">
-                  <p>适用于IOS手机</p>
-                </div>
-                <div class="btns">
-                    <button><a href="https://apps.apple.com/cn/app/天翼云瞰/id1609919930">立即下载</a></button>
-                </div>
-            </div>
-            <div class="downloadBox">
-                <div class="os">
-                    <p class="device">Windows</p>
-                </div>
-                <div class="icon-border">
-                    <img src="@/assets/images/download/windows.svg" alt="">
-                </div>
-                <div class="instruction">
-                  <!-- 20220518 update from 1.1.0 to 1.1.1 -->
-                    <p class="desc">V1.0.0</p>
-                </div>
-                <div v-if="isMobile" class="os-desc">
-                  <p>适用于PC端</p>
-                </div>
-                <div class="btns-in-dev">
-                    <p>上架中，</p>
-                    <p>敬请期待</p>
-                </div>
-            </div>
           </section>
-
-        </section>
+        </div>
       </section>
     </div>
+    <!-- 移动端 -->
+    <div v-if="isMobile" class="mobile">
+      <section class="banner">
+        <Slider v-bind="{ title, desc, fontStyle, picName, btnDesc, btnSrc, backgroundStyle, iconColor }" />
+        <div class="bg">
+          <section class="container">
+            <section class="download" ref="download">
+              <div class="downloadBox">
+                  <div class="icon">
+                      <img src="@/assets/images/download/ios_qr.png" alt="">
+                  </div>
+                  <div class="content">
+                    <div class="os">
+                        <p class="device">IOS</p>
+                    </div>
+                    <div class="instruction">
+                      <!-- 20220518 update from 1.1.0 to 1.1.1 -->
+                        <p class="desc">1.3.1</p>
+                        <p class="desc">适用于苹果手机</p>
+                    </div>
+                  </div>
+                  <div class="seperator" />
+                  <div class="btns">
+                      <button><a href="https://apps.apple.com/cn/app/天翼云瞰/id1609919930">立即下载</a></button>
+                  </div>
+              </div>
+              <div class="downloadBox">
+                  <div class="icon">
+                      <img src="@/assets/images/download/qr_android.png" alt="">
+                  </div>
+                  <div class="content">
+                    <div class="os">
+                        <p class="device">Android</p>
+                    </div>
+                    <div class="instruction">
+                      <!-- 20220518 update from 1.1.0 to 1.1.1 -->
+                        <p class="desc">1.3.1</p>
+                        <p class="desc">适用于安卓手机</p>
+                    </div>
+                  </div>
+                  <div class="seperator" />
+                  <div class="btns">
+                      <button><a href="https://vss.guiyang.vcn.ctyun.cn/app/android/latest/vss-android.apk">立即下载</a></button>
+                    </div>
+              </div>
+            </section>
+
+          </section>
+        </div>
+      </section>
+    </div>
+
+
     <div v-if="isNewBrowser&&!clicked" class="shade">
       <img src="@/assets/images/download/h5-shade.png" alt="">
       <button class="btn" @click="() => clicked = true">我知道了</button>
@@ -90,23 +136,44 @@
 
 <script>
 import Vue from "vue";
+import Navigator from "~/components/Navigator.vue";
 export default Vue.extend({
-  layout: 'download',
   head(){
     return {
-      title: '天翼云 - 视频监控'
+        Navigatortitle: '天翼云 - 视频监控'
     }
   },
   data(){
     return {
+      isHoverIos: false,
+      isHoverAndroid: false,
+      isHoverWin: false,
       isMobile:false,
       isNewBrowser:false,
-      clicked:false
+      clicked:false,
+      navigation:[
+        { label: '下载中心', name: 'download'}
+      ],
+      title: '天翼云瞰下载中心',
+      desc:'天翼云瞰支持桌面和移动客户端',
+      fontStyle: { color: '#000' },
+      picSrc: undefined,
+      picName: undefined,
+      btnDesc: undefined,
+      btnSrc: undefined,
+      iconColor: null,
+      backgroundStyle: { 'background': "#fff url('/_nuxt/assets/mock/download/slider_download.png') no-repeat", 'background-size': '100% 100%' },
     }
   },
   mounted(){
+    this.navigation = this.navigation.map( nav => ({
+      ...nav,
+      el: this.$refs[nav.name].$el || this.$refs[nav.name]
+    }))
     this.isMobile = this.isMobileBrowser()
+    console.log('this.isMobile:',this.isMobile)
     this.isNewBrowser = this.isweixin() || this.isqq()
+    console.log('this.isNewBrowser:',this.isNewBrowser)
   },
   methods: {
     isMobileBrowser(){
@@ -123,43 +190,74 @@ export default Vue.extend({
     },
     isqq() {
       return navigator.userAgent.indexOf('YYB_D ') > -1 || navigator.userAgent.indexOf('QQ/') > -1;
+    },
+    handleHover(os){
+      switch(os){
+        case 'ios':
+          this.isHoverIos = true
+          break
+        case 'android':
+          this.isHoverAndroid = true
+          break
+        case 'win':
+          this.isHoverWin = true
+          break
+      }
+    },
+    handleOut(os){
+      switch(os){
+        case 'ios':
+          this.isHoverIos = false
+          break
+        case 'android':
+          this.isHoverAndroid = false
+          break
+        case 'win':
+          this.isHoverWin = false
+          break
+      }
     }
   }
 });
 </script>
 <style lang="scss">
 html{
-  @media only screen and (min-width: 1350px) {
-    font-size: 14px;
-  }
-  @media only screen and (min-width: 850px) and (max-width: 1349px) {
-    font-size: 12px;
-  }
-  @media only screen and (min-width: 600px) and (max-width: 849px) {
-    font-size: 10px;
-  }
-  @media only screen and (min-width: 500px) and (max-width: 599px){
-    font-size: 9px;
-  }
-  @media only screen and (min-width: 300px) and (max-width: 499px){
-    font-size: 8px;
-  }
-  @media only screen and (min-width: 200px) and (max-width: 299px){
-    font-size: 6px;
-  }
+  font-size: 8px;
+  // @media only screen and (min-width: 1350px) {
+  //   font-size: 14px;
+  // }
+  // @media only screen and (min-width: 850px) and (max-width: 1349px) {
+  //   font-size: 12px;
+  // }
+  // @media only screen and (min-width: 600px) and (max-width: 849px) {
+  //   font-size: 10px;
+  // }
+  // @media only screen and (min-width: 500px) and (max-width: 599px){
+  //   font-size: 9px;
+  // }
+  // @media only screen and (min-width: 300px) and (max-width: 499px){
+  //   font-size: 8px;
+  // }
+  // @media only screen and (min-width: 200px) and (max-width: 299px){
+  //   font-size: 6px;
+  // }
 }
 </style>
 <style lang="scss" scoped>
 body {
   background: #F8F8F8;
 }
+.bg{
+  background: url('../../assets/mock/download/bg.png') no-repeat;
+  background-size: cover;
+}
 .banner {
   margin: 0 auto;
   .container {
-    width: 80vw;
-    max-width: 77rem;
-    min-width: 40rem;
-    margin: 0 auto;
+    height: 694px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     .bd {
       padding-top: 4.3rem;
       text-align: left;
@@ -205,33 +303,66 @@ body {
     }
   }
   .download {
-    margin: 9rem auto;
-    @media only screen and (min-width: 850px){
-      margin: 6rem 0 !important;
+    display: grid;
+    grid-auto-flow: column dense;
+    grid-template-columns: 600px 495px;
+    grid-template-rows: repeat(2, 267px);
+    grid-gap: 28px 39px;
+    .downloadBox:last-child{
+      grid-row-start: span 2;
+      padding-left: 0;
+      width: 100%;
+      height:100%;
+      flex-direction: column;
+      justify-content: center !important;
+      .icon{
+        height: 80px;
+        margin-bottom: 77px;
+      }
     }
-    display: flex;
-    justify-content: space-around;
-    background-color: #fff;
-    border: 1px solid #BBBBBB;
-    box-shadow: rgb(0 0 0 / 40%) 0px 2px 6px;
     .downloadBox {
       display: flex;
-      flex-direction: column;
+      justify-content: space-between;
       align-items: center;
-      padding: 1.5rem;
+      padding-left: 96px;
+      width: 600px;
+      height: 267px;
+      background: #fff;
+      border-radius: 10px;
+      .corner{
+        margin-top: 18px;
+        margin-right: 12px;
+        width: 64px;
+        height: 100%;
+        position: relative;
+        .half{
+          position: absolute;
+          z-index: 1;
+          width: 0;
+          height: 0;
+          border-bottom: 64px solid #fff;
+          border-right: 64px solid transparent;
+        }
+        img{
+          position: absolute;
+          z-index: 0;
+          top:0;
+        }
+      }
       .os {
         margin-bottom: 2.9rem;
-        @media only screen and (min-width: 850px){
-          margin: 0 !important;
-        }
         .device {
-          font-weight: 400;
-          font-size: 2.6rem;
-          line-height: 3.8rem;
+          font-size: 34px;
+          color: #333333;
+          letter-spacing: 0;
+          line-height: 36px;
+          font-weight: 600;
         }
       }
       .icon {
-        width: 10.3rem;
+        width: 60px;
+        display: flex;
+        align-items: center;
         @media only screen and (min-width: 850px) {
           height: 100%; // 兼容IE
         }
@@ -239,6 +370,10 @@ body {
           width: 100%;
           vertical-align: middle;
         }
+      }
+      .qr-size{
+        width: 170px;
+        height: 190px;
       }
       .icon-border{
         width: 10.3rem;
@@ -256,16 +391,19 @@ body {
           text-align: center;
           font-size: 1rem;
           .desc{
-            color: rgb(206, 204, 204);
+            font-size: 22px;
+            color: #666666;
+            letter-spacing: 0;
+            line-height: 36px;
+            font-weight: 400;
           }
       }
       .btns{
-        padding-top: 1.5rem;
-        @media only screen and (min-width: 850px){
-          padding-top: 0.5rem !important;
-        }
+        margin-top: 30px;
         button {
-          background: rgb(238, 21, 21);
+          background: #fff;
+          border: 1px solid #DF0629 !important;
+          border-radius: 28px !important;
           display: inline-block;
           line-height: 1;
           // white-space: nowrap;
@@ -283,7 +421,7 @@ body {
           font-size: 1rem;
           border-radius: .3rem;
           a{
-            color: #fff;
+            color: #DF0629;
           }
         }
       }
@@ -303,94 +441,53 @@ body {
         }
       }
     }
+    .qr{
+      padding-left: 38px;
+    }
   }
 }
 .mobile{
   .container{
-    .bd{
-      .use-help{
-        h5{
-          font-size: 2rem;
-        }
-        p{
-          font-size: 1.8rem;
-        }
-      }
-    }
+    height: auto;
+    width: 90%;
+    margin: 0 auto;
     .download{
+      width: 100%;
+      display: flex;
       flex-direction: column;
       border:none;
       box-shadow:none;
-      .downloadBox{
-        display: grid;
-        grid-template-columns: 13rem 1fr 1fr;
-        grid-template-rows: repeat(3, auto);
-        place-items: center center;
-        grid-column-gap: 1.5rem;
-        border: 1px solid #BBBBBB;
-        border-radius: 6px;
-        box-shadow: rgb(0 0 0 / 40%) 0px 2px 6px;
-        margin-bottom: 3rem;
+      .downloadBox,.downloadBox:last-child{
+        width: 100%;
+        height: 22rem;
+        flex-direction: row;
+        justify-content: flex-start;
+        padding-left: 4.5rem;
         .icon{
-          grid-column-start: 1;
-          grid-column-end: 2;
-          grid-row-start: 1;
-          grid-row-end: 4;
+          width: 16rem;
+          height: 16rem;
+          margin-right: 6.6rem;
+          margin-bottom: 0;
         }
-        .icon-border{
-          grid-column-start: 1;
-          grid-column-end: 2;
-          grid-row-start: 1;
-          grid-row-end: 4;
-        }
-        .os{
-          grid-column-start: 2;
-          grid-column-end: 3;
-          margin:0;
-          justify-self: start;
+        .seperator{
+          height: 94%;
+          width: 1px;
+          background: #E6E6E6;
+          margin-left: auto;
         }
         .instruction{
-          grid-column-start: 2;
-          grid-column-end: 3;
-          text-align: left;
-          justify-self: start;
-          // transform: scale(0.7);
-          // transform-origin: 0;
-          p{
-            font-size: 1.5rem;
-            color: #484545;
+          .desc{
+            font-size: 2.75rem;
+            color: #000000;
+            text-align: left;
           }
         }
         .btns{
-          grid-column-start: 3;
-          grid-column-end: 4;
-          grid-row-start: 1;
-          grid-row-end: 4;
-          padding: 0;
-        }
-        .btns-in-dev{
-          grid-column-start: 3;
-          grid-column-end: 4;
-          grid-row-start: 1;
-          grid-row-end: 4;
-          padding: 0;
-          p{
-            display: block;
-            line-height: 2rem;
+          margin: 0 5.1rem 0 auto;
+          button{
+            width: 24.6rem;
+            height: 7rem;
           }
-        }
-        .os-desc{
-            font-size: 0.6rem;
-            color: rgb(206, 204, 204);
-            grid-column-start: 2;
-            grid-column-end: 3;
-            justify-self: start;
-            // transform: scale(0.7);
-            // transform-origin: 0;
-            p{
-              font-size: 1.5rem;
-              color: #484545;
-            }
         }
       }
     }

@@ -14,7 +14,7 @@ import { deounbce } from '~/assets/ts/debounce'
 @Component
 export default class extends Vue{
   @Prop() private navigation!: any
-  private activeName = 'ai'
+  private activeName = ''
   private bann: any
   private bannerTop = 500
   private bodyHeight = 0
@@ -42,9 +42,11 @@ export default class extends Vue{
   }
 
   private mounted() {
-      window.addEventListener("scroll", this.handScroll)
-      this.bann = this.$refs.banner
-      this.bannerTop = this.bann?.offsetTop
+    this.activeName = this.navigation[0].name
+    this.resetActivePosition()
+    window.addEventListener("scroll", this.handScroll)
+    this.bann = this.$refs.banner
+    this.bannerTop = this.bann?.offsetTop
   }
 
   private handScroll() {
@@ -69,7 +71,7 @@ export default class extends Vue{
     this.jumpTo(this.activeName)
     setTimeout(() => {
       this.stopWatchFlag = false
-    },600)
+    },1000)
   }
 
   private resetActivePosition() {
@@ -78,12 +80,14 @@ export default class extends Vue{
       this.$nextTick(() => {
         const activeEl = $el.querySelector('.el-tabs__item.is-active');
         const lineEl = $el.querySelector('.el-tabs__active-bar');
-        const style: any = getComputedStyle(activeEl);
-        const pl = style.paddingLeft.match(/\d+/)[0] * 1;
-        const pr = style.paddingRight.match(/\d+/)[0] * 1;
-        const w = style.width.match(/\d+/)[0] * 1;
-        lineEl.style.transform = 'translateX(' + (activeEl.offsetLeft + pl) + 'px)';
-        lineEl.style.width = (w - pl - pr)+'px';
+        if(activeEl && lineEl){
+          const style: any = getComputedStyle(activeEl);
+          const pl = style.paddingLeft.match(/\d+/)[0] * 1;
+          const pr = style.paddingRight.match(/\d+/)[0] * 1;
+          const w = style.width.match(/\d+/)[0] * 1;
+          lineEl.style.transform = 'translateX(' + (activeEl.offsetLeft + pl) + 'px)';
+          lineEl.style.width = (w - pl - pr)+'px';
+        }
       })
   }
 
@@ -122,7 +126,7 @@ export default class extends Vue{
         min-width: 1100px;
         margin: 0 auto;
         display: flex;
-        justify-content: space-between;
+        justify-content: space-evenly;
         .el-tabs__active-bar{
           background: #DF0629;
           height: 4px;

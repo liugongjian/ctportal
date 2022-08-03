@@ -1,5 +1,5 @@
 <template>
-  <Slider v-bind="{ title, desc, fontStyle, picName, btnDesc, btnSrc, backgroundStyle }" />
+  <Slider v-bind="{ title, desc, fontStyle, picName, btnDesc, btnSrc, backgroundStyle, iconColor }" />
 </template>
 
 <script lang="ts">
@@ -15,5 +15,6 @@ export default class extends Vue{
   private btnDesc = '立即开通'
   private btnSrc = 'https://www.ctyun.cn/products/10011360'
   private backgroundStyle = { 'background-image': 'linear-gradient(179deg, #23233C 34%, #56566E 94%)' }
+  private iconColor = '#F1C482'
 }
 </script>
