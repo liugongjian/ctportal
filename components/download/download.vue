@@ -416,8 +416,10 @@ body {
           font-weight: 400;
           -webkit-user-select: none;
           padding: 1rem 1.5rem;
-          font-size: 1rem;
+          font-size: 20px;
           border-radius: .3rem;
+          width: 184px;
+          height: 55px;
           a{
             color: #DF0629;
           }
