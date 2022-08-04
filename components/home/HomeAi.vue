@@ -104,7 +104,6 @@ export default Vue.extend({
         transition: opacity 100ms;
         &__title {
           font-size: 16px;
-          font-weight: bold;
           margin: 30px 0 15px 0;
         }
       }

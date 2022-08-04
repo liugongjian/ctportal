@@ -20,7 +20,7 @@
               <div class="solution__item__wrap__desc__content__detail">
                 {{ active.desc }}
               </div>
-              <div style="margin:20px 0;font-size:16px;font-weight:bold;">应用场景:</div>
+              <div style="margin-top:38px;margin-bottom:27px;font-size:16px;font-weight:bold;">应用场景:</div>
               <ul class="solution__item__wrap__desc__content__list">
                 <li v-for="(item,index) in active.list" :key="index">{{item}}</li>
               </ul>
