@@ -1,4 +1,3 @@
-
 <template>
   <div>
     <HomeAi ref="ai"/>
@@ -6,7 +5,7 @@
       <div class="title">
         人脸识别
       </div>
-      <div class="list-wrapper-single-line">
+      <div class="list-wrapper-single-line face">
         <list-item-3 v-for="item in faceList" :item="item" :key="item.src"/>
       </div>
     </div>
@@ -57,5 +56,11 @@ export default class extends Vue{
   background: #F8F9FB url('../../assets/mock/ai/sectionbg.png') no-repeat;
   background-size:100% 100%;
   width: 100% !important;
+}
+</style>
+
+<style scoped>
+.face{
+  height: 220px;
 }
 </style>

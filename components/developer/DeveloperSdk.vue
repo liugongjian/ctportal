@@ -10,7 +10,7 @@
               <div class="sdk__item__title">Java SDK</div>
               <div>
                 <div class="sdk__item__button">
-                  <a class="el-button light-btn el-button--default" href="https://vss.guiyang.vcn.ctyun.cn/sdk/ctyun-java-sdk-vss-0.0.2.zip" target="_blank">SDK下载</a>
+                  <a class="el-button light-btn el-button--default" href="https://vss.guiyang.vcn.ctyun.cn/sdk/ctyun-java-sdk-vss-0.0.2.zip" target="_blank">SDK文档</a>
                 </div>
                 <div class="sdk__item__button">
                   <a class="el-button light-btn el-button--default" href="https://vss.guiyang.vcn.ctyun.cn/sdk/ctyun-java-sdk-vss-0.0.2.zip" target="_blank">SDK下载</a>
@@ -26,7 +26,7 @@
               <div class="sdk__item__title">Python SDK</div>
               <div>
                 <div class="sdk__item__button">
-                  <a class="el-button light-btn el-button--default" href="https://vss.guiyang.vcn.ctyun.cn/sdk/ctyun-python-sdk-vss-0.0.2.zip" target="_blank">SDK下载</a>
+                  <a class="el-button light-btn el-button--default" href="https://vss.guiyang.vcn.ctyun.cn/sdk/ctyun-python-sdk-vss-0.0.2.zip" target="_blank">SDK文档</a>
                 </div>
                 <div class="sdk__item__button">
                   <a class="el-button light-btn el-button--default" href="https://vss.guiyang.vcn.ctyun.cn/sdk/ctyun-java-sdk-vss-0.0.2.zip" target="_blank">SDK下载</a>
@@ -42,7 +42,7 @@
               <div class="sdk__item__title">GO SDK</div>
               <div>
                 <div class="sdk__item__button">
-                  <a class="el-button light-btn el-button--default" href="https://vss.guiyang.vcn.ctyun.cn/sdk/ctyun-go-sdk-vss-0.0.2.zip" target="_blank">SDK下载</a>
+                  <a class="el-button light-btn el-button--default" href="https://vss.guiyang.vcn.ctyun.cn/sdk/ctyun-go-sdk-vss-0.0.2.zip" target="_blank">SDK文档</a>
                 </div>
                 <div class="sdk__item__button">
                   <a class="el-button light-btn el-button--default" href="https://vss.guiyang.vcn.ctyun.cn/sdk/ctyun-java-sdk-vss-0.0.2.zip" target="_blank">SDK下载</a>
@@ -58,7 +58,7 @@
               <div class="sdk__item__title">Node.js SDK</div>
               <div>
                 <div class="sdk__item__button">
-                  <a class="el-button light-btn el-button--default" href="https://vss.guiyang.vcn.ctyun.cn/sdk/ctyun-java-sdk-vss-0.0.2.zip" target="_blank">SDK下载</a>
+                  <a class="el-button light-btn el-button--default" href="https://vss.guiyang.vcn.ctyun.cn/sdk/ctyun-java-sdk-vss-0.0.2.zip" target="_blank">SDK文档</a>
                 </div>
                 <div class="sdk__item__button">
                   <a class="el-button light-btn el-button--default" href="https://vss.guiyang.vcn.ctyun.cn/sdk/ctyun-java-sdk-vss-0.0.2.zip" target="_blank">SDK下载</a>

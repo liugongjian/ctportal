@@ -74,7 +74,14 @@
       }
       &__button {
         margin-top: 85px;
+        width: 182px;
+        height: 55px;
         .light-btn{
+          width: 100%;
+          height: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
           border: 1px solid rgba(223,6,41,1);
           border-radius: 10px;
           font-size: 15px;
