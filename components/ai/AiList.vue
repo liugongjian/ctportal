@@ -42,7 +42,7 @@ export default class extends Vue{
       { src: require('~/assets/mock/ai/gathering.png'), title:'人员聚集', content:'适用于3米以上的中远距离俯拍，以头部为识别目标统计图片中的瞬时人数' },
       { src: require('~/assets/mock/ai/body.png'), title:'人体属性检测', content:'检测图像中的所有人体，识别多种属性信息，包含性别年龄、服饰类别、服饰颜色等。' },
       { src: require('~/assets/mock/ai/smoke.png'), title:'吸烟检测', content:'检测画面中的人员是否有吸烟行为，包括手中拿烟、嘴上叼烟。' },
-      { src: require('~/assets/mock/ai/helmet.png'), content:'检测画面中的人员是否佩戴安全帽、穿反光服，规范从业人员的作业行为。' },
+      { src: require('~/assets/mock/ai/helmet.png'), title:'安全帽反光服检测', content:'检测画面中的人员是否佩戴安全帽、穿反光服，规范从业人员的作业行为。' },
   ]
   private senarioList = [
       { src: require('~/assets/mock/ai/dangerzone.png'), title:'危险区域检测', content:'对危险监控区域内的人员靠近行为进行识别。' },

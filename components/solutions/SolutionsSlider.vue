@@ -11,7 +11,7 @@ export default class extends Vue{
   private title = ''
   private desc = ''
   private fontStyle = { color: '#000' }
-  private picName = undefined
+  private picName = null
   private btnDesc = '服务咨询'
   private btnSrc = 'https://www.ctyun.cn/products/10011360'
   private backgroundStyle = {}

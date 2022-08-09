@@ -32,9 +32,15 @@ export default class extends Vue{
   private followScroll(){
     if(this.navigation){
       for(let i = 0 ; i < this.navigation.length ; i++){
+        this.resetActivePosition()
         if(this.bodyHeight < this.navigation[i].el.offsetTop){
-          this.resetActivePosition()
-          this.activeName = this.navigation[i].name
+          const scrollHeight =   document.documentElement.scrollHeight || document.body.scrollHeight
+          const clientHeight =  document.documentElement.clientHeight || document.body.clientHeight
+          if(Math.floor(this.bodyHeight) === scrollHeight - clientHeight){
+            this.activeName = this.navigation[this.navigation.length - 1].name
+          } else {
+            this.activeName = this.navigation[i].name
+          }
           break
         }
       }
