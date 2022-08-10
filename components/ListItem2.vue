@@ -33,9 +33,13 @@ export default class extends Vue{
     margin-left: 40px;
   }
   &__title{
-    font-size: 24px;
-    font-weight: 500;
+    font-size: 18px;
+    font-weight: bold;
     margin-bottom: 25px;
+  }
+  &__content{
+    font-size: 14px;
+    line-height: 20px;
   }
 }
 .small{

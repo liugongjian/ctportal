@@ -1,7 +1,7 @@
 <template>
 <div class="map">
   <div class="map-wrapper">
-    <div class="map-wrapper__title">天翼云全国云资源布局</div>
+    <div class="map-wrapper__title title">天翼云全国云资源布局</div>
     <div class="map-wrapper__desc">天翼云视频监控节点分布在全国15省，27个地理区域，提供高速稳定、贴近客户的视频云网服务</div>
     <div id="home-amap" ref="map"></div>
     <div class="map-wrapper__region">
@@ -16,8 +16,8 @@
         <li @mouseover="getRegionDetail('guizhou')" @click="fixRegion('guizhou')" :class="{'clicked':theRegion === 'guizhou'}">贵州云基地({{regions['guizhou'].length}})</li>
         <li @mouseover="getRegionDetail('huadong')" @click="fixRegion('huadong')" :class="{'clicked':theRegion === 'huadong'}">华东({{regions['huadong'].length}})</li>
         <li @mouseover="getRegionDetail('huanan')" @click="fixRegion('huanan')" :class="{'clicked':theRegion === 'huanan'}">华南({{regions['huanan'].length}})</li>
-        <li @mouseover="getRegionDetail('xibei')" @click="fixRegion('xibei')" :class="{'clicked':theRegion === 'xibei'}">西北({{regions['xibei'].length}})</li>
         <li @mouseover="getRegionDetail('xinan')" @click="fixRegion('xinan')" :class="{'clicked':theRegion === 'xinan'}">西南({{regions['xinan'].length}})</li>
+        <li @mouseover="getRegionDetail('xibei')" @click="fixRegion('xibei')" :class="{'clicked':theRegion === 'xibei'}">西北({{regions['xibei'].length}})</li>
         <li @mouseover="getRegionDetail('beifang')" @click="fixRegion('beifang')" :class="{'clicked':theRegion === 'beifang'}">北方({{regions['beifang'].length}})</li>
       </ul>
     </div>
@@ -225,11 +225,13 @@ export default class extends Vue{
       height: 900px;
     }
     &__title{
-      font-size: 40px;
+      font-size: 26px;
       text-align: center;
       margin-bottom: 20px;
     }
     &__desc {
+      margin-top: -32px;
+      margin-bottom: 88px;
       text-align: center;
       color: $textGrey;
     }

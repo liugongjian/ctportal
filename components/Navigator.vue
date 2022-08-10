@@ -122,6 +122,7 @@ export default class extends Vue{
     display: flex;
     justify-content: center;
     align-items: center;
+    box-shadow: 0px 5px 10px 0px rgba(235,233,233,0.5);
     .el-tabs__nav-scroll{
       width: 100%;
       display: flex;
@@ -145,6 +146,9 @@ export default class extends Vue{
         }
       }
     }
+  }
+  ::v-deep .el-tabs__nav-wrap::after{
+    height: 0;
   }
   ::v-deep .is-active {
     color:#DF0629;

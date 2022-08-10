@@ -1,7 +1,7 @@
 <template>
   <div class="ai">
     <div class="ai__container">
-      <div class="ai__title">AI能力的深度应用</div>
+      <div class="ai__title title">AI能力的深度应用</div>
       <div class="ai__right">
         <div class="ai__intro">
           大规模数据处理能力及云基础设施的迅猛发展的背景下，AI算法的成熟让监控安防的智能化成为可能。随着场景的不断丰富和应用的不断深入，更多成熟可用的视频算法可以融入到各行业的生产流程中，赋予行业先进生产力

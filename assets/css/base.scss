@@ -97,10 +97,11 @@ a {
 
 
 .title{
-  font-size: 26px;
-  font-family: PingFangSC-Medium;
-  margin-bottom: 52px;
-  text-align: center;
+  font-size: 26px !important;
+  font-family: PingFangSC-Medium !important;
+  margin-bottom: 52px !important;
+  text-align: center !important;
+  font-weight: bold;
 }
 
 .list-wrapper-single-line{

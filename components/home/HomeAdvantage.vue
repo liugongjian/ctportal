@@ -1,7 +1,7 @@
 <template>
   <div class="advantage">
     <div class="advantage__container">
-      <div class="advantage__title">产品优势</div>
+      <div class="advantage__title title">产品优势</div>
       <div class="advantage__item__wrap">
         <list-item-2 v-for="item in list" :key="item.src" :item="item" />
       </div>

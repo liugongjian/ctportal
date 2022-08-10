@@ -1,7 +1,7 @@
 <template>
   <div class="solution">
     <div class="solution__container">
-      <div class="solution__title">行业解决方案</div>
+      <div class="solution__title title">行业解决方案</div>
       <div class="solution__item__wrap">
         <el-tabs v-model="activeName">
           <el-tab-pane label="智慧城市" name="city" />
@@ -26,7 +26,10 @@
               </ul>
             </div>
             <div class="solution__item__wrap__desc__feature">
-              <span v-for="(tag,index) in active.tags" :key="index" class="tag">{{tag}}</span>
+              <div v-for="(tag,index) in active.tags" :key="index" class="tag">
+                <span>{{tag}}</span>
+                <span class="seperator"/>
+              </div>
             </div>
           </div>
           <div class="solution__item__wrap__desc__img">
@@ -90,7 +93,7 @@ export default class extends Vue{
       }
       &__desc {
         height: 500px;
-        margin-top: 20px;
+        margin-top: 61px;
         background: #FFFFFF;
         box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.1);
         border-radius: 4px;
@@ -98,23 +101,23 @@ export default class extends Vue{
         justify-content: space-between;
         &__feature{
           margin: 28px 0 0 32px;
+          display: flex;
+          align-items: center;
           .tag{
             color: #828282;
             font-size: 14px;
-            display: inline-flex;
-            justify-content: space-between;
+            display: flex;
             align-items: center;
-            width: 110px;
-            margin-right: 55px;
+            justify-content: space-between;
+            .seperator{
+              display: inline-block;
+              width: 1px;
+              height: 33px;
+              background: #828282;
+              margin: 0 47px;
+            }
           }
-          .tag::after{
-            content: '';
-            display: inline-block;
-            width: 1px;
-            height: 33px;
-            background: #828282;
-          }
-          .tag:last-child::after{
+          .tag:last-child .seperator{
             display: none;
           }
         }
