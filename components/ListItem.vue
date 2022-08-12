@@ -46,13 +46,20 @@ export default class extends Vue{
   }
   &__title {
     font-size: 18px;
+    line-height: 36px;
     font-weight: bold;
-    margin: 22px 0 20px 27px;
+    margin: 22px 0 0 27px;
   }
   &__content {
     font-size: 12px;
     text-align: justify;
     margin: 0 20px 38px 27px;
+    font-family: PingFangSC-Medium;
+    font-size: 12px;
+    color: rgba(0,0,0,0.65);
+    letter-spacing: 0;
+    line-height: 20px;
+    font-weight: 500;
   }
 }
 </style>

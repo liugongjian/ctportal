@@ -2,8 +2,10 @@
   <div class="advantage light-bg">
     <div class="advantage__container">
       <div class="advantage__title">功能介绍</div>
-      <div class="advantage__item__wrap">
-        <list-item-2 v-for="item in list" :key="item.src" :item="item" :is-small="isSmall"/>
+      <div class="dark-bg">
+        <div class="advantage__item__wrap">
+          <list-item-2 v-for="item in list" :key="item.src" :item="item" :is-small="isSmall"/>
+        </div>
       </div>
     </div>
   </div>
@@ -71,18 +73,27 @@ export default class extends Vue{
   .advantage {
     // background: #f1f1f1;
     &__container {
-      @include container;
-      @include containerPadding;
+        padding-left: 20px;
+        padding-right: 20px;
+        color: #333333;
+        padding-top: 70px;
+        padding-bottom: 70px;
     }
     &__title {
       font-size: 26px;
       text-align: center;
-      margin-bottom: 80px;
+      margin-bottom: 52px;
     }
     &__item__wrap {
+      width: 1180px;
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
+    }
+    .dark-bg{
+      display: flex;
+      justify-content: center;
+      padding-top:50px;
     }
   }
 </style>

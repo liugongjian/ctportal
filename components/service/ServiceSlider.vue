@@ -13,6 +13,10 @@ export default class extends Vue{
   private picName = undefined
   private btnDesc = undefined
   private btnSrc = 'https://www.ctyun.cn/products/10011360'
-  private backgroundStyle = { 'background': "#fff url('/_nuxt/assets/mock/service/service_banner.png') no-repeat", 'background-size': '100% 100%' }
+  private backgroundStyle = {
+      'background': "#fff url('/_nuxt/assets/mock/service/service_banner.png') no-repeat",
+      'background-size': 'auto 100%',
+      'background-position': 'right'
+    }
 }
 </script>

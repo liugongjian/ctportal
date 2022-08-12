@@ -1,3 +1,11 @@
+<!--
+ * @Author: liugongjian liugongjianxin@163.com
+ * @Date: 2022-08-04 14:39:59
+ * @LastEditors: liugongjian liugongjianxin@163.com
+ * @LastEditTime: 2022-08-12 14:03:50
+ * @FilePath: \vss-portal-web\components\ai\AiSlider.vue
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+-->
 <template>
   <Slider v-bind="{ title, desc, fontStyle, picName, btnDesc, btnSrc, backgroundStyle }" />
 </template>
@@ -13,6 +21,10 @@ export default class extends Vue{
   private picName = undefined
   private btnDesc = undefined
   private btnSrc = 'https://www.ctyun.cn/products/10011360'
-  private backgroundStyle = { 'background': "#fff url('/_nuxt/assets/mock/ai/banner.png') no-repeat", 'background-size': '100% 100%' }
+  private backgroundStyle = {
+                              'background': "#fff url('/_nuxt/assets/mock/ai/banner.png') no-repeat",
+                              'background-size': 'auto 100%',
+                              'background-position': 'right'
+                            }
 }
 </script>
