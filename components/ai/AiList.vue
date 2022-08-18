@@ -59,8 +59,13 @@ export default class extends Vue{
 }
 </style>
 
-<style scoped>
+<style lang="scss" scoped>
 .face{
   height: 220px;
+  .list__item{
+    height: 100%;
+    margin: 0;
+    margin-right: 18px;
+  }
 }
 </style>

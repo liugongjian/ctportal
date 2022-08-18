@@ -23,7 +23,7 @@ export default class extends Vue{
 
 <style lang="scss" scoped>
 .list__item2{
-  width: 450px;
+  width: 532px;
   margin-bottom: 80px;
   display: flex;
   &__img{

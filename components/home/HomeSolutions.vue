@@ -122,13 +122,17 @@ export default class extends Vue{
           }
         }
         &__content{
-          width: 570px;
+          width: 728px;
           height: 375px;
           margin-left: 32px;
+          margin-top: 13px;
+          border-radius: 4px;
+          background-image: linear-gradient(173deg, #F5F5F7 0%, rgba(241,241,241,0.00) 100%);
+          background: url('../../assets/mock/solution_bg.png') no-repeat;
           &__title{
             font-size: 22px;
             font-weight: 500;
-            margin: 40px 0 30px 0;
+            margin: 25px 0 30px 0;
           }
           &__tag{
             .el-tag{
@@ -146,6 +150,7 @@ export default class extends Vue{
             padding-left: 20px;
             li {
               margin-bottom: 20px;
+              padding-left: 11px;
               list-style-image:url('../../assets/mock/solution/tick.png');
             }
           }

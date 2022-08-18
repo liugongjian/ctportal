@@ -23,10 +23,11 @@ export default class extends Vue{
 </script>
 <style lang="scss" scoped>
   .advantage {
-    background: #f1f1f1;
+    background: #fff;
     &__container {
       @include container;
       @include containerPadding;
+      padding-bottom: 0px;
     }
     &__title {
       font-size: 40px;
