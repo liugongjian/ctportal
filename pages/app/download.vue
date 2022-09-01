@@ -48,7 +48,7 @@
                 </div>
                 <div class="instruction">
                   <!-- 20220518 update from 1.1.0 to 1.1.1 -->
-                    <p class="desc">V1.3.1</p>
+                    <p class="desc">V1.4.0</p>
                 </div>
                 <div v-if="isMobile" class="os-desc">
                   <p>适用于IOS手机</p>
