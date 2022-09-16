@@ -29,8 +29,8 @@
                     <img src="@/assets/images/download/qr_android.png" alt="">
                 </div>
                 <div class="instruction">
-                  <!-- 20220518 update from 1.1.0 to 1.1.1 -->
-                    <p class="desc">V1.4.1</p>
+                  <!-- 20220916 update from 1.4.1 to 1.4.2 -->
+                    <p class="desc">V1.4.2</p>
                 </div>
                 <div v-if="isMobile" class="os-desc">
                   <p>适用于安卓手机</p>
@@ -47,8 +47,8 @@
                     <img src="@/assets/images/download/ios_qr.png" alt="">
                 </div>
                 <div class="instruction">
-                  <!-- 20220518 update from 1.1.0 to 1.1.1 -->
-                    <p class="desc">V1.4.0</p>
+                  <!-- 20220916 update from 1.4.0 to 1.4.1 -->
+                    <p class="desc">V1.4.1</p>
                 </div>
                 <div v-if="isMobile" class="os-desc">
                   <p>适用于IOS手机</p>
