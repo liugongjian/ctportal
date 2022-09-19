@@ -47,7 +47,7 @@
                     <img src="@/assets/images/download/ios_qr.png" alt="">
                 </div>
                 <div class="instruction">
-                  <!-- 20220916 update from 1.4.0 to 1.4.1 -->
+                  <!-- 20220919 update from 1.4.1 to 1.4.2 -->
                     <p class="desc">V1.4.2</p>
                 </div>
                 <div v-if="isMobile" class="os-desc">
