@@ -1,5 +1,5 @@
 <template>
-  <div class="list__item" @click="handleClick">
+  <div class="list__item" :style="clickable ? 'cursor: pointer;' : ''" @click="handleClick">
     <div class="list__item__img"><img :src="item.src" /></div>
     <div class="list__item__title">{{item.title}}</div>
     <div class="list__item__content">{{item.content}}</div>
@@ -12,10 +12,13 @@ import { Vue, Prop, Component} from 'vue-property-decorator'
 @Component
 export default class extends Vue{
   @Prop() private item!: any
+  @Prop() private clickable!: boolean
 
   private handleClick(){
-    const routeData = this.$router.resolve({ path: '/aidemo', query: { info: this.item.url} });
-    window.open(routeData.href, '_blank');
+    if(this.clickable){
+        const routeData = this.$router.resolve({ path: '/aidemo', query: { info: this.item.url} });
+        window.open(routeData.href, '_blank');
+    }
   }
 }
 </script>
@@ -31,7 +34,6 @@ export default class extends Vue{
   font-weight: 500;
   background: #FFFFFF;
   border-radius: 4px;
-  cursor: pointer;
   &__img {
     height: 183px;
     width: 100%;

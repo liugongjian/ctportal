@@ -11,7 +11,7 @@
     <div class="ai__container">
       <div class="ai__right">
         <div class="list-wrapper-multiple-line">
-          <list-item v-for="item in list" :item="item" :key="item.src"/>
+          <list-item v-for="item in list" :item="item" :key="item.src" :clickable="true"/>
         </div>
       </div>
     </div>
