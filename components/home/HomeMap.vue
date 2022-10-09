@@ -136,7 +136,7 @@ export default class extends Vue{
         itemStyle: {
           normal: {
             color: '#DF0629',
-            shadowColor: 'rgba(174, 90, 0, 1)',
+            shadowColor: 'rgba(223, 6, 41, 1)',
             shadowBlur: 6,
             label: {
               show: onHover,
@@ -222,7 +222,7 @@ export default class extends Vue{
     position: relative;
     #home-amap {
       width: 85%;
-      height: 900px;
+      height: 850px;
     }
     &__title{
       font-size: 26px;
@@ -230,6 +230,7 @@ export default class extends Vue{
       margin-bottom: 20px;
     }
     &__desc {
+      font-size: 12px;
       margin-top: -32px;
       margin-bottom: 88px;
       text-align: center;
@@ -245,7 +246,7 @@ export default class extends Vue{
       }
       &__detail{
         border: 1px solid $borderGrey;
-        background: #f7f7f7;
+        background: #fff;
         width: 50%;
         position: relative;
         right: -1px;
@@ -275,7 +276,7 @@ export default class extends Vue{
         border-bottom: none;
         padding: 10px 0;
         cursor: pointer;
-        background: #f7f7f7;
+        background: #fff;
       }
       & li:last-child{
         border-bottom: 1px solid $borderGrey;

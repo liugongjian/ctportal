@@ -1,4 +1,10 @@
 /* eslint-disable */
+import './arch_city'
+import './arch_community'
+import './arch_edu'
+import './arch_express'
+import './arch_retail'
+import './arch_site'
 import './arrow-down'
 import './finish'
 import './search'

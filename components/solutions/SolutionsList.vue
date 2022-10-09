@@ -17,10 +17,10 @@ export default class extends Vue{
     switch (this.$route.query.info) {
       case 'city':
         this.isEven = false
-        this.list = [{id: 1, src: require('~/assets/mock/solution/city1.png'), title: '城市安全', content: '适用于对城市安全、应急管理、交通调度有迫切需求的城市'},
-                  {id: 2, src: require('~/assets/mock/solution/city2.png'), title: '智能监管', content: '进行实时的智能监管，从而及时发现问题'},
-                  {id: 3, src: require('~/assets/mock/solution/city3.png'), title: '协同调度', content: '可以快速协同调度资源，以解决问题'},
-                  {id: 4, src: require('~/assets/mock/solution/city4.png'), title: '统一管理', content: '进行视频数据、结构化数据等多维度大数据的统一管理和应用'}]
+        this.list = [{id: 1, src: require('~/assets/mock/solution/city5.png'), title: '城市安全', content: '适用于对城市安全、应急管理、交通调度有迫切需求的城市'},
+                  {id: 2, src: require('~/assets/mock/solution/city6.png'), title: '智能监管', content: '进行实时的智能监管，从而及时发现问题'},
+                  {id: 3, src: require('~/assets/mock/solution/city7.png'), title: '协同调度', content: '可以快速协同调度资源，以解决问题'},
+                  {id: 4, src: require('~/assets/mock/solution/city8.png'), title: '统一管理', content: '进行视频数据、结构化数据等多维度大数据的统一管理和应用'}]
         break
       case 'education':
         this.isEven = true

@@ -4,7 +4,8 @@
     <div class="title">方案架构</div>
         <div class="solution__item__wrap__desc">
           <div class="solution__item__wrap__desc__img">
-            <img v-if="picName" :src="picName" />
+            <!-- <img v-if="picName" :src="picName" /> -->
+            <svg-icon width="588" height="650" v-if="picName" :name="picName"/>
           </div>
           <div>
             <div class="solution__item__wrap__desc__content">
@@ -78,6 +79,9 @@ export default class extends Vue{
           img{
             width: 98%;
 
+          }
+          .svg-icon{
+            width: 98%;
           }
         }
         &__feature{

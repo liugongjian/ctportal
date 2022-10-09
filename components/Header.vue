@@ -243,7 +243,7 @@ export default Vue.extend({
       align-items: stretch;
       &__item {
         color: $text;
-        font-size: 16px;
+        font-size: 14px;
         margin-right: 40px;
         display: flex;
         align-items: center;

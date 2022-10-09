@@ -1,5 +1,5 @@
 <template>
-  <div style="min-width: 1700px">
+  <div style="min-width: 1360px">
     <Header />
     <Nuxt />
     <Footer />

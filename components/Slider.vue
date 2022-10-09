@@ -10,7 +10,9 @@
           <div class="slider__item__content" :style="fontStyle">
             {{desc}}
           </div>
-          <a v-if="btnDesc" class="el-button el-button--primary" :href="btnSrc" target="_blank">{{btnDesc}}</a>
+          <a v-if="btnDesc" class="el-button el-button--primary" :href="btnSrc" target="_blank">
+            {{btnDesc}}
+          </a>
         </div>
         <div class="slider__item__right">
           <!-- <img class="slider__item__img" :src="require(`${picSrc}.png`)"/> -->
@@ -57,6 +59,7 @@ export default class extends Vue{
         border: none;
         width: 120px;
         height: 44px;
+        padding: 14px 20px !important;
       }
     }
     &__right {

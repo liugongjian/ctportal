@@ -1,11 +1,15 @@
 <template>
   <div class="ai">
-    <div class="ai__container">
-      <div class="ai__title title">AI能力的深度应用</div>
-      <div class="ai__right">
-        <div class="ai__intro">
-          大规模数据处理能力及云基础设施的迅猛发展的背景下，AI算法的成熟让监控安防的智能化成为可能。随着场景的不断丰富和应用的不断深入，更多成熟可用的视频算法可以融入到各行业的生产流程中，赋予行业先进生产力
+        <div class="ai__title">
+        <div class="title">
+            AI能力的深度应用
         </div>
+        <div class="ai__intro">
+            大规模数据处理能力及云基础设施的迅猛发展的背景下，AI算法的成熟让监控安防的智能化成为可能。随着场景的不断丰富和应用的不断深入，更多成熟可用的视频算法可以融入到各行业的生产流程中，赋予行业先进生产力
+        </div>
+      </div>
+    <div class="ai__container">
+      <div class="ai__right">
         <div class="list-wrapper-multiple-line">
           <list-item v-for="item in list" :item="item" :key="item.src"/>
         </div>
@@ -42,22 +46,26 @@ export default Vue.extend({
     @include containerPadding;
     display: flex;
     flex-direction: column;
+    padding-top: 42px;
+    padding-bottom: 52px;
   }
   &__title {
     font-size: 26px;
     font-family: PingFangSC-Medium;
-    margin-right: 110px;
-    margin-bottom: 20px;
     text-align: center;
+    padding-top: 82px;
+    padding-bottom: 52px;
+    background: #fff;
+      .ai__intro {
+            font-size: 12px;
+            font-family: PingFangSC-Medium;
+            line-height: $baseLineHeight;
+            font-weight: normal;
+            margin-top: -32px;
+        }
   }
   &__right {
     flex: 1;
-  }
-  &__intro {
-    font-size: 12px;
-    font-family: PingFangSC-Medium;
-    line-height: $baseLineHeight;
-    margin-bottom: 94px;
   }
   &__gallery {
     display: flex;

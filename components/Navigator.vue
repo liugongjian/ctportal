@@ -140,6 +140,7 @@ export default class extends Vue{
         }
         .el-tabs__item{
           margin-top: 32px;
+          font-size: 16px;
         }
         .el-tabs__item:hover{
           color: #DF0629;

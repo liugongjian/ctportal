@@ -3,7 +3,7 @@
     <div class="solution__container">
       <div class="solution__title title">行业解决方案</div>
       <div class="solution__item__wrap">
-        <el-tabs v-model="activeName">
+        <el-tabs v-model="activeName" @tab-click="handleTabClick">
           <el-tab-pane label="智慧城市" name="city" />
           <el-tab-pane label="智慧教育" name="education" />
           <el-tab-pane label="智慧社区" name="community" />
@@ -34,7 +34,11 @@
           </div>
           <div class="solution__item__wrap__desc__img">
             <img :src="active.image" />
-            <div class="detail">查看详情</div>
+            <div class="detail">
+                <span>查看详情</span>
+                <svg-icon height="18" width="14" :name="'vector'" color="red"/>
+            </div>
+            
           </div>
         </div>
       </div>
@@ -60,6 +64,15 @@ export default class extends Vue{
   get active() {
     return this.solutions.find(item => item.name === this.activeName)
   }
+
+  private handleTabClick(tab:any) {
+    this.$nextTick(() => {
+        // let tabs = document.getElementsByClassName('solution__item__wrap')[0]
+        // let ele = tabs.getElementsByClassName('el-tabs__active-bar')[0]
+        // let distance = tab.index == 0 ? 27 : tab.index * 194 + 'px'
+        // ele.style.transform = `translateX(${distance})`
+    })
+  }
 }
 </script>
 <style lang="scss" scoped>
@@ -80,32 +93,35 @@ export default class extends Vue{
     &__item__wrap {
       display: flex;
       flex-direction: column;
+      align-items: center;
       ::v-deep .el-tabs__nav-wrap::after{
         display: none;
       }
       ::v-deep .el-tabs__active-bar{
         background-color: #fff;
         height: 4px;
+        // width: 140px !important;
       }
       ::v-deep .el-tabs__item{
         color: rgba(255,255,255,0.80);
         font-size: 16px;
       }
       &__desc {
+        width: 1180px;
         height: 500px;
-        margin-top: 61px;
+        margin-top: 42px;
         background: #FFFFFF;
         box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.1);
-        border-radius: 4px;
+        border-radius: 8px;
         display: flex;
         justify-content: space-between;
         &__feature{
-          margin: 28px 0 0 32px;
+          margin: 40px 0 0 32px;
           display: flex;
           align-items: center;
           .tag{
             color: #828282;
-            font-size: 14px;
+            font-size: 12px;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -113,7 +129,7 @@ export default class extends Vue{
               display: inline-block;
               width: 1px;
               height: 33px;
-              background: #828282;
+              background: #c2c2c2;
               margin: 0 47px;
             }
           }
@@ -126,7 +142,7 @@ export default class extends Vue{
           height: 375px;
           margin-left: 32px;
           margin-top: 13px;
-          border-radius: 4px;
+          border-radius: 8px;
           background-image: linear-gradient(173deg, #F5F5F7 0%, rgba(241,241,241,0.00) 100%);
           background: url('../../assets/mock/solution_bg.png') no-repeat;
           &__title{
@@ -160,7 +176,7 @@ export default class extends Vue{
           height: 385px;
           margin-top: 30px;
           margin-right: 32px;
-          border-radius: 4px;
+          border-radius: 8px;
         }
         .detail{
           font-size: 14px;
@@ -171,12 +187,15 @@ export default class extends Vue{
       .el-tabs{
         align-self: center;
         ::v-deep .el-tabs__item{
-          font-size: 20px !important;
           padding: 0 65px;
           height: 50px;
           line-height: 50px;
         }
       }
+    }
+    .svg-icon{
+        display: inline-block;
+        margin-left: 4px;
     }
   }
 </style>

@@ -31,6 +31,7 @@ export default class extends Vue{
   font-weight: 500;
   background: #FFFFFF;
   border-radius: 4px;
+  cursor: pointer;
   &__img {
     height: 183px;
     width: 100%;
