@@ -36,7 +36,7 @@
             <img :src="active.image" />
             <div class="detail">
                 <span>查看详情</span>
-                <svg-icon height="18" width="14" :name="'vector'" color="red"/>
+                <svg-icon height="12" width="6" :name="'vector'" color="#fff #DF0629"/>
             </div>
             
           </div>
