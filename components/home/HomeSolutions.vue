@@ -38,7 +38,6 @@
                 <span>查看详情</span>
                 <svg-icon height="12" width="6" :name="'vector'" color="#fff #DF0629"/>
             </div>
-            
           </div>
         </div>
       </div>
@@ -54,23 +53,32 @@ import { Vue, Component} from 'vue-property-decorator'
 export default class extends Vue{
   private activeName = 'city'
   private solutions = [
-    { name:'city', c_name:'智慧城市', image: require('~/assets/images/solution/city.jpg'), tags:['视频接入', '录像存储', '车辆分析', '人流分析'], desc: '重点面向城市人流、车流信息，以及社会面视频数据的统一纳管，支持智能检测与分析。', list: ['大规模部署推流接入点，就近接入，保证各场合稳定推流', '提供AI内容审核增值服务，可人脸识别，人员聚集检测、车辆牌号检索等', '支持多种播流格式，支持全网加速分发', '整合多渠道数据信息，智能统计与分析，丰富数据资产，助力城市管理数字化转型'] },
-    { name:'education', c_name:'智慧教育', image: require('~/assets/images/solution/education.jpg'), tags:[ '视频接入', '录像存储', '人脸分析', '车辆分析'],  desc: '重点面向校园、培训机构等行业客户的视频监控需求，实现安全的内容分发和高价值内容录制留存。', list: ['建设周期短，成本低廉，适合技术能力薄弱的学校或者教育机构', '支持设备接入、存储和分发一体化解决方案，按需扩容，提升资源利用率', '支持AI算法仓库统一管理，GPU算力智能调度，AI算法统一编排'] },
-    { name:'community', c_name:'智慧社区', image: require('~/assets/images/solution/community.jpg'), tags:['视频接入', '录像存储', '人流分析'],  desc: '重点面向涉及社区客户在线监控服务：如楼宇、小区、园区等，支持大并发就近上云。', list: ['兼容主流视频终端设备，支持GB28181、GAT1400、RTMP、RTSP等协议直接接入，启动快、成本低', '基于云原生架构部署、按需扩容，可支持百万级设备接入、存储和分发，提升资源利用率', '提供向上级联能力，便于视频资源的共享，实现上级平台对社区视频资源的纳管'] },
-    { name:'site', c_name:'智慧工地', image: require('~/assets/images/solution/site.jpg'), tags:['视频接入', '录像存储', '危险区域告警', '安全帽反光服识别'],  desc:'重点面向建筑行业客户，纳管所有工地视频，实现精准识别，提前告警等。' , list: ['建设周期短，成本低廉，云端汇聚组网方式更简单明了，可用性更强，后续运维简单可靠','大规模部署推流接入点，就近接入，满足多种形态视频资源的稳定接入', '集成AI内容审核，进行人脸识别，人员聚集检测、车辆牌号检索等工地现场管控'] },
-    { name:'retail', c_name:'智慧零售', image: require('~/assets/images/solution/retail.jpg'), tags:['视频接入', '车辆分析', '人流分析'],  desc: '重点面向零售行业客户，提供智能远程视频点检、远程看店，最终实现数字化精细化运营。', list: ['前端设备、平台公网/专线接入，设备统一接入与管理','根据业务特点，随时随地播放实时流、历史流，查看截图，支持监控内容的按需播放与调取，实现远程巡店', '支持多种算法部署升级、算力弹性扩容，智能统计分析客流情况，智能预警'] },
-    { name:'logistics', c_name:'智慧物流', image: require('~/assets/images/solution/logistics.jpg'), tags:['视频接入', '录像存储', '车辆分析'],  desc: '重点面向物流行业客户，支持智能检测与分析，实现货物轨迹动态跟踪。', list: ['智能分拣物件，规范从业人员行为规范管理','打破数据孤岛，将港口、车辆、仓库和快递柜等货物运输流程的视频云上集中管理','解决了企业物流运输任务的总体分配与调度，实时监控货物运输情况，形成物流数字化网络，提升对企业的综合服务能力'] }
+    { name:'city', c_name:'智慧城市', image: require('~/assets/images/solution/city.png'), tags:['视频接入', '录像存储', '车辆分析', '人流分析'], desc: '重点面向城市人流、车流信息，以及社会面视频数据的统一纳管，支持智能检测与分析。', list: ['大规模部署推流接入点，就近接入，保证各场合稳定推流', '提供AI内容审核增值服务，可人脸识别，人员聚集检测、车辆牌号检索等', '支持多种播流格式，支持全网加速分发', '整合多渠道数据信息，智能统计与分析，丰富数据资产，助力城市管理数字化转型'] },
+    { name:'education', c_name:'智慧教育', image: require('~/assets/images/solution/education.png'), tags:[ '视频接入', '录像存储', '人脸分析', '车辆分析'],  desc: '重点面向校园、培训机构等行业客户的视频监控需求，实现安全的内容分发和高价值内容录制留存。', list: ['建设周期短，成本低廉，适合技术能力薄弱的学校或者教育机构', '支持设备接入、存储和分发一体化解决方案，按需扩容，提升资源利用率', '支持AI算法仓库统一管理，GPU算力智能调度，AI算法统一编排'] },
+    { name:'community', c_name:'智慧社区', image: require('~/assets/images/solution/community.png'), tags:['视频接入', '录像存储', '人流分析'],  desc: '重点面向涉及社区客户在线监控服务：如楼宇、小区、园区等，支持大并发就近上云。', list: ['兼容主流视频终端设备，支持GB28181、GAT1400、RTMP、RTSP等协议直接接入，启动快、成本低', '基于云原生架构部署、按需扩容，可支持百万级设备接入、存储和分发，提升资源利用率', '提供向上级联能力，便于视频资源的共享，实现上级平台对社区视频资源的纳管'] },
+    { name:'site', c_name:'智慧工地', image: require('~/assets/images/solution/site.png'), tags:['视频接入', '录像存储', '危险区域告警', '安全帽反光服识别'],  desc:'重点面向建筑行业客户，纳管所有工地视频，实现精准识别，提前告警等。' , list: ['建设周期短，成本低廉，云端汇聚组网方式更简单明了，可用性更强，后续运维简单可靠','大规模部署推流接入点，就近接入，满足多种形态视频资源的稳定接入', '集成AI内容审核，进行人脸识别，人员聚集检测、车辆牌号检索等工地现场管控'] },
+    { name:'retail', c_name:'智慧零售', image: require('~/assets/images/solution/retail.png'), tags:['视频接入', '车辆分析', '人流分析'],  desc: '重点面向零售行业客户，提供智能远程视频点检、远程看店，最终实现数字化精细化运营。', list: ['前端设备、平台公网/专线接入，设备统一接入与管理','根据业务特点，随时随地播放实时流、历史流，查看截图，支持监控内容的按需播放与调取，实现远程巡店', '支持多种算法部署升级、算力弹性扩容，智能统计分析客流情况，智能预警'] },
+    { name:'logistics', c_name:'智慧物流', image: require('~/assets/images/solution/logistics.png'), tags:['视频接入', '录像存储', '车辆分析'],  desc: '重点面向物流行业客户，支持智能检测与分析，实现货物轨迹动态跟踪。', list: ['智能分拣物件，规范从业人员行为规范管理','打破数据孤岛，将港口、车辆、仓库和快递柜等货物运输流程的视频云上集中管理','解决了企业物流运输任务的总体分配与调度，实时监控货物运输情况，形成物流数字化网络，提升对企业的综合服务能力'] }
   ]
   get active() {
     return this.solutions.find(item => item.name === this.activeName)
   }
 
+  private mounted(){
+    this.$nextTick(() => {
+        let tabs = document.getElementsByClassName('solution__item__wrap')[0]
+        let ele : any = tabs.getElementsByClassName('el-tabs__active-bar')[0]
+        let distance = 32.5 + 'px'
+        ele.style.transform = `translateX(${distance})`
+    })
+  }
+
   private handleTabClick(tab:any) {
     this.$nextTick(() => {
-        // let tabs = document.getElementsByClassName('solution__item__wrap')[0]
-        // let ele = tabs.getElementsByClassName('el-tabs__active-bar')[0]
-        // let distance = tab.index == 0 ? 27 : tab.index * 194 + 'px'
-        // ele.style.transform = `translateX(${distance})`
+        let tabs = document.getElementsByClassName('solution__item__wrap')[0]
+        let ele : any = tabs.getElementsByClassName('el-tabs__active-bar')[0]
+        let distance = 32.5 + tab.index * 194 + 'px'
+        ele.style.transform = `translateX(${distance})`
     })
   }
 }
@@ -100,7 +108,7 @@ export default class extends Vue{
       ::v-deep .el-tabs__active-bar{
         background-color: #fff;
         height: 4px;
-        // width: 140px !important;
+        width: 129px !important;
       }
       ::v-deep .el-tabs__item{
         color: rgba(255,255,255,0.80);

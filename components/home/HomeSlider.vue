@@ -1,5 +1,5 @@
 <template>
-  <Slider v-bind="{ title, desc, fontStyle, picName, btnDesc, btnSrc, backgroundStyle, iconColor }" />
+  <Slider v-bind="{ title, desc, fontStyle, btnDesc, btnSrc, backgroundStyle, iconColor }" />
 </template>
 
 <script lang="ts">

@@ -35,8 +35,8 @@ import { Vue, Component} from 'vue-property-decorator'
 @Component
 export default class extends Vue{
   private faceList = [
-      { src: require('~/assets/mock/ai/face.png'), title:'人脸识别', content:'通过比对人脸库中的照片，进行1:N比对，基于输出的符合质量标准的图片，返回被识别的人员信息。' },
-      { src: require('~/assets/mock/ai/mask.png'), title:'口罩检测', content:'通过人脸和人体分析的方式检测用户是否佩戴口罩。' }
+      { src: require('~/assets/mock/ai/face1.png'), title:'人脸识别', content:'通过比对人脸库中的照片，进行1:N比对，基于输出的符合质量标准的图片，返回被识别的人员信息。' },
+      { src: require('~/assets/mock/ai/mask1.png'), title:'口罩检测', content:'通过人脸和人体分析的方式检测用户是否佩戴口罩。' }
   ]
   private bodyList = [
       { src: require('~/assets/mock/ai/gathering.png'), title:'人员聚集', content:'适用于3米以上的中远距离俯拍，以头部为识别目标统计图片中的瞬时人数' },
