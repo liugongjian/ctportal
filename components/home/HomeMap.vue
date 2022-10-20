@@ -108,6 +108,20 @@ export default class extends Vue{
             show:false
           }
         },
+        regions: [
+          {
+            name: "南海诸岛",
+            itemStyle: {
+              // 隐藏地图
+              normal: {
+                opacity: 1, // 为 0 时不绘制该图形
+              }
+            },
+            label: {
+              show: false // 隐藏文字
+            }
+          }
+        ],
         itemStyle: { // 定义样式
           normal: { // 普通状态下的样式
             areaColor: '#F1F3F5',

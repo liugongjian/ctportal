@@ -14,7 +14,7 @@ export default class extends Vue{
 //   private picName = 'slider_home'
   private btnDesc = '立即开通'
   private btnSrc = 'https://www.ctyun.cn/products/10011360'
-  private backgroundStyle = { 'background': "#fff url('/_nuxt/assets/mock/slider_home.png') center 0px no-repeat", 'background-size': 'cover' }
+  private backgroundStyle = { 'background': "#fff url('/_nuxt/assets/mock/slider_home.png') no-repeat center", 'background-size': 'cover'}
   private iconColor = '#F1C482'
 }
 </script>
