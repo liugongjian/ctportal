@@ -36,7 +36,7 @@ export default class extends Vue{
   &__seperator{
     width: 52px;
     height: 3px;
-    background: #DF0629;
+    background: $newPrimary;
     margin: 0 0 20px 27px;
 
   }

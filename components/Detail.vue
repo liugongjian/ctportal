@@ -141,7 +141,7 @@ export default class extends Vue{
         }
         .detail{
           font-size: 14px;
-          color: #DF0629;
+          color: $newPrimary;
           margin-top: 28px;
         }
       }

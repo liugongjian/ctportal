@@ -143,7 +143,7 @@ export default class extends Vue{
           font-size: 16px;
         }
         .el-tabs__item:hover{
-          color: #DF0629;
+          color: $newPrimary;
         }
       }
     }
@@ -152,7 +152,7 @@ export default class extends Vue{
     height: 0;
   }
   ::v-deep .is-active {
-    color:#DF0629;
+    color:$newPrimary;
   }
 }
 </style>

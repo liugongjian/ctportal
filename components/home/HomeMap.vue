@@ -256,7 +256,7 @@ export default class extends Vue{
       right: 5%;
       width: 300px;
       .clicked{
-        color: #DF0629;
+        color: $newPrimary;
       }
       &__detail{
         border: 1px solid $borderGrey;
@@ -296,8 +296,8 @@ export default class extends Vue{
         border-bottom: 1px solid $borderGrey;
       }
       & li:hover{
-        border-color: #DF0629;
-        background: #DF0629;
+        border-color: $newPrimary;
+        background: $newPrimary;
         color: #fff;
       }
     }

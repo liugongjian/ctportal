@@ -104,6 +104,6 @@ export default class extends Vue{
 .play{
   width: 34px;
   height: 34px;
-  color: #DF0629;
+  color: $newPrimary;
 }
 </style>

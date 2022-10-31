@@ -400,7 +400,7 @@ body {
         margin-top: 30px;
         button {
           background: #fff;
-          border: 1px solid #DF0629 !important;
+          border: 1px solid $newPrimary !important;
           border-radius: 28px !important;
           display: inline-block;
           line-height: 1;

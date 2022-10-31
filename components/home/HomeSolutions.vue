@@ -87,7 +87,7 @@ export default class extends Vue{
   .solution {
 
     background: #F8F9FB url('../../assets/mock/solution/home_background.png') no-repeat;
-    background-size:100%;
+    background-size:100% 80%;
     &__container {
       @include container;
       @include containerPadding;
@@ -188,7 +188,7 @@ export default class extends Vue{
         }
         .detail{
           font-size: 14px;
-          color: #DF0629;
+          color: $newPrimary;
           margin-top: 28px;
         }
       }

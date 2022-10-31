@@ -210,7 +210,7 @@ export default Vue.extend({
     a {
       color: $text;
       &:hover {
-        color: $primary;
+        color: #DF0629;
       }
     }
     &__container {
@@ -245,6 +245,7 @@ export default Vue.extend({
         color: $text;
         font-size: 14px;
         margin-right: 40px;
+        padding: 0 8px;
         display: flex;
         align-items: center;
         cursor: pointer;
@@ -258,22 +259,23 @@ export default Vue.extend({
           vertical-align: middle;
         }
         &:hover {
-          color: $primary;
+          color: $newPrimary;
         }
         &.sub {
           cursor: default;
         }
         &.hovered {
-          color: $primary;
+          color: $newPrimary;
           .svg-icon {
             color: $primary;
             transform: rotate(180deg);
           }
         }
         &.actived {
-          color: $primary;
+          color: $newPrimary;
+          background: rgba(223,6,41,0.05);
           a {
-            color: $primary;
+            color: $newPrimary;
           }
         }
       }
@@ -347,7 +349,7 @@ export default Vue.extend({
         padding: 5px 0;
         cursor: pointer;
         &:hover {
-          color: $primary;
+          color: $newPrimary;
         }
         a {
           display: block;

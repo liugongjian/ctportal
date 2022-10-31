@@ -86,7 +86,7 @@
         .light-btn{
           border: none;
           color: #fff;
-          background: #DF0629;
+          background: $newPrimary;
         }
       }
       .longer{

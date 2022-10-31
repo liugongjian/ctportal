@@ -128,13 +128,13 @@
         display: inline-block;
         margin: 15px 53px 0 0;
         .light-btn {
-          border: 1px solid #DF0629;
+          border: 1px solid $newPrimary;
           width: 108px;
           height: 38px;
           padding: 8px 10px;
           border-radius: 10px;
           font-size: 15px;
-          color: #DF0629;
+          color: $newPrimary;
         }
       }
     }
