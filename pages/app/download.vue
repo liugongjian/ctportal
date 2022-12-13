@@ -6,7 +6,7 @@
 
           <div class="bd">
             <div class="logo">
-              <img src="@/assets/images/download/ctyun_logo.png" alt="">
+              <img src="@/assets/images/download/dllogo.png" alt="">
             </div>
             <div class="title">
               <h1>天翼云瞰</h1>
