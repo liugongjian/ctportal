@@ -19,7 +19,7 @@ export default Vue.extend({
   methods: {
     init() {
       const title = this.getQueryVariable('title')
-      document.title = decodeURIComponent(title) || '天翼云 - 视频监控'
+      document.title = decodeURIComponent(title) || '天翼云 - 智能视图服务'
       const videoUrl = this.getQueryVariable('video')
       const url = window.atob(decodeURIComponent(videoUrl))
       const videoElement = document.createElement('video')

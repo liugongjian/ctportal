@@ -46,7 +46,7 @@ export default Vue.extend({
   layout: 'app',
   head(){
     return {
-      title: '天翼云 - 视频监控'
+      title: '天翼云 - 智能视图服务'
     }
   },
   data(){
