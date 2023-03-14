@@ -1,6 +1,10 @@
 <template>
   <div class="footer">
-    <p>本产品由天翼云科技有限公司开发，联系方式：400-810-9889</p>
+    <p>
+      &nbsp;&nbsp;&nbsp;开发者：天翼云科技有限公司<br/>
+      运营机构：天翼云科技有限公司<br/>
+      联系方式：400-810-9889&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+    </p>
     <p>Copyright © 2022 版权所有
       <span class="privacy"><a href="https://vcn.ctyun.cn/app/agreements/privacy/">隐私协议</a></span> |
       <span><a href="https://vcn.ctyun.cn/app/agreements/authority/">权限描述</a></span></p>
