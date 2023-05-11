@@ -8,7 +8,7 @@
       label-position="top"
       label-width="100px"
     >
-      <div class="form_title"><h2>天翼云视频监控需求问卷</h2></div>
+      <div class="form_title"><h2>天翼云智能视图服务需求问卷</h2></div>
       <div class="form_col-level1">基本信息</div>
       <el-form-item label="企业名称" prop="companyName">
         <el-input v-model="form.companyName" />
@@ -460,7 +460,7 @@ export default Vue.extend({
           // const val = item.value.slice(1, 3)
           if(item.value === this.form.provinceCode) {
             this.dynamicCity = item.children
-          } 
+          }
         })
       } else {
         // clearable
@@ -472,7 +472,7 @@ export default Vue.extend({
           }
         ]
       }
-      
+
     },
     async renderAiAlgorithm() {
       const ai = await getAiAlgorithm()
