@@ -3,37 +3,42 @@
     <h1>个人信息收集清单</h1>
     <table class="table" border="1" cellspacing="0" cellpadding="0">
       <colgroup>
-        <col width="25%">
-        <col width="25%">
-        <col width="25%">
-        <col width="25%">
+        <col width="20%">
+        <col width="20%">
+        <col width="20%">
+        <col width="20%">
+        <col width="20%">
       </colgroup>
       <tr>
-        <td colspan="4">个人信息收集清单</td>
+        <td colspan="5">个人信息收集清单</td>
       </tr>
       <tr>
         <td>使用场景</td>
         <td>个人信息种类</td>
         <td>使用目的</td>
-        <td>收集内容</td>
+        <td>收集情况</td>
+        <td>信息内容</td>
       </tr>
       <tr>
         <td>登录</td>
         <td>用户账号信息</td>
         <td>用于账号登录</td>
+        <td>1条</td>
         <td>{{userName}}</td>
       </tr>
       <tr v-if="pInfoShow">
         <td>附加功能</td>
         <td>终端存储权限</td>
         <td>存储和读取用户对视频进行截图操作后生成的图片；</td>
-        <td>开启存储权限</td>
+        <td>未收集</td>
+        <td>/</td>
       </tr>
       <tr v-if="cInfoShow">
         <td>附加功能</td>
         <td>相机权限</td>
         <td>扫码识别视频监控摄像头的SN码时，需要打开相机。</td>
-        <td>开启相机权限</td>
+        <td>未收集</td>
+        <td>/</td>
       </tr>
     </table>
     <br>
