@@ -27,7 +27,7 @@
                 <p class="device">Android</p>
               </div>
               <div class="icon">
-                <img src="@/assets/images/download/qr_android.png" alt="" />
+                <img src="@/assets/images/download/qr_android20230518.png" alt="" />
               </div>
               <div class="instruction">
                 <!-- 20220926 update from 1.4.1 to 1.4.3 -->
@@ -39,7 +39,7 @@
               <div class="btns">
                 <button>
                   <a
-                    href="https://vss.guiyang.vcn.ctyun.cn/app/android/latest/vss-android.apk"
+                    href="https://vss.vaas.cn-guianxinqu-1.ctyunxs.cn/app/android/latest/vss-android.apk"
                     >立即下载</a
                   >
                 </button>
