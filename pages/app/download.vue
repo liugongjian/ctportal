@@ -31,7 +31,7 @@
               </div>
               <div class="instruction">
                 <!-- 20220926 update from 1.4.1 to 1.4.3 -->
-                <p class="desc">V1.6.0 (2023.04.03)</p>
+                <p class="desc">V1.6.2 (2023.06.05)</p>
               </div>
               <div v-if="isMobile" class="os-desc">
                 <p>适用于安卓手机</p>
@@ -54,7 +54,7 @@
               </div>
               <div class="instruction">
                 <!-- 20220926 update from 1.4.1 to 1.4.2 -->
-                <p class="desc">V1.6.0 (2023.04.03)</p>
+                <p class="desc">V1.6.2 (2023.06.05)</p>
               </div>
               <div v-if="isMobile" class="os-desc">
                 <p>适用于IOS手机</p>
