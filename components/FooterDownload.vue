@@ -6,8 +6,8 @@
       联系方式：400-810-9889&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
     </p>
     <p>Copyright © 2022 版权所有
-      <span class="privacy"><a href="https://vcn.ctyun.cn/app/agreements/privacy/">隐私协议</a></span> |
-      <span><a href="https://vcn.ctyun.cn/app/agreements/authority/">权限描述</a></span></p>
+      <span class="privacy"><a href="https://vaas.ctyun.cn/app/agreements/privacy/">隐私协议</a></span> |
+      <span><a href="https://vaas.ctyun.cn/app/agreements/authority/">权限描述</a></span></p>
   </div>
 </template>
 <style  lang="scss" scoped>
